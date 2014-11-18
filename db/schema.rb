@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118073046) do
+ActiveRecord::Schema.define(version: 20141118174056) do
 
   create_table "books", force: true do |t|
     t.integer  "drive_id"
@@ -29,17 +29,6 @@ ActiveRecord::Schema.define(version: 20141118073046) do
     t.datetime "updated_at"
   end
 
-  create_table "drives", force: true do |t|
-    t.string   "departure"
-    t.string   "destination"
-    t.datetime "leaving_time"
-    t.integer  "capacity"
-    t.integer  "price"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "messages", force: true do |t|
     t.integer  "to_user_id"
     t.integer  "from_user_id"
@@ -52,6 +41,34 @@ ActiveRecord::Schema.define(version: 20141118073046) do
     t.integer  "user_id"
     t.integer  "driver_id"
     t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trips", force: true do |t|
+    t.string   "departure"
+    t.string   "destination"
+    t.datetime "leaving_time"
+    t.integer  "capacity"
+    t.integer  "price"
+    t.integer  "driver_id"
+    t.integer  "complete_flag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "userprofiles", force: true do |t|
+    t.string   "name"
+    t.date     "birthday"
+    t.integer  "user_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
