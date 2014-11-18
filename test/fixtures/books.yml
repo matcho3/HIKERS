@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  drive_id: 1
+  user_id: 1
+  reservations: 1
+  status: 1
+
+two:
+  drive_id: 1
+  user_id: 1
+  reservations: 1
+  status: 1
