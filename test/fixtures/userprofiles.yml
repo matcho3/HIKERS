@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  trip_id: 1
+  name: MyString
+  birthday: 2014-11-19
   user_id: 1
-  reservations: 1
-  status: 1
+  image: MyString
 
 two:
-  trip_id: 1
+  name: MyString
+  birthday: 2014-11-19
   user_id: 1
-  reservations: 1
-  status: 1
+  image: MyString
