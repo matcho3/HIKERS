@@ -2,7 +2,7 @@
   <div class="span6 offset3">   
     <%= form_for(@user) do |f| %>
     
-     <%= render 'shared/error_messages' %>
+     <%= render 'shared/error_messages',object: f.object %>
   
       <div class="field">
         <%= f.label :email %><br>
@@ -17,7 +17,7 @@
         <%= f.password_field :password_confirmation %>
       </div>
       <div class="actions">
-        <%= f.submit "登録", class: "btn btn-large btn-primary" %>
+        <%= f.submit "DONE", class: "btn btn-large btn-primary" %>
       </div>
       <% end %>
     　</div>

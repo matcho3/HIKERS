@@ -40,6 +40,7 @@ html {
 
 body {
   padding-top: 60px;
+  color:#15A8B5;
 }
 
 section {
@@ -115,6 +116,8 @@ footer {
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
+right: 0;
+left: 0;
   a {
     color: $gray;
     &:hover {
@@ -289,4 +292,32 @@ aside {
 
 .reply{
   display: none;
+}
+
+
+
+.btn-primary{
+  color: #5DCFB8;
+}
+
+.navbar-inverse
+{
+  color:red;
+}
+
+.hero-unit
+{
+  color: #FFF;
+}
+
+.field
+{
+  width: 302px;
+text-align: center;
+margin: auto;
+}
+
+.actions
+{
+  margin-left: 293px;
 }

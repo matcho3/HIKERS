@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :users
-
-  get "sessions/new"
+  get "about/index"
+  root  'about#index'
   get "sessions/create"
-  get "sessions/destroy"
  match '/signin',to:'sessions#new',via:'get'
  match '/signout',to:'sessions#destroy',via:'delete'
+ resources :sessions, only: [:new, :create, :destroy]
  resources :users
- resources :tweets
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
