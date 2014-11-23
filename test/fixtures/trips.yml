@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  departure: MyString
+  departure: OSAKA
   destination: MyString
   leaving_time: 2014-11-19 02:40:56
   capacity: 1
@@ -10,7 +10,7 @@ one:
   complete_flag: 1
 
 two:
-  departure: MyString
+  departure: TOKYO
   destination: MyString
   leaving_time: 2014-11-19 02:40:56
   capacity: 1
