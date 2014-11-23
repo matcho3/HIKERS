@@ -1,10 +1,10 @@
 class CreateBooks < ActiveRecord::Migration
   def change
     create_table :books do |t|
-      t.integer :trips_id
+      t.integer :trip_id
       t.integer :user_id
       t.integer :reservations
-      t.integer :status, default: 0
+      t.integer :status
 
       t.timestamps
     end
