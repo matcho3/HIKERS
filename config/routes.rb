@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :user_profiles
+
   get "about/index"
   root  'about#index'
   get "sessions/create"
@@ -9,7 +11,6 @@ Rails.application.routes.draw do
 
  resources :sessions, only: [:new, :create, :destroy]
  resources :users
- resources :userprofiles
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
