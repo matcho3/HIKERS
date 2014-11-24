@@ -1,24 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
+<h1>
+  <%= profile_image_for @user_profile %>
   <%= @user_profile.name %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
+　　<strong>Birthday:</strong>
   <%= @user_profile.birthday %>
 </p>
-
-<p>
-  <strong>User:</strong>
-  <%= @user_profile.user_id %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @user_profile.image %>
-</p>
+</h1>
 
 <%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |
-<%= link_to 'Back', user_profiles_path %>
+<%= link_to 'Back', user_profile_path %>
+
