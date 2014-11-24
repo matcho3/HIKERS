@@ -1,0 +1,18 @@
+<%= form_for(@user_profile , :html => { :multipart => true }) do |f| %> 
+<%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.date_select :birthday %>
+  </div>
+ <div class="field">
+        <%= f.label :image  %><br>
+        <%= f.file_field :image %>
+      </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

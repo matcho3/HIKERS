@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  birthday: 2014-11-19
+  birthday: 2014-11-24
   user_id: 1
   image: MyString
 
 two:
   name: MyString
-  birthday: 2014-11-19
+  birthday: 2014-11-24
   user_id: 1
   image: MyString
