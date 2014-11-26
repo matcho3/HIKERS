@@ -46,6 +46,7 @@ class UsersController < ApplicationController
     @user.set_image(file)
     # raise 'hi'
     if @user.update_attributes(user_profile_params)
+      redirect_to @user
     else
       render 'edit'
     end
@@ -67,6 +68,10 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation)
+    end
+
+    def user_profile_params
+      params.require(:user).permit(:name, :birthday)
     end
 
     def signed_in_user
