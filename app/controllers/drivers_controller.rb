@@ -25,7 +25,7 @@ before_action :set_driver, only: [:show, :edit, :update, :destroy]
     @driver.set_car_image(file)
     if @driver.update_attributes(driver_params)
       flash[:success] = "Driver's Profile Updated"
-      redirect_to @user
+      redirect_to @driver
     else
       render 'edit'
     end

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
  resources :sessions, only: [:new, :create, :destroy]
  resources :users
- resources :drivers, only: [:new, :create, :destroy, :show, :edit]
+ resources :drivers, only: [:new, :create, :destroy, :show, :edit, :update]
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
