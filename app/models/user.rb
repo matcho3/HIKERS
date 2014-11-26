@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 	validates :password, length: { minimum: 6 }, on: :create
 	has_one :user_profile
 
+	has_one :driver, dependent: :destroy
+
 	has_secure_password
 
 	def set_image(file)
