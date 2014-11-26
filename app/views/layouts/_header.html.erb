@@ -20,10 +20,10 @@
                 </li>
               </ul>
             </li>
-             <% if driver_id = nil? %>
+             <% if !current_user.driver %>
               <li><%= link_to "DriverR", new_driver_path %></li>
              <% else %>
-              <li><%= link_to "DriverR", edit_driver_path %></li>
+              <li><%= link_to "DriverR", edit_driver_path(current_user.driver.id) %></li>
              <% end %> 
           <% else %>
             <li><%= link_to "Sign in", signin_path %></li>
