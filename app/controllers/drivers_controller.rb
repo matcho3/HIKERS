@@ -10,6 +10,7 @@ before_action :set_driver, only: [:show, :edit, :update, :destroy]
 
   def create
     @driver = Driver.new(driver_params)
+    @driver.user_id = current_user.id
     file = params[:driver][:car_image]
     @driver.set_car_image(file)
     if @driver.save
@@ -42,7 +43,7 @@ before_action :set_driver, only: [:show, :edit, :update, :destroy]
   
   private
    def driver_params
-      params.require(:driver).permit(:car_image, :license_history)
+      params.require(:driver).permit(:license_history)
    end
 
    def set_driver

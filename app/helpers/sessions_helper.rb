@@ -21,17 +21,8 @@ module SessionsHelper
     @current_user ||= User.find_by(remember_token: remember_token)
   end
 
-  def current_driver
-     remember_token = Driver.encrypt(cookies[:remember_token])
-    @current_driver ||= Driver.find_by(remember_token: remember_token)
-  end
-
   def current_user=(user)
     @current_user = user
-  end
-
-  def current_driver=(driver)
-    @current_driver = driver
   end
 
   #current_userの存在の確認
