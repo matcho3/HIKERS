@@ -6,6 +6,8 @@ Rails.application.routes.draw do
  match '/signin',to:'sessions#new',via:'get'
  match '/signout',to:'sessions#destroy',via:'delete'
  match '/search', to: 'search#index', via: 'get'
+ match '/driver/:id',to:'drivers#new',as:'resister_driver', via:'get'
+
 
  resources :sessions, only: [:new, :create, :destroy]
  resources :users

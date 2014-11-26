@@ -46,6 +46,7 @@ class UsersController < ApplicationController
     @user.set_image(file)
     # raise 'hi'
     if @user.update_attributes(user_profile_params)
+      redirect_to @user
     else
       render 'edit'
     end
