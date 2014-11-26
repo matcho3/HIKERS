@@ -53,6 +53,7 @@ textarea {
 
 .center {
   text-align: center;
+  margin: 118px;;
   h1 {
     margin-bottom: 10px;
   }
@@ -323,7 +324,7 @@ margin: auto;
 }
 
 .field2{
-  width:90px;
+  width:161px;;
   margin-left:-5px;
   border-radius: 0px;
 }
@@ -340,7 +341,7 @@ float:left;
 
 
 .search-input{
-  width: 100%;
+  width: 574px;
 display: inline-block;
 margin-top: 7px;
 }
@@ -364,4 +365,34 @@ color: #555555;
 -moz-border-radius: 4px;
 border-radius: 4px;
 vertical-align: middle;
+}
+
+
+.datepicker{
+  display:inline;
+}
+
+.field3{
+width:168px;
+  margin-left:-5px;
+  border-radius: 0px;
+}
+
+
+.bootstrap-datetimepicker-widget{
+left: 539px;
+width: 203px;
+padding: 2px;
+margin-top: 0px;
+z-index: 3013;
+}
+
+.welcome{
+  font-size:47px ;
+}
+
+.btn2{
+  background-size: 40px;
+
+  
 }

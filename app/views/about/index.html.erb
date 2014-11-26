@@ -1,7 +1,12 @@
-<div class="center">
-  <h1>Welcome to Hikers!!</h1>
-
-
-  <%= link_to "Sign up!", new_user_path, class: "btn " %>
-   <%= render 'layouts/search' %>
-</div>
+<% if signed_in? %>
+	<div class="center">
+		<h1 class="welcome">WELCOME TO HIKERS.</h1>
+		<%= render 'layouts/search' %> 
+	</div>
+<% else %>
+	<div class="center">
+		<h1 class="welcome">WELCOME TO HIKERS.</h1>
+		<%= render 'layouts/search' %> 
+		<%= link_to "Sign up now!", new_user_path, class: "btn btn-large btn-primary" %>
+	</div>
+<% end %>
