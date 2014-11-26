@@ -8,6 +8,7 @@ before_action :set_driver, only: [:show, :edit, :update, :destroy]
   def edit
   end
 
+
   def create
     @driver = Driver.new(driver_params)
     @driver.user_id = current_user.id
