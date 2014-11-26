@@ -5,6 +5,9 @@ before_action :set_driver, only: [:show, :edit, :update, :destroy]
     @driver = Driver.new
   end
 
+  def edit
+  end
+
   def create
     @driver = Driver.new(driver_params)
     file = params[:driver][:car_image]
