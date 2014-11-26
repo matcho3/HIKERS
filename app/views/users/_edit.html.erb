@@ -2,23 +2,23 @@
   <div class="span6 offset3">   
     <%= form_for(@user) do |f| %>
     
-     <%= render 'shared/error_messages',object: f.object %>
-  
-      <div class="field">
-        <%= f.label :email %><br>
-        <%= f.text_field :email %>
-      </div>
-      <div class="field">
-        <%= f.label :password %><br>
-        <%= f.password_field :password %>
-      </div>
-      <div class="field">
-        <%= f.label :password_confirmation, "Confirmation!" %><br>
-        <%= f.password_field :password_confirmation %>
-      </div>
-      <div class="actions">
-        <%= f.submit "DONE", class: "btn btn-large btn-primary" %>
-      </div>
-      <% end %>
-    　</div>
-  </div>
+    <%= render 'shared/error_messages',object: f.object %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :birthday %><br>
+      <%= f.date_select :birthday %>
+    </div>
+    <div class="field">
+      <%= f.label :image  %><br>
+      <%= f.file_field :image %>
+    </div>
+    <div class="actions">
+      <%= f.submit "DONE", class: "btn btn-large btn-primary" %>
+    </div>
+    <% end %>
+  　</div>
+</div>

@@ -21,14 +21,17 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
   end
-
+  
   # POST /users
   # POST /users.json
-  def create
+   def create
     @user = User.new(user_params)
-    if @user.save
+    file = params[:user][:image]
+    @user.set_image(file)
+    # raise 'hi'
+    if @user.save(validate: false)
       sign_in @user
-      flash[:success] = "Welcome to HIKERS!!"
+      flash[:success] = "Welcome to Twitter!"
       redirect_to @user
     else
       render 'new'
@@ -38,8 +41,10 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
    def update
-    file = params[:user]
-    if @user.update_attributes(user_params)
+    file = params[:user][:image]
+    @user.set_image(file)
+    # raise 'hi'
+    if @user.update_attributes(user_profile_params)
       flash[:success] = "Profile updated"
       redirect_to @user
     else
@@ -63,6 +68,10 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation)
+    end
+
+    def user_profile_params
+      params.require(:user).permit(:name, :birthday)
     end
 
     def signed_in_user
