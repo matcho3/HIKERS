@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
-   def update
+  def update
     file = params[:user]
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"

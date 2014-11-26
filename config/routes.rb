@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get "drivers/new"
+  get "drivers/create"
+  get "drivers/destroy"
   get "about/index"
   root  'about#index'
   get "sessions/create"
