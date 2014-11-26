@@ -1,3 +1,3 @@
 class Trip < ActiveRecord::Base
-	belong_to :driver
+	belongs_to :driver
 end

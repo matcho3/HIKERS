@@ -1,6 +1,6 @@
 class Driver < ActiveRecord::Base
 	has_one :user
-	has_many :trip
+	has_many :trips
 
 	def set_car_image(file)
     	if !file.nil?

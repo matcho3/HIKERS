@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="span6 offset3">   
+    <%= form_for(@trip) do |f| %>
+    
+     <%= render 'shared/error_messages', object: f.object %>
+
+      <div class="field">
+        <%= f.label :departure %><br>
+        <%= f.text_field :departure %>
+      </div>
+      <div class="field">
+        <%= f.label :destination %><br>
+        <%= f.text_field :destination %>
+      </div>
+      <div class="field">
+        <%= f.label :leaving_time %><br>
+        <%= f.text_field :leaving_time %>
+      </div>
+      <div class="field">
+        <%= f.label :capacity %><br>
+        <%= f.text_field :capacity %>人
+      </div>
+      <div class="field">
+        <%= f.label :price %><br>
+        <%= f.text_field :price %>円
+      </div>
+      <div class="actions">
+        <%= f.submit "登録", class: "btn btn-large btn-primary" %>
+      </div>
+    <% end %>
+　</div>
+</div>
