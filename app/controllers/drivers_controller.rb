@@ -1,5 +1,8 @@
 class DriversController < ApplicationController
+before_action :set_driver, only: [:show, :edit, :update, :destroy]
+
   def new
+    @driver = Driver.new
   end
 
   def create
@@ -8,7 +11,7 @@ class DriversController < ApplicationController
     @driver.set_car_image(file)
     if @driver.save
       flash[:success] = "Driver Entry Completed!"
-      redirect_to @user
+      redirect_to @driver
     else
       render 'new'
     end
@@ -25,13 +28,21 @@ class DriversController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def destroy
     @driver.destroy
     flash[:success] = "driver's profile destroyed."
     redirect_to users_url
   end
-
-  def driver_params
+  
+  private
+   def driver_params
       params.require(:driver).permit(:car_image, :license_history)
-  end
+   end
+
+   def set_driver
+      @driver = Driver.find(params[:id])
+   end
 end
