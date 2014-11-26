@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   
   # POST /users
   # POST /users.json
-   def create
+  def create
     @user = User.new(user_params)
     file = params[:user][:image]
     @user.set_image(file)
@@ -40,13 +40,12 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
-   def update
+
+  def update
     file = params[:user][:image]
     @user.set_image(file)
     # raise 'hi'
     if @user.update_attributes(user_profile_params)
-      flash[:success] = "Profile updated"
-      redirect_to @user
     else
       render 'edit'
     end
