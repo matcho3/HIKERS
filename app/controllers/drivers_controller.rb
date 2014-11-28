@@ -50,4 +50,8 @@ before_action :set_driver, only: [:show, :edit, :update, :destroy]
    def set_driver
       @driver = Driver.find(params[:id])
    end
+
+   def signed_in_driver
+      redirect_to signin_url, notice: "Please sign in." unless signed_in?
+   end
 end
