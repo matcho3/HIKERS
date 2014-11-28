@@ -1,11 +1,12 @@
 class TripsController < ApplicationController
+
 	 before_action :set_trip, only: [:show, :edit, :update, :destroy]
 	def new
     	@trip = Trip.new
   	end
 
   	def create
-  		@trip = Trip.new(trip_params)
+  		@trip = current_user.driver.trips.build(trip_params)
     	if @trip.save
       		flash[:success] = "Trip Entry Completed!"
       		redirect_to root_url
