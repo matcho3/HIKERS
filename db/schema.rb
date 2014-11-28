@@ -58,15 +58,6 @@ ActiveRecord::Schema.define(version: 20141125043827) do
     t.datetime "updated_at"
   end
 
-  create_table "userprofiles", force: true do |t|
-    t.string   "name"
-    t.date     "birthday"
-    t.integer  "user_id"
-    t.string   "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "password_digest"
