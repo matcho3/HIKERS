@@ -17,8 +17,10 @@
 //= require_tree .
 //= require bootstrap-datetimepicker
 
-var data = {'data-format': 'yyyy-MM-dd hh:mm:ss' };
+var data = {'data-format': 'yyyy-MM-dd' };
 $(function(){
-    $('.datepicker').attr(data);
+    $('.datepicker input').attr(data);
     $('.datepicker').datetimepicker();
 });
+
+// hh:mm:ss

@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-	
+	 before_action :set_trip, only: [:show, :edit, :update, :destroy]
 	def new
     	@trip = Trip.new
   	end
@@ -19,6 +19,9 @@ class TripsController < ApplicationController
   	
   	def edit
   	end
+
+    def update
+    end
 
   	def index
   	end

@@ -1,0 +1,17 @@
+<table border="1">
+  <tr>
+    <th>car_image</th><th>profile_image</th><th>Departure</th><th>Destination</th><th>Capacity</th><th>Destination</th>
+  </tr>
+
+<% @trips.each do |trip| %>
+  <tr>
+  	<td><%= trip.departure %></td>
+    <td><%= trip.departure %></td>
+    <td><%= trip.destination %></td>
+    <td><%= trip.capacity %></td>
+    <td><%= profile_image_for current_user %></td>
+    <td><%= profile_image_for current_user %></td>
+    <!-- 画像うまく呼び出せないので、とりあえずこの画像はってます。 -->
+  </tr>
+<% end %>
+</table>

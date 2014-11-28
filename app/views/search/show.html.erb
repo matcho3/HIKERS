@@ -1,0 +1,25 @@
+<table border="1">
+  <tr>
+    <th>car_image</th><th>profile_image</th><th>Departure</th><th>Destination</th><th>Capacity</th><th>Price</th><th>Book</th>
+  </tr>
+
+<% @trip %>
+  <tr>
+  	<td><%= profile_image_for current_user %></td>
+    <td><%= profile_image_for current_user %></td>
+  	<td><%= @trip.departure %></td>
+    <td><%= @trip.destination %></td>
+    <td><%= @trip.capacity %></td>
+    <td><%= @trip.price %></td>
+    <td><%= link_to root_path, class: "btn " do %>
+      <i class="fa fa-ticket"></i>
+      <% end %>
+      <!-- まだ作ってないので、とりあえずルートに飛ばしてます。 -->
+    </td>
+
+    
+    <!-- <td><%#= link_to "Check!", , class: "btn btn-large btn-primary" %></td> -->
+
+    
+  </tr>
+</table>

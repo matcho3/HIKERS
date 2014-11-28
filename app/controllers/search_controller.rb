@@ -16,6 +16,7 @@ class SearchController < ApplicationController
 	def index
 		# @search_word = params[:word]
 		@trips = Trip.all
+	
 		if !params[:departure].blank?
 			@trips.where!(departure: params[:departure])
 		end
@@ -23,7 +24,18 @@ class SearchController < ApplicationController
 			@trips.where!(destination: params[:destination])
 		end
 		if !params[:leaving_time].blank?
-			@trips.where!(leaving_time: params[:leaving_time])
+			@trips.where!("leaving_time > ? AND leaving_time < ?", Time.parse(params[:leaving_time]).beginning_of_day, Time.parse(params[:leaving_time]).end_of_day)
 		end
 	end
+
+
+	def show
+		@trip = Trip.find(params[:id])
+	end
+
+
+
+
+
 end
+

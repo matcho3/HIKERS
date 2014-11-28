@@ -2,6 +2,7 @@
   <%= profile_car_image_for @driver %>
   license history <%= @driver.license_history %>
 </h1>
+	<%= profile_image_for current_user %>
 
 
 <%= link_to 'Edit', edit_driver_path(@driver) %> 
