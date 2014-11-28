@@ -1,10 +1,9 @@
 class TripsController < ApplicationController
 
-
-	
-  def new
-   @trip = Trip.new
-   end
+	 before_action :set_trip, only: [:show, :edit, :update, :destroy]
+	def new
+    	@trip = Trip.new
+  	end
 
   	def create
   		@trip = current_user.driver.trips.build(trip_params)
@@ -21,6 +20,9 @@ class TripsController < ApplicationController
   	
   	def edit
   	end
+
+    def update
+    end
 
   	def index
   	end

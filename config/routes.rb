@@ -6,6 +6,7 @@ Rails.application.routes.draw do
  match '/signin',to:'sessions#new',via:'get'
  match '/signout',to:'sessions#destroy',via:'delete'
  match '/search', to: 'search#index', via: 'get'
+ match '/search/:id',to: 'search#show',as:'trips_search', via:'get'
  match '/driver/:id',to:'drivers#new',as:'resister_driver', via:'get'
 
 
@@ -13,7 +14,10 @@ Rails.application.routes.draw do
  resources :users
  resources :drivers
  resources :trips
+ resources :books
 end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
