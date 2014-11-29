@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :reviews
+
   get "about/index"
   root  'about#index'
   get "sessions/create"
