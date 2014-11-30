@@ -12,12 +12,16 @@
         <%= f.label :destination %><br>
         <%= f.text_field :destination, placeholder: "Destination" %>
       </div>
-      <div class="field">
-        <%= f.label :leaving_time %><br>
-        <%= f.text_field :leaving_time, placeholder: "Date and Time" %> 
-        <!-- カレンダーで選んで時間帯記入の形式に-->
+      <div class="datepicker">
+        <%= f.label :leaving_time, class: "label2" %><br>
+        <%= f.text_field :leaving_time, placeholder: "Date and Time",class: "field5" %>
+        <span class="add-on">
+          <i  data-date-icon="icon-calendar">
+          <i data-time-icon="icon-time" >
+        </span>
       </div>
-      <div class="field">
+
+    <div class="field">
         <%= f.label :capacity %><br>
         <%= f.text_field :capacity, placeholder: "Capacity" %>
       </div>
@@ -31,3 +35,8 @@
     <% end %>
 　</div>
 </div>
+
+
+
+                 
+              

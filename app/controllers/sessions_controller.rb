@@ -17,4 +17,4 @@ class SessionsController < ApplicationController
     sign_out
     render 'about/index'
   end
-end
+end 
