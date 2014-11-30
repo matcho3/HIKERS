@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
 
-	 before_action :set_trip, only: [:show, :edit, :update, :destroy]
+	 before_action :set_trip, only: [:show, :edit, :update, :destroy, :book]
 	def new
     	@trip = Trip.new
   	end
@@ -14,6 +14,19 @@ class TripsController < ApplicationController
       		render 'new'
     	end
   	end
+
+    def book
+      # @trip = Trip.find(params[:id])
+      # @book = Book.new
+      # @book.user_id = current_user.id 
+      # @book.trip_id = @trip.id
+      # @book.save
+
+      @book = current_user.books.create(trip_id: @trip.id)
+      @book.save
+        flash[:success] = "Your book request has been confirmed!!"
+        redirect_to root_url
+    end
 
   	def show
       @trip = Trip.find(params[:id])
