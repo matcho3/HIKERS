@@ -3,6 +3,8 @@ class Driver < ActiveRecord::Base
 	has_many :trips
 	has_many :reviews
 
+	validates :license_history, presence: true
+
 	def set_car_image(file)
     	if !file.nil?
       	 file_name = file.original_filename
