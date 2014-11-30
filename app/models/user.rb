@@ -10,6 +10,15 @@ class User < ActiveRecord::Base
 
 	has_one :driver, dependent: :destroy
 
+	# send message
+	has_many :sending_messages, foreign_key: "from_user_id", class_name: "Messages", dependent: :destroy
+    has_many :sendings, through: :sending_messages
+	
+	# receive message
+	has_many :receiving_messages, foreign_key: "to_user_id", class_name: "Messages", dependent: :destroy
+    has_many :receivings, through: :receiving_relationships
+	
+
 	has_secure_password
 
 	def set_image(file)
@@ -20,6 +29,10 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	# send messageする関数
+	def send!(other_user)
+		sending_messages.create!(to_user_id: other_user.id)
+	end
 
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64

@@ -1,6 +1,6 @@
 <table border="1">
   <tr>
-    <th>car_image</th><th>profile_image</th><th>Departure</th><th>Destination</th><th>Capacity</th><th>Price</th><th>Book</th>
+    <th>car_image</th><th>profile_image</th><th>Departure</th><th>Destination</th><th>Capacity</th><th>Price</th><th>Book</th><th>message</th>
   </tr>
 
 <% @trip %>
@@ -15,6 +15,10 @@
       <i class="fa fa-ticket"></i>
       <% end %>
       <!-- まだ作ってないので、とりあえずルートに飛ばしてます。 -->
+    </td>
+    <td><%= link_to sending_user_path, class: "btn" do %>
+      <i class="fa fa-message"></i>
+      <% end %>
     </td>
 
     

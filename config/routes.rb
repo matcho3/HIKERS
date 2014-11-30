@@ -11,7 +11,11 @@ Rails.application.routes.draw do
 
 
  resources :sessions, only: [:new, :create, :destroy]
- resources :users
+ resources :users do
+    member do
+      get :sending, :receivings
+    end
+ end
  resources :drivers
  resources :trips
  resources :books
