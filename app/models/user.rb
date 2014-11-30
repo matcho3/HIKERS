@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 	validates :password, length: { minimum: 6 }, on: :create
 	has_one :user_profile
 	has_many :reviews, dependent: :destroy
+	has_many :books, dependent: :destroy
 	#ユーザーが削除された時、ツイートも一緒に削除されるように。
 	has_one :driver, dependent: :destroy
 
