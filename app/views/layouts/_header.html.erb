@@ -16,21 +16,23 @@
                 <!-- <li><%#= link_to "Settings", edit_user_path(current_user) %></li> -->
 
                 <% if !current_user.driver %>
-              <li><%= link_to "DriverR", new_driver_path %></li>
-             <% else %>
-              <li><%= link_to "DriverR", edit_driver_path(current_user.driver.id) %></li>
-             <% end %> 
+                  <li><%= link_to "DriverR", new_driver_path %></li>
+                <% else %>
+                  <li><%= link_to "DriverR", edit_driver_path(current_user.driver.id) %></li>
+                <% end %> 
                 <li class="divider"></li>
                 <li>
                   <%= link_to "Sign out", signout_path, method: "delete" %>
                 </li>
               </ul>
             </li>
-             <% if !current_user.driver %>
+            <li><%= link_to "message", new_trip_path %></li><!--sending_user_path(current_user.id)-->
+            <li><%= link_to "Notification", new_trip_path %></li><!-- pathは仮。フィードにNotificationを実装したらそこに飛ばす-->
+            <% if !current_user.driver %>
               <li><%= link_to "DriverR", new_driver_path %></li>
-             <% else %>
+            <% else %>
               <li><%= link_to "List Your Trips", new_trip_path %></li>
-             <% end %> 
+            <% end %> 
           <% else %>
             <li><%= link_to "Sign in", signin_path %></li>
           <% end %>
