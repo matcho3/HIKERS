@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:create, :destroy]
+  before_action :correct_user,   only: :destroy
 
   # GET /reviews
   # GET /reviews.json
@@ -29,7 +31,7 @@ class ReviewsController < ApplicationController
       flash[:success] = "Review created!"
       redirect_to root_url
     else
-      @feed_tweets = current_user.reviews.paginate(page: params[:page])
+      @feed_reviews = current_user.reviews.paginate(page: params[:page])
       render 'about/index'
     end
   end
@@ -52,9 +54,7 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1.json
   def destroy
     @review.destroy
-    respond_to do |format|
-      format.html { redirect_to reviews_url }
-      format.json { head :no_content }
+    redirect_to reviews_url
     end
   end
 
@@ -66,6 +66,13 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:user_id, :driver_id, :comment)
+      params.require(:review).permit(:comment)
+      # :user_id, :driver_id,
+    end
+
+
+    def correct_user
+      @review = Review.find_by(id: params[:id])
+      redirect_to root_url unless current_user?(@review.user)
     end
 end

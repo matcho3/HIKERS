@@ -1,24 +1,21 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <h1>
-        <%= profile_image_for @user %>
-        <%= @user.name %>
-        <%= @user.birthday %>
-      </h1>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+        <%= render 'reviews/form' %>
     </section>
   </aside>
-  <div class="span8">
-    <% if @user.reviews.any? %>
-      <h3>Reviews (<%= @user.reviews.count %>)</h3>
+<div class="span8">
+    <% if @feed_reviews.any? %>
+      <h3>Reviews</h3>
       <ol class="microposts">
-        <%= render @reviws %>
+        <%= render @feed_reviews %>
       </ol>
-      <%= will_paginate @reviews %>
+      <%= will_paginate @feed_reviews %>
     <% end %>
   </div>
 </div>
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>
-
-
