@@ -1,6 +1,7 @@
 class Driver < ActiveRecord::Base
 	belongs_to :user
 	has_many :trips
+	has_many :reviews
 
 	validates :license_history, presence: true
 

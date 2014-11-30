@@ -1,9 +1,25 @@
-<h1>
-  <%= profile_image_for @user %>
-  <%= @user.name %>
-  <%= @user.birthday %>
-</h1>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+   </aside>
+   <%= link_to 'レビューを書く', new_review_path %>
+<%#= render 'reviews/form' %>
 
+    <!-- <section> -->
+        <%#= render 'reviews/form' %>
+    <!-- </section> -->
+  <!-- </aside>  -->
+<!-- <div class="span8"> -->
+    <!-- <#% if @feed_reviews.any? %> -->
+      <!-- <h3>Reviews</h3> -->
+      <!-- <ol class="microposts"> -->
+        <%#= render @feed_reviews %>
+      <!-- </ol> -->
+      <%#= will_paginate @feed_reviews %>
+    <!-- <#% end %> -->
+</div>
 
-<%= link_to 'Edit', edit_user_path(current_user) %>
+<%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>

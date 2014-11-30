@@ -1,4 +1,3 @@
-<h1> Check the Trip you selected! </h1>
 <table border="1">
   <tr>
     <th>profile_image</th><th>car_image</th><th>Departure</th><th>Destination</th><th>leaving_time</th><th>Capacity</th><th>Price</th><th>Book</th>
@@ -12,11 +11,12 @@
     <td><%= @trip.leaving_time %></td>
     <td><%= @trip.capacity %></td>
     <td><%= @trip.price %></td>
-    <td><%= link_to trip_path(@trip), class: "btn ", method: :get do %>
-      <i class="fa fa-ticket"></i>
-      <% end %>
-    </td>
   </tr>
 </table>
 
+<%= link_to "手続き完了!", root_path , class: "btn btn-large btn-primary" %>
 
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
