@@ -10,7 +10,7 @@ Rails.application.routes.draw do
  match '/search', to: 'search#index', via: 'get'
  match '/search/:id',to: 'search#show',as:'trips_search', via:'get'
  match '/driver/:id',to:'drivers#new',as:'resister_driver', via:'get'
-
+ match '/book/:id',to:'book#show',as:'books_trip',via:'get'
 
  resources :sessions, only: [:new, :create, :destroy]
  resources :users

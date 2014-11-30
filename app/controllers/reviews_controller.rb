@@ -55,8 +55,8 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     redirect_to reviews_url
-    end
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
