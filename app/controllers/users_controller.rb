@@ -10,10 +10,65 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show
+  
     # @reviews = @user.reviews.paginate(page: params[:page])
     # @feed_reviews = current_user.reviews.paginate(page: params[:page])
+
+  def show
+    @trips = current_user.driver.trips
+      @trips.each do |trip|
+      @books = trip.books
+      end
+      @books.each do |book|
+      @user = book.user
+      end
   end
+
+
+
+
+
+
+
+
+    # users = User.all
+    # liked_users = current_user.likeds
+    # liked_users.each do |user|
+    #   users.where!.not(id: user.id
+    # end
+
+    # relationships  = Relationship.where(liked_id: current_user.id, match_flag: ['1','2'])
+    # relationships.each do |relationship|
+    #   users.where!.not(id: relationship.liking_id)
+    # end
+    
+    # users.where!.not(id: current_user.id)
+
+    # @user = users.order("RANDOM()").first
+    # if @user
+    #   @videos = @user.videos.paginate(page: params[:page])
+
+    #   render 'show'
+    #   else
+    #     render 'no_one'
+    # end
+
+
+# user.driver.trips
+# trip.books
+# book.user
+
+
+
+
+
+
+
+
+
+
+
+
 
   # GET /users/new
   def new

@@ -3,23 +3,28 @@
     <section>
       <%= render 'shared/user_info' %>
     </section>
-   </aside>
-   <%= link_to 'レビューを書く', new_review_path %>
-<%#= render 'reviews/form' %>
+  </aside>
+  <%= link_to 'レビューを書く', new_review_path %>
+  <h2>MY TRIPS<h2>
+   <table border="1">
+    <tr>
+      <th>car_image</th><th>Departure</th><th>Destination</th><th>leaving_time</th><th>Capacity</th><th>Price</th>
+    </tr>
 
-    <!-- <section> -->
-        <%#= render 'reviews/form' %>
-    <!-- </section> -->
-  <!-- </aside>  -->
-<!-- <div class="span8"> -->
-    <!-- <#% if @feed_reviews.any? %> -->
-      <!-- <h3>Reviews</h3> -->
-      <!-- <ol class="microposts"> -->
-        <%#= render @feed_reviews %>
-      <!-- </ol> -->
-      <%#= will_paginate @feed_reviews %>
-    <!-- <#% end %> -->
+    <% @trips.each do |trip| %>
+    <tr>
+      <td><%= profile_car_image_for trip.driver %></td>
+      <td><%= trip.departure %></td>
+      <td><%= trip.destination %></td>
+      <td><%= trip.leaving_time %></td>
+      <td><%= trip.capacity %></td>
+      <td><%= trip.price %></td>
+    </tr>
+    <h2>You got a trip request From<%= @user.name %> !! YAY :)</h2>
+    <% end %>
+  </table>
 </div>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>
