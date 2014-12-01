@@ -25,7 +25,6 @@ class TripsController < ApplicationController
       @book = current_user.books.create(trip_id: @trip.id)
       @book.save
         flash[:success] = "Your book request has been confirmed!!"
-        redirect_to root_url
     end
 
   	def show
