@@ -27,7 +27,7 @@
               </ul>
             </li>
             <li><%= link_to "message", new_trip_path %></li><!--sending_user_path(current_user.id)-->
-            <li><%= link_to "Notification", new_trip_path %></li><!-- pathは仮。フィードにNotificationを実装したらそこに飛ばす-->
+            <li><%= link_to "Notification", notification_index_path %></li><!-- pathは仮。フィードにNotificationを実装したらそこに飛ばす-->
             <% if !current_user.driver %>
               <li><%= link_to "DriverR", new_driver_path %></li>
             <% else %>

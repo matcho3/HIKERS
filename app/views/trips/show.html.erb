@@ -6,7 +6,7 @@
   <tr>
     <th>profile_image</th><th>car_image</th><th>Departure</th><th>Destination</th><th>leaving_time</th><th>Capacity</th><th>Price</th>
   </tr>
-<% @trip %>
+
   <tr>
     <td><%= link_to profile_image_for(@trip.driver.user), @trip.driver.user  %></td>
     <td><%= profile_car_image_for @trip.driver %></td>
@@ -20,9 +20,12 @@
 
 <h2>Are you sure you want to complete this Book request?</h2>
 
-<%= link_to "DONE!", root_path , class: "btn btn-large btn-primary" %>
+<%= link_to "DONE!", book_trip_path(@trip) , class: "btn btn-large btn-primary" %>
 
 
+<%#= form_tag("/hoge", method: "get", id: "hoge_id", name: "hoge_name", class: "hoge_class") do %>
+  <!-- formの中身 -->
+<%# end %>
 
 <%#= link_to 'Edit', edit_book_path(@book) %>
 <%#= link_to 'Back', books_path %>
