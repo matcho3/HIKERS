@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125043827) do
+ActiveRecord::Schema.define(version: 20141130145135) do
 
   create_table "books", force: true do |t|
     t.integer  "trip_id"
@@ -54,15 +54,6 @@ ActiveRecord::Schema.define(version: 20141125043827) do
     t.integer  "price"
     t.integer  "driver_id"
     t.integer  "complete_flag"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "userprofiles", force: true do |t|
-    t.string   "name"
-    t.date     "birthday"
-    t.integer  "user_id"
-    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

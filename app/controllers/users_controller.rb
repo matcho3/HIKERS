@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    # @reviews = @user.reviews.paginate(page: params[:page])
+    # @feed_reviews = current_user.reviews.paginate(page: params[:page])
   end
 
   # GET /users/new
