@@ -24,6 +24,16 @@ class UsersController < ApplicationController
       end
   end
 
+  def book
+    @trips = current_user.driver.trips
+      @trips.each do |trip|
+      @books = trip.books
+      end
+      @books.each do |book|
+      @user = book.user
+      end
+  end
+
 
 
 
