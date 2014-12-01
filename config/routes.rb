@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  
 
+
+  get "notification/index"
+  get "notification/show"
   get "about/index"
   root  'about#index'
   get "sessions/create"
@@ -10,6 +12,9 @@ Rails.application.routes.draw do
  match '/search/:id',to: 'search#show',as:'trips_search', via:'get'
  match '/driver/:id',to:'drivers#new',as:'resister_driver', via:'get'
  match '/book/:id',to:'book#show',as:'books_trip',via:'get'
+  # match '/notification',to: 'notification#index', via:'get'
+
+  # match '/notification/:id',to: 'notification#show',as:'notification_smtg', via:'get'
 
  resources :sessions, only: [:new, :create, :destroy]
  resources :users do
@@ -18,8 +23,12 @@ Rails.application.routes.draw do
     end
  end
  resources :drivers
- resources :trips
  resources :reviews
+ resources :trips do
+    member do
+      get 'book'
+    end
+ end
 end
 
 
