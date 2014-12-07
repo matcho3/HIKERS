@@ -2,8 +2,15 @@
   <div class="span6 offset3">   
     <%= form_for(@user) do |f| %>
     
-     <%= render 'shared/error_messages',object: f.object %>
-  
+    <%= render 'shared/error_messages',object: f.object %>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :sex, "Sex" %>
+        <%= f.select :sex, ["male", "female"], {}, class: ".select-box" %>
+      </div>
       <div class="field">
         <%= f.label :email %><br>
         <%= f.text_field :email %>
@@ -22,3 +29,7 @@
       <% end %>
     　</div>
   </div>
+
+
+
+

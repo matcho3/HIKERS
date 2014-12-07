@@ -21,7 +21,6 @@ class TripsController < ApplicationController
       # @book.user_id = current_user.id 
       # @book.trip_id = @trip.id
       # @book.save
-
       @book = current_user.books.create(trip_id: @trip.id)
       @book.save
         flash[:success] = "Your book request has been confirmed!!"

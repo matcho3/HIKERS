@@ -68,18 +68,6 @@ class UsersController < ApplicationController
 # trip.books
 # book.user
 
-
-
-
-
-
-
-
-
-
-
-
-
   # GET /users/new
   def new
     @user = User.new
@@ -95,16 +83,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     file = params[:user][:image]
     @user.set_image(file)
-    # raise 'hi'
-    if @user.save(validate: false)
+    if @user.save
       sign_in @user
-      flash[:success] = "Welcome to Twitter!"
-      redirect_to @user
+      flash[:success] = "Welcome to HIKERS!"
+      redirect_to root_url
     else
       render 'new'
     end
   end
-
+# (validate: false)
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
 
@@ -134,7 +121,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :password, :password_confirmation, :sex)
     end
 
     def user_profile_params
