@@ -36,6 +36,11 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'bootstrap-datetimepicker-rails'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'devise'
+# gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth'
+gem 'httparty'
 
 
 group :doc do

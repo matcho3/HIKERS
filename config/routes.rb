@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
-
+  
+  devise_for :users, :controllers => {
+  :sessions      => "users/sessions",
+  :registrations => "users/registrations",
+  :passwords     => "users/passwords",
+  :omniauth_callbacks => "users/omniauth_callbacks" 
+}
   get "notification/index"
   get "notification/show"
-  get "about/index"
   root  'about#index'
   get "sessions/create"
   match '/signin',to:'sessions#new',via:'get'
@@ -19,7 +24,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :sessions, only: [:new, :create, :destroy]
+  # resources :sessions, only: [:new, :create, :destroy]
   resources :users do
     member do
     get 'book'
