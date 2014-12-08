@@ -24,6 +24,14 @@
       <% end %>
     <% end %>
   </table>
+  <h2>MY REVIEW</h2>
+  <!--twitterと同様にreviewを表示。pagenate -->
+  <section>
+    self-introduction: <%= current_user.self_introduction %><br>
+    location:<%= current_user.location %><br>
+    school:<%= current_user.school %><br>
+    workplace:<%= current_user.workplace %>
+  </section>  
 </div>
 
 

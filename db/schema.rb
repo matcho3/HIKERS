@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141207082031) do
+ActiveRecord::Schema.define(version: 20141208141113) do
 
   create_table "books", force: true do |t|
     t.integer  "trip_id"
@@ -69,6 +69,10 @@ ActiveRecord::Schema.define(version: 20141207082031) do
     t.date     "birthday"
     t.string   "image"
     t.string   "sex"
+    t.string   "self_introduction"
+    t.string   "location"
+    t.string   "school"
+    t.string   "workplace"
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"

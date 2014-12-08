@@ -24,6 +24,7 @@ class UsersController < ApplicationController
        @user = book.user
       end
     end
+    #@reviews = @user.reviews.paginate(page: params[:page])
   end
 
   def book
@@ -127,7 +128,7 @@ class UsersController < ApplicationController
     end
 
     def user_profile_params
-      params.require(:user).permit(:name, :birthday)
+      params.require(:user).permit(:name, :birthday, :self_introduction, :location, :school, :workplace)
     end
 
     def signed_in_user
