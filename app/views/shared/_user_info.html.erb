@@ -4,7 +4,8 @@
   <%= current_user.birthday%>
 </h1>
 <span>
-  <%= link_to "view my profile", current_user %>
+  <!--<%= link_to "view my profile", current_user %>-->
+  <%= link_to "Edit my profile", edit_user_path(@user) %>
 </span>
 <span>
   <%= pluralize(current_user.reviews.count, "review") %>

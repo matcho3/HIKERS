@@ -44,7 +44,7 @@ before_action :set_driver, only: [:show, :edit, :update, :destroy]
   
   private
    def driver_params
-      params.require(:driver).permit(:license_history)
+      params.require(:driver).permit(:license_history, :time_get_license)
    end
 
    def set_driver
