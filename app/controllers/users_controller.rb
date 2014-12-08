@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     # @feed_reviews = current_user.reviews.paginate(page: params[:page])
 
   def show
+    if !@user.driver == nil
       @trips = current_user.driver.trips
       @trips.each do |trip|
         @books = trip.books
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
       @books.each do |book|
        @user = book.user
       end
+    end
   end
 
   def book
