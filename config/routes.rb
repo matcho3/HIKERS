@@ -7,6 +7,15 @@ Rails.application.routes.draw do
   :passwords     => "users/passwords",
   :omniauth_callbacks => "users/omniauth_callbacks" 
 }
+
+devise_scope :user do
+  get "/login" => "devise/sessions#new"
+end
+
+devise_scope :user do
+  delete "/logout" => "devise/sessions#destroy"
+end
+
   get "notification/index"
   get "notification/show"
   root  'about#index'
