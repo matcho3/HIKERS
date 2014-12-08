@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141208070837) do
-=======
-ActiveRecord::Schema.define(version: 20141207082031) do
->>>>>>> 650491d4708ba008d385205248047a50dfbd6ce9
 
   create_table "books", force: true do |t|
     t.integer  "trip_id"
