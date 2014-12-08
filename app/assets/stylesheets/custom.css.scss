@@ -406,3 +406,37 @@ z-index: 3013;
 
 img {height: 151px;
 width: auto;}
+
+// .select2 {
+//    background: transparent;
+//    width: 268px;
+//    padding: 5px;
+//    font-size: 16px;
+//    line-height: 1;
+//    border: 0;
+//    border-radius: 0;
+//    height: 34px;
+//    -webkit-appearance: none;
+//    }
+
+// .styled-select {
+//    width: 240px;
+//    height: 34px;
+//    overflow: hidden;
+//    background: url(new_arrow.png) no-repeat right #ddd;
+//    border: 1px solid #ccc;
+//    }
+
+.select-box {
+  background: #FFFDF4;
+  border: 2px solid #D2BA85;
+  border-radius: 5px;
+  color: #0C2245;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  text-indent: 5px;
+  vertical-align: middle;
+  width: 140px;
+}

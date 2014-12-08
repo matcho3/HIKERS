@@ -26,14 +26,21 @@
                 </li>
               </ul>
             </li>
-            <li><%= link_to "message", new_trip_path %></li><!--sending_user_path(current_user.id)-->
-            <li><%= link_to "Notification", notification_index_path %></li><!-- pathは仮。フィードにNotificationを実装したらそこに飛ばす-->
+           <!--sending_user_path(current_user.id)-->
+            <li><%= link_to notification_index_path, id: "logo" do %>
+            <i class="fa fa-paper-plane-o"></i>
+            <% end %></li>
+            <li><%= link_to notification_index_path, id: "logo" do %>
+            <i class="fa fa-globe"></i>
+            <% end %></li>
+          <!-- pathは仮。フィードにNotificationを実装したらそこに飛ばす-->
             <% if !current_user.driver %>
               <li><%= link_to "DriverR", new_driver_path %></li>
             <% else %>
               <li><%= link_to "List Your Trips", new_trip_path %></li>
             <% end %> 
           <% else %>
+            <li><%= link_to "Sign up", new_user_path %></li>
             <li><%= link_to "Sign in", signin_path %></li>
           <% end %>
         </ul>
@@ -50,7 +57,7 @@
 
 
 
-
+<!-- <i class="fa fa-paper-plane-o"></i> -->
 
 
 

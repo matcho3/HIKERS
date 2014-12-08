@@ -10,10 +10,63 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show
+  
     # @reviews = @user.reviews.paginate(page: params[:page])
     # @feed_reviews = current_user.reviews.paginate(page: params[:page])
+
+  def show
+    @trips = current_user.driver.trips
+      @trips.each do |trip|
+      @books = trip.books
+      end
+      @books.each do |book|
+      @user = book.user
+      end
   end
+
+  def book
+    @trips = current_user.driver.trips
+      @trips.each do |trip|
+      @books = trip.books
+      end
+      @books.each do |book|
+      @user = book.user
+      end
+  end
+
+
+
+
+
+
+
+
+    # users = User.all
+    # liked_users = current_user.likeds
+    # liked_users.each do |user|
+    #   users.where!.not(id: user.id
+    # end
+
+    # relationships  = Relationship.where(liked_id: current_user.id, match_flag: ['1','2'])
+    # relationships.each do |relationship|
+    #   users.where!.not(id: relationship.liking_id)
+    # end
+    
+    # users.where!.not(id: current_user.id)
+
+    # @user = users.order("RANDOM()").first
+    # if @user
+    #   @videos = @user.videos.paginate(page: params[:page])
+
+    #   render 'show'
+    #   else
+    #     render 'no_one'
+    # end
+
+
+# user.driver.trips
+# trip.books
+# book.user
 
   # GET /users/new
   def new
@@ -30,16 +83,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     file = params[:user][:image]
     @user.set_image(file)
-    # raise 'hi'
-    if @user.save(validate: false)
+    if @user.save
       sign_in @user
-      flash[:success] = "Welcome to Twitter!"
-      redirect_to @user
+      flash[:success] = "Welcome to HIKERS!"
+      redirect_to root_url
     else
       render 'new'
     end
   end
-
+# (validate: false)
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
 
@@ -69,7 +121,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :password, :password_confirmation, :sex)
     end
 
     def user_profile_params
