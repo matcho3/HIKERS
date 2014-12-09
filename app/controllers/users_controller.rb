@@ -20,9 +20,10 @@ class UsersController < ApplicationController
       @trips.each do |trip|
         @books = trip.books
       end
-      @books.each do |book|
-       @user = book.user
-      end
+      #@userがかぶるからコメントアウトしてみました
+      #@books.each do |book|
+       #@user = book.user
+      #end
     end
     #@reviews = @user.reviews.paginate(page: params[:page])
   end
