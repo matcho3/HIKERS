@@ -1,25 +1,30 @@
 Rails.application.routes.draw do
 
+  
+  devise_for :users, :controllers => {
+  :sessions      => "users/sessions",
+  :registrations => "users/registrations",
+  :passwords     => "users/passwords",
+  :omniauth_callbacks => "users/omniauth_callbacks" 
+}
+
+devise_scope :user do
+  get 'login', :to => 'users/sessions#new', :as => :new__session
+  get 'logout', :to => 'users/sessions#destroy', :as => :destroy_session
+end
+
 
   get "notification/index"
   get "notification/show"
-  get "about/index"
   root  'about#index'
-  get "sessions/create"
-  match '/signin',to:'sessions#new',via:'get'
-  match '/signout',to:'sessions#destroy',via:'delete'
+  # get "sessions/create"
+  # match '/signup',to:'users#new',via:'get'
+  # match '/signout',to:'sessions#destroy',via:'delete'
   match '/search', to: 'search#index', via: 'get'
   match '/search/:id',to: 'search#show',as:'trips_search', via:'get'
   match '/driver/:id',to:'drivers#new',as:'resister_driver', via:'get'
   match '/book/:id',to:'book#show',as:'books_trip',via:'get'
-  # match '/notification',to: 'notification#index', via:'get'
-
-  # match '/notification/:id',to: 'notification#show',as:'notification_smtg', via:'get'
-
-
-
-
-  resources :sessions, only: [:new, :create, :destroy]
+  
   resources :users do
     member do
       get 'book'
@@ -37,6 +42,20 @@ Rails.application.routes.draw do
 
 
 end
+
+
+
+
+
+# match '/notification',to: 'notification#index', via:'get'
+  # match '/notification/:id',to: 'notification#show',as:'notification_smtg', via:'get'
+
+
+
+
+
+
+
 
 
 

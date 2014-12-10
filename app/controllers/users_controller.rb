@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :signed_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
+  before_filter :authenticate_user!
+  # user_signed_in?
+  # user_sessionde
+
   # GET /users
   # GET /users.json
   def index
