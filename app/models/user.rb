@@ -23,6 +23,14 @@ class User < ActiveRecord::Base
     user
   end
 
+  def set_image(file)
+    if !file.nil?
+      file_name = file.original_filename
+      File.open("public/docs/#{file_name}", 'wb'){|f| f.write(file.read)}
+      self.image = file_name
+    end
+  end
+
   # # 通常サインアップ時のuid用、Twitter OAuth認証時のemail用にuuidな文字列を生成
   # def self.create_unique_string
   #   SecureRandom.uuid
