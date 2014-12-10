@@ -3,4 +3,5 @@ class Message < ActiveRecord::Base
 	belongs_to :receiving, class_name: "User"
     validates :from_user_id, presence: true
     validates :to_user_id, presence: true
+	#belongs_to :user
 end

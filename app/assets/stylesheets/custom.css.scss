@@ -1,5 +1,6 @@
 @import "bootstrap";
 
+
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
@@ -440,3 +441,14 @@ width: auto;}
   vertical-align: middle;
   width: 140px;
 }
+
+// a.btn.btn-social.btn-facebook{
+//   background-color: blue;
+// }
+
+a:visited{
+  color: #645DCF
+}
+
+
+
