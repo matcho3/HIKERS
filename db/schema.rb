@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20141209071059) do
 
   create_table "books", force: true do |t|
@@ -80,16 +79,13 @@ ActiveRecord::Schema.define(version: 20141209071059) do
     t.date     "birthday"
     t.string   "image"
     t.string   "sex"
-<<<<<<< HEAD
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
     t.string   "self_introduction"
     t.string   "location"
     t.string   "school"
     t.string   "workplace"
-=======
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
->>>>>>> 0aa0b346cf79fc2e3636ff31bf20e5c5ac4d5b04
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
