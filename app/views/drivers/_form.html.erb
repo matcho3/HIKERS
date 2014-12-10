@@ -14,7 +14,7 @@
       </div>
       <div class="field">
         <%= f.label :license_history %><br>
-        <%= f.text_field :license_history %>
+        <%= f.select :license_history, ["~1年", "1年〜3年", "4年〜5年", "6年〜10年", "11年〜"], {}, class: ".select-box" %>
       </div>
       <div class="actions">
         <%= f.submit "続行", class: "btn btn-large btn-primary" %>
