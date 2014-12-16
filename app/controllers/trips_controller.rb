@@ -26,6 +26,11 @@ class TripsController < ApplicationController
         flash[:success] = "Your book request has been confirmed!!"
     end
 
+
+
+
+    
+
   	def show
       @trip = Trip.find(params[:id])
   	end
