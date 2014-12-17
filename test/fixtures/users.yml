@@ -42,27 +42,32 @@
 #   password_confirmation: password)
 
 user_1:
+  name: Daniel
   id: 1
   email: sample1@icloud.com
-  image: images.jpg
+  image: images-2.jpg
 
 user_2:
+  name: Jenny
   id: 2
   email: sample2@icloud.com
   image: images-1.jpg
 
 user_3:
+  name: Michaele
   id: 3
   email: sample3@icloud.com
   image: images-2.jpg
 
 user_4:
+  name: Francis
   id: 4
   email: sample4@icloud.com
   image: images-3.jpg
 
 user_5:
+  name: Jax
   id: 5
   email: sample5@icloud.com
-  image: imgres.jpg
+  image: images-3.jpg
 

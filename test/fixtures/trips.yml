@@ -13,6 +13,7 @@
 #   end
 
 trip_1:
+  id: 1
   departure: OSAKA
   destination: TOKYO
   leaving_time: 2014-11-19
@@ -22,6 +23,7 @@ trip_1:
   complete_flag: 1
 
 trip_2:
+  id: 2
   departure: OSAKA
   destination: TOKYO
   leaving_time: 2014-11-19
@@ -31,6 +33,7 @@ trip_2:
   complete_flag: 1
 
 trip_3:
+  id: 3
   departure: OSAKA
   destination: TOKYO
   leaving_time: 2014-11-19
@@ -40,6 +43,7 @@ trip_3:
   complete_flag: 1
 
 trip_4:
+  id: 4
   departure: OSAKA
   destination: TOKYO
   leaving_time: 2014-11-19
@@ -49,6 +53,7 @@ trip_4:
   complete_flag: 1
 
 trip_5:
+  id: 5
   departure: OSAKA
   destination: TOKYO
   leaving_time: 2014-11-19
