@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row sample">
   <aside class="span4">
     <section>
       <%= render 'shared/user_info' %>
@@ -6,15 +6,21 @@
   </aside>
  
 
- <% if !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
+  <% if !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
     <!-- {|u| [u.body_part]} -->
     <!-- ココカラ -->
-      <%= render 'shared/trips_collections' %>
+    <%= render 'shared/trips_collections' %>
        <!-- ココまではパーシャルで、呼び出せるようにする。ドロップダウンからの表示。 -->
-    <% end %>
-    
-  </table>
+  <% end %>
 </div>
 
 
-<!--<%= link_to 'Back', users_path %>-->
+
+
+<% unless @user == current_user %>
+<%= render 'shared/review_form' %>
+<% end %>
+
+
+
+<%= link_to 'Back', users_path %>

@@ -10,7 +10,7 @@
 <span> -->
   <%#= pluralize(current_user.reviews.count, "review") %>
 <!-- </span> -->
-
+ <div>
 <%= link_to profile_image_for(@user), @user %>
 <h1>
   <%= @user.name %>
@@ -23,6 +23,7 @@
   <%= link_to "Edit my profile", edit_user_path(@user) %>
 </span>
 <% end %>
+</div>
 
 <!-- <span> -->
   <%#= pluralize(@reviews.reviews.count, "review") %>

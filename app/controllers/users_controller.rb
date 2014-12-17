@@ -32,8 +32,22 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    
+    @review = Review.new
   end
+
+# create_table "reviews", force: true do |t|
+#     t.integer  "user_id"
+#     t.integer  "driver_id"
+#     t.text     "comment"
+#     t.datetime "created_at"
+#     t.datetime "updated_at"
+#   end
+
+
+
+
+
+
 
 
 
