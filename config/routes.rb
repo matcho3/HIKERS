@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
   
-  get "sample_pages/index"
-  post "sample_pages/purchase"
-  get "sample_pages/purchased"
+  # get "sample_pages/index"
+  # post "sample_pages/purchase"
+  # get "sample_pages/purchased"
+  get "trips/show"
+  post "trips/purchase"
+  get "trips/purchased"
   devise_for :users, :controllers => {
   :sessions      => "users/sessions",
   :registrations => "users/registrations",

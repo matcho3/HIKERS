@@ -22,6 +22,12 @@
 
 <%= link_to "BOOK!", book_trip_path(@trip), class: "btn btn-large btn-primary" %>
 
+<%= form_tag({controller: "trips", action: "purchase"}, method: "post")  do %>
+<script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="test_public_5YFbMC1cpfub4l74zIfF2csl" data-lang="ja"></script>
+<% end %>
+
+
+<!-- form_tag({controller: "people", action: "search"}, method: "get", class: "nifty_form") -->
 
 <%#= form_tag("/hoge", method: "get", id: "hoge_id", name: "hoge_name", class: "hoge_class") do %>
   <!-- formの中身 -->

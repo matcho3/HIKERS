@@ -5,4 +5,3 @@ class Review < ActiveRecord::Base
   validates :comment, length: { maximum: 140 }
 end
 
-
