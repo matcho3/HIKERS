@@ -1,7 +1,7 @@
 <li>
   <%#= link_to profile_image_for(review.user) %>
   <span class="user">
-    <%#= link_to tweet.user.name, tweet.user %>
+    <%= link_to review.user.name, review.user %>
   </span>
   <span class="content"><%= review.comment %></span>
   <span class="timestamp">

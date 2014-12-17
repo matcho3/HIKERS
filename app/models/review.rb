@@ -4,3 +4,5 @@ class Review < ActiveRecord::Base
 	default_scope -> { order('created_at DESC') }
   validates :comment, length: { maximum: 140 }
 end
+
+

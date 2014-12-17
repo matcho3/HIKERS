@@ -31,6 +31,8 @@ class SearchController < ApplicationController
 
 	def show
 		@trip = Trip.find(params[:id])
+		@review = Review
+		@reviews = @trip.driver.reviews.paginate(page: params[:page])
 	end
 
 

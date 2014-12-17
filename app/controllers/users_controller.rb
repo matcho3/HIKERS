@@ -34,7 +34,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @review = Review.new
     @reviews = @user.driver.reviews.paginate(page: params[:page])
-    
   end
 
   # Review.pluck(:comment)
