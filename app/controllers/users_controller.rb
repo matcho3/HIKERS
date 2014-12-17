@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
   before_action :signed_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
   before_filter :authenticate_user!
@@ -18,17 +18,24 @@ class UsersController < ApplicationController
     # @reviews = @user.reviews.paginate(page: params[:page])
     # @feed_reviews = current_user.reviews.paginate(page: params[:page])
 
+  # def show
+  #   if !@user.driver == nil
+  #     @trips = current_user.driver.trips
+  #     @trips.each do |trip|
+  #       @books = trip.books
+  #     end
+  #     @books.each do |book|
+  #      @user = book.user
+  #     end
+  #   end
+  # end
+
   def show
-    if !@user.driver == nil
-      @trips = current_user.driver.trips
-      @trips.each do |trip|
-        @books = trip.books
-      end
-      @books.each do |book|
-       @user = book.user
-      end
-    end
+    @user = User.find(params[:id])
+    
   end
+
+
 
   def book
     @trips = current_user.driver.trips
