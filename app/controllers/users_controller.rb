@@ -33,8 +33,13 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @review = Review.new
+    @reviews = @user.driver.reviews.paginate(page: params[:page])
+    
   end
 
+  # Review.pluck(:comment)
+
+# User.pluck(:body_part)
 # create_table "reviews", force: true do |t|
 #     t.integer  "user_id"
 #     t.integer  "driver_id"

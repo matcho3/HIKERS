@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :set_review, only: [:edit, :update, :destroy]
   before_action :signed_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
 
@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
+
   end
 
   # GET /reviews/new
@@ -27,18 +28,22 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     # @user = User.new
-    # @user = User.find_by(id: params[:id])
+    # @user = User.find(params)
+    # @user = something
     @review = Review.new
     @review.comment =  params[:review][:comment]
     @review.user_id = current_user.id
     @review.driver_id = params[:driver_id]
-    
+    @driver = Driver.find(params[:driver_id]);
+    @user = @driver.user
+    # @user = current_user
     if @review.save
       flash[:success] = "Review created!"
-      redirect_to @review
+      redirect_to @user
     else
       @feed_reviews = @user.reviews.paginate(page: params[:page])
       # render 'about/index'
+      # current_user は変更する必要性あり一時的にいれてます。
     end
   end
 
