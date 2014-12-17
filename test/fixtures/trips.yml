@@ -1,20 +1,58 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+# create_table "trips", force: true do |t|
+#     t.string   "departure"
+#     t.string   "destination"
+#     t.datetime "leaving_time"
+#     t.integer  "capacity"
+#     t.integer  "price"
+#     t.integer  "driver_id"
+#     t.integer  "complete_flag"
+#     t.datetime "created_at"
+#     t.datetime "updated_at"
+#   end
+
+trip_1:
   departure: OSAKA
-  destination: MyString
-  leaving_time: 2014-11-19 02:40:56
+  destination: TOKYO
+  leaving_time: 2014-11-19
   capacity: 1
-  price: 1
+  price: 1000
   driver_id: 1
   complete_flag: 1
 
-two:
-  departure: TOKYO
-  destination: MyString
-  leaving_time: 2014-11-19 02:40:56
+trip_2:
+  departure: OSAKA
+  destination: TOKYO
+  leaving_time: 2014-11-19
   capacity: 1
-  price: 1
-  driver_id: 1
+  price: 1000
+  driver_id: 2
   complete_flag: 1
 
+trip_3:
+  departure: OSAKA
+  destination: TOKYO
+  leaving_time: 2014-11-19
+  capacity: 1
+  price: 1000
+  driver_id: 3
+  complete_flag: 1
+
+trip_4:
+  departure: OSAKA
+  destination: TOKYO
+  leaving_time: 2014-11-19
+  capacity: 1
+  price: 1000
+  driver_id: 4
+  complete_flag: 1
+
+trip_5:
+  departure: OSAKA
+  destination: TOKYO
+  leaving_time: 2014-11-19
+  capacity: 1
+  price: 1000
+  driver_id: 5
+  complete_flag: 1

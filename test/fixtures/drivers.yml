@@ -1,9 +1,36 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: 
-  car_image: MyString
 
-two:
-  user: 
-  car_image: MyString
+
+# create_table "drivers", force: true do |t|
+#     t.integer  "user_id"
+#     t.string   "car_image"
+#     t.datetime "created_at"
+#     t.datetime "updated_at"
+#     t.string   "license_history"
+#     t.string   "time_get_license"
+#   end
+
+driver_1:
+  user_id: 1
+  car_image: 14549267751_1f2123a6da_m.jpg
+
+driver_2:
+  user_id: 2
+  car_image: 2481296236_861b001fd3_m.jpg
+
+driver_3:
+  user_id: 3
+  car_image: 4914799967_f12fca57b1_m.jpg
+
+driver_4:
+  user_id: 4
+  car_image: 4915404094_bf15f47427_m.jpg
+
+driver_5:
+  user_id: 5
+  car_image: 5453159681_cf89f4270d_m.jpg
+
+# driver_1:
+#   user_id: 1
+#   car_image: 

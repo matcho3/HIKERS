@@ -5,24 +5,64 @@
 # below each fixture, per the syntax in the comments below
 #
 
+
+# create_table "users", force: true do |t|
+#     t.string   "email",                  default: "", null: false
+#     t.string   "encrypted_password",     default: "", null: false
+#     t.string   "reset_password_token"
+#     t.datetime "reset_password_sent_at"
+#     t.datetime "remember_created_at"
+#     t.integer  "sign_in_count",          default: 0,  null: false
+#     t.datetime "current_sign_in_at"
+#     t.datetime "last_sign_in_at"
+#     t.string   "current_sign_in_ip"
+#     t.string   "last_sign_in_ip"
+#     t.datetime "created_at"
+#     t.datetime "updated_at"
+#     t.string   "password_digest"
+#     t.string   "remember_token"
+#     t.date     "birthday"
+#     t.string   "image"
+#     t.string   "sex"
+#     t.string   "provider"
+#     t.string   "uid"
+#     t.string   "name"
+#   end
+
+
+
+
+
+# user_2:
+#   name: Daniel,
+#   image: "8d7cb9e09ece546ef4353defa2fe9377.jpg",
+#   reservation_id: 2
+#   birthday: Time.now,
+#   password: password,
+#   password_confirmation: password)
+
+user_1:
+  id: 1
+  email: sample1@icloud.com
+  image: images.jpg
+
 user_2:
-  name: Daniel,
-  image: "8d7cb9e09ece546ef4353defa2fe9377.jpg",
-  reservation_id: 2
-  birthday: Time.now,
-  password: password,
-  password_confirmation: password)
+  id: 2
+  email: sample2@icloud.com
+  image: images-1.jpg
 
 user_3:
   id: 3
-  reservation_id: 3
-  birthday: 2014/12/19
-  operation_id: 3
   email: sample3@icloud.com
+  image: images-2.jpg
 
 user_4:
   id: 4
-  reservation_id: 4
-  birthday: 2014/12/19
-  operation_id: 4
-  email: sample4@gmail.com
+  email: sample4@icloud.com
+  image: images-3.jpg
+
+user_5:
+  id: 5
+  email: sample5@icloud.com
+  image: imgres.jpg
+
