@@ -1,17 +1,18 @@
-<% if signed_in? %>
+</div>
+<%= render 'shared/video_header' %>
+<!-- <div class="search-area">
+<#% if signed_in? %>
 	<div class="center">
 		<h1 class="welcome">WELCOME TO HIKERS.</h1>
-		<%= render 'layouts/search' %> 
+		<%#= render 'layouts/search' %> 
 	</div>
-<% else %>
+<#% else %>
 	<div class="center">
 		<h1 class="welcome">WELCOME TO HIKERS.</h1>
-		<%= render 'layouts/search' %>
-		<%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-social btn-facebook" do %>
-            <i class="fa fa-facebook">　Sign in with Facebook</i>
-            <% end %>
+		<%#= render 'layouts/search' %>
 	</div>
-<% end %>
+<#% end %>
+</div> -->
 
 
 <!-- <a class="btn btn-block btn-social btn-twitter">
