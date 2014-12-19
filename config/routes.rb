@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
   
+  # get "sample_pages/index"
+  # post "sample_pages/purchase"
+  # get "sample_pages/purchased"
+  get "trips/show"
+  post "trips/purchase"
+  get "trips/purchased"
   devise_for :users, :controllers => {
-  :sessions      => "users/sessions",
   :registrations => "users/registrations",
   :passwords     => "users/passwords",
   :omniauth_callbacks => "users/omniauth_callbacks" 
@@ -24,6 +29,7 @@ end
   match '/search/:id',to: 'search#show',as:'trips_search', via:'get'
   match '/driver/:id',to:'drivers#new',as:'resister_driver', via:'get'
   match '/book/:id',to:'book#show',as:'books_trip',via:'get'
+  # post "sample_pages/purchase"
   
   resources :users do
     member do

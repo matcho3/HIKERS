@@ -1,12 +1,30 @@
-<%= link_to profile_image_for(current_user), current_user %>
-<h1>
-  <%= current_user.name %>
-  <%= current_user.birthday%>
-</h1>
+<%#= link_to profile_image_for(current_user), current_user %>
+<!-- <h1> -->
+  <%#= current_user.name %>
+  <%#= current_user.birthday%>
+<!-- </h1>
+<span> -->
+  <%#= link_to "view my profile", current_user %>
+  <%#= link_to "Edit my profile", edit_user_path(@user) %>
+<!-- </span>
+<span> -->
+  <%#= pluralize(current_user.reviews.count, "review") %>
+<!-- </span> -->
+ <div>
+<%= link_to profile_image_for(@user), @user %>
+<!-- <h1> -->
+  <%= @user.name %>
+  <%= @user.birthday%>
+<!-- </h1> -->
+
+<% if @user == current_user %>
 <span>
-  <!--<%= link_to "view my profile", current_user %>-->
+  <%= link_to "view my profile", current_user %>
   <%= link_to "Edit my profile", edit_user_path(@user) %>
 </span>
-<span>
-  <%= pluralize(current_user.reviews.count, "review") %>
-</span>
+<% end %>
+</div>
+
+<!-- <span> -->
+  <%#= pluralize(@reviews.reviews.count, "review") %>
+<!-- </span> -->

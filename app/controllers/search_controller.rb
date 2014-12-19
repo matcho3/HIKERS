@@ -16,7 +16,7 @@ class SearchController < ApplicationController
 	def index
 		# @search_word = params[:word]
 		@trips = Trip.all
-	
+
 		if !params[:departure].blank?
 			@trips.where!(departure: params[:departure])
 		end
@@ -31,6 +31,8 @@ class SearchController < ApplicationController
 
 	def show
 		@trip = Trip.find(params[:id])
+		@review = Review
+		@reviews = @trip.driver.reviews.paginate(page: params[:page])
 	end
 
 

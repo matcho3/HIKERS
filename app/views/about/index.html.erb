@@ -1,17 +1,83 @@
-<% if signed_in? %>
+</div>
+<%= render 'shared/video_header' %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- <div class="container">
+	  
+  <div class="row">
+		<div class="col-sm-4">
+		  <h3>SEARCH TRIPS</h3>
+		  <p>
+		    Find a best driver for you to trip with.
+		  </p>
+		</div>
+		<div class="col-sm-4">
+		  <h3>APPLY</h3>
+		  <p>Apply a trip plan that makes you excited. </p>
+		</div>
+		<div class="col-sm-4">
+		  <h3>GO TRIP!!</h3>
+		  <p>Get on a trip with your driver.</p>
+		</div>
+   </div>
+</div> -->
+
+<%= render 'shared/main_content' %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="search-area">
+<#% if signed_in? %>
 	<div class="center">
 		<h1 class="welcome">WELCOME TO HIKERS.</h1>
-		<%= render 'layouts/search' %> 
+		<%#= render 'layouts/search' %> 
 	</div>
-<% else %>
+<#% else %>
 	<div class="center">
 		<h1 class="welcome">WELCOME TO HIKERS.</h1>
-		<%= render 'layouts/search' %>
-		<%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-social btn-facebook" do %>
-            <i class="fa fa-facebook">　Sign in with Facebook</i>
-            <% end %>
+		<%#= render 'layouts/search' %>
 	</div>
-<% end %>
+<#% end %>
+</div> -->
 
 
 <!-- <a class="btn btn-block btn-social btn-twitter">
