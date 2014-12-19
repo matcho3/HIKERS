@@ -65,7 +65,7 @@ def purchased
 
 private
    def trip_params
-      params.require(:trip).permit(:departure, :destination, :leaving_time, :capacity, :price)
+      params.require(:trip).permit(:departure, :destination, :leaving_time, :capacity, :price, :purpose)
    end
 
    def set_trip

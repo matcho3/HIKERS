@@ -93,7 +93,7 @@
                 <% if !current_user.driver %>
                 <li><%= link_to "DriverR", new_driver_path %></li>
                 <% else %>
-                <li><%= link_to "DriverR", edit_driver_path(current_user.driver.id) %></li>
+
                 <% end %> 
 
 
@@ -120,6 +120,8 @@
 
 
 
+
+
           <!-- pathは仮。フィードにNotificationを実装したらそこに飛ばす-->
             <% if !current_user.driver %>
               <li><%= link_to "DriverR", new_driver_path %></li>
@@ -131,11 +133,14 @@
 
 
           <% else %>
+
             <li><%= link_to user_omniauth_authorize_path(:facebook), class: " btn-social btn-facebook" do %>
             <i class="fa fa-facebook"></i>
             <% end %></li>
              <li><%= link_to "Sign up", new_user_registration_path %></li>   
+
             <li><%= link_to "Sign in", new_user_session_path %></li>
+            <li><%= link_to "List Your Trips", new_trip_path %></li>
           <% end %>
         </ul
       </nav>
