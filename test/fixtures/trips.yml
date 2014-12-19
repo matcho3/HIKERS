@@ -16,7 +16,7 @@ trip_1:
   id: 1
   departure: OSAKA
   destination: TOKYO
-  leaving_time: 2014-11-19
+  leaving_time: 2014-12-21
   capacity: 1
   price: 1000
   driver_id: 1
@@ -26,7 +26,7 @@ trip_2:
   id: 2
   departure: OSAKA
   destination: TOKYO
-  leaving_time: 2014-11-19
+  leaving_time: 2014-12-21
   capacity: 1
   price: 1000
   driver_id: 2
@@ -36,7 +36,7 @@ trip_3:
   id: 3
   departure: OSAKA
   destination: TOKYO
-  leaving_time: 2014-11-19
+  leaving_time: 2014-12-21
   capacity: 1
   price: 1000
   driver_id: 3
@@ -46,7 +46,7 @@ trip_4:
   id: 4
   departure: OSAKA
   destination: TOKYO
-  leaving_time: 2014-11-19
+  leaving_time: 2014-12-21
   capacity: 1
   price: 1000
   driver_id: 4
@@ -56,7 +56,7 @@ trip_5:
   id: 5
   departure: OSAKA
   destination: TOKYO
-  leaving_time: 2014-11-19
+  leaving_time: 2014-12-21
   capacity: 1
   price: 1000
   driver_id: 5

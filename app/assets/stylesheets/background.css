@@ -1,0 +1,30 @@
+/*div.container.howitworks2{
+  background-color:#40A2FF;
+}*/
+
+
+.howitworks.traveler{
+  background-color: #fff;
+  color: #fff;
+  text-align: center;
+}
+
+p.jj{
+  color: darkgreen;
+}
+
+.fa2{
+  color: #000;
+}
+
+.footer {
+  background-color: #ddd  ;
+}
+
+#navnav{
+  margin-right: -30px;
+}
+
+body header form{
+  display: block;
+}

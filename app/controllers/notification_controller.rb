@@ -1,7 +1,10 @@
 class NotificationController < ApplicationController
+  
   def index
-  	@trip = current_user.driver.trips
-  	@book = Book.find_by(trip_id: @trip)
+  	current_user.driver.trips.each do |trip|
+  		@trip = trip
+  	end
+  	@book = Book.find_by(trip_id: @trip.id)
   	@user = User.find_by(id: @book.user_id)
   	render 'show' 	
   end

@@ -16,7 +16,7 @@ class SearchController < ApplicationController
 	def index
 		# @search_word = params[:word]
 		@trips = Trip.all
-	
+
 		if !params[:departure].blank?
 			@trips.where!(departure: params[:departure])
 		end
