@@ -3,13 +3,13 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def application
-  	@string = "hi"
+  	# @string = "hi"
+    
   	current_user.driver.trips.each do |trip|
   		@trip = trip
   	end
   	@book = Book.find_by(trip_id: @trip.id)
   	@user = @book.user
-  	render 'show' 	
+  	render 'show'
   end
-
 end

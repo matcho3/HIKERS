@@ -27,4 +27,37 @@ p.jj{
 
 body header form{
   display: block;
+  float: left;
+}
+
+header.navbar.navbar-fixed-top.navbar-inverse{
+	height: 60px;
+}
+
+
+.nav > li {
+	float: left;
+}
+
+.add-on .fa-calendar{
+	color: white;
+}
+
+
+.navbar .input-group-addon{
+	display: inline-block;
+	padding-right: 20px;
+}
+
+input.btn.btn-large.btn-primary{
+  width:100px;
+}
+
+input[type="button"] {
+width: 100px;
+}
+
+input[type="submit"] {
+width: 107px;
+margin: 0 auto;
 }

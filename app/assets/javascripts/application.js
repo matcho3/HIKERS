@@ -21,5 +21,3 @@ $(function(){
     $('.datepicker input').attr(data);
     $('.datepicker').datetimepicker();
 });
-
-// hh:mm:ss

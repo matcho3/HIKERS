@@ -17,6 +17,10 @@
   <%= @user.birthday%>
 <!-- </h1> -->
 
+
+
+
+
 <% if @user == current_user %>
 <span>
   <%= link_to "view my profile", current_user %>
@@ -25,6 +29,11 @@
 <% end %>
 </div>
 
-<!-- <span> -->
+<% if !@user.driver.trips == nil %>
+  <%= %>
+<% end %>
+
+
+<!-- > -->
   <%#= pluralize(@reviews.reviews.count, "review") %>
 <!-- </span> -->

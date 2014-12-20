@@ -10,7 +10,8 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    # @trip = Trip.find(params[:id])
+    raise 'hi'
+    @trip = Trip.find(params[:id])
   end
 
   # GET /books/new
