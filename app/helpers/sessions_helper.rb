@@ -7,9 +7,9 @@ module SessionsHelper
   #   self.current_user = user
   # end
 
-  # def signed_in_user
-  #     redirect_to signin_url, notice: "Please sign in." unless signed_in?
-  # end
+  def signed_in_user
+       redirect_to signin_url, notice: "Please sign in." unless signed_in?
+  end
   
 
   # def sign_out

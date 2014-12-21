@@ -4,6 +4,13 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+$grayMediumLight: #eaeaea;
+$grayLight: #eaaaea;
+$gray: #eeeeee;
+$grayDarker : #eeeaaa;
+$grayLighter : #eeeeee;
+$blue: blue;
+
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -11,7 +18,7 @@ $grayMediumLight: #eaeaea;
   box-sizing: border-box;
 }
 
-// *{
+// *
 //   margin: 0;
 //   padding: 0;
 // }
@@ -450,5 +457,23 @@ a:visited{
   color: #645DCF
 }
 
+.comment_area{
+  height:128px;
+  width: 528px;
+}
 
+.sample{
+  float: left;
+}
 
+button.btn.btn-large, input[type="submit"].btn.btn-large{
+  margin-left: 453px;
+}
+
+.span8{
+  margin-left: 251px;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section{
+  display: initial;
+}
