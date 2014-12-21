@@ -36,7 +36,13 @@ end
       get 'book'
     end
   end
-  resources :drivers
+
+  resources :drivers do
+    member do 
+      get 'trip'
+    end
+  end
+
   resources :reviews
 
   resources :trips do

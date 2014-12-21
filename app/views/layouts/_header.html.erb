@@ -42,7 +42,9 @@
                     <li><%= link_to "DriverR", edit_driver_path(current_user.driver.id) %></li>
                   <% end %> 
 
+                  <li><%= link_to "my trip", trip_driver_path(id: current_user.driver.id) %></li>
 
+  
                   <li class="divider"></li>
                   <li>
                     <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>

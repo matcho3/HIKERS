@@ -42,6 +42,12 @@ before_action :set_driver, only: [:show, :edit, :update, :destroy]
     flash[:success] = "driver's profile destroyed."
     redirect_to users_url
   end
+
+  def trip
+    @driver = Driver.find(params[:id])
+    @trips = @driver.trips.paginate(page: params[:page])
+    render 'show_trip'
+  end
   
   private
    def driver_params
