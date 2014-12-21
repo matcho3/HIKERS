@@ -26,9 +26,6 @@ class TripsController < ApplicationController
         flash[:success] = "Your book request has been confirmed!!"
     end
 
-def index
-  end
-
   def purchase
     # WebPay.api_key = WEBPAY_SECRET_KEY
     webpay = WebPay.new(WEBPAY_SECRET_KEY)

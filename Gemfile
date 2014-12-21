@@ -43,6 +43,7 @@ gem 'omniauth'
 gem 'httparty'
 gem 'webpay'
 
+
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
