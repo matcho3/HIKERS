@@ -45,10 +45,9 @@ class UsersController < ApplicationController
       #@books.each do |book|
        #@user = book.user
       #end
-    end
+  end
     #@reviews = @user.reviews.paginate(page: params[:page])
 # >>>>>>> 90ca0090f3e05de2b7fb48850688348ad41cb0ef
-  end
 
   # Review.pluck(:comment)
 
