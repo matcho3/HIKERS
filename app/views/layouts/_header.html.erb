@@ -32,7 +32,7 @@
           <% if signed_in? %>
             
             <li id="fat-menu" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
                   Account <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
@@ -89,7 +89,7 @@
             <% if !current_user.driver %>
               <li><%= link_to "DriverR", new_driver_path %></li>
             <% else %>
-              <li><%= link_to "List Your Trips", new_trip_path %></li>
+              <li><%= link_to "List Your Trips", new_trip_path, class: "account" %></li>
             <% end %> 
 
 

@@ -10,28 +10,32 @@
 <ul class="search-list col-center">
    <% @trips.each do |trip| %>
   <li class="col-sm-6 col-lg-3 row-space-4 transition-delay-1000">
-    <a href="#" class="darken-on-hover-container panel-image media-photo">
-     
+    <!-- <a href="#" class="darken-on-hover-container panel-image media-photo"> -->
+   <%= link_to trips_search_path(trip), class: "darken-on-hover-container panel-image media-photo" do %>
       <div class="media-cover darken-on-hover background-search-card">
          <div class="row row-table row-full-height">
           <div class="driver_info">
-            <%= profile_image_for trip.driver.user  %>
             <%=  profile_car_image_for trip.driver %>
+            <%= profile_image_for trip.driver.user  %>
+
           </div>
            <div class="col-bottom col-sm-12">
             <div class="h3 text-center text-contrast strong">
+             
           <%= trip.departure %>
           <%= trip.destination %>
           </div>
            <p class="text-center text-contrast">
-          <%= trip.capacity %>人
-          <%= trip.price %>
+          <i class="fa fa-users"></i><%= trip.capacity %>人
+          <i class="fa fa-jpy"></i><%= trip.price %>
+          
+
           </p>
           </div>
          </div>
       </div>
-    
-    </a>
+    <% end %>
+    <!-- </a> -->
   </li>
   <% end %>
 </ul>
