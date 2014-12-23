@@ -14,9 +14,15 @@ class UsersController < ApplicationController
 
   def notification
     # @string = "hi"
-    current_user.driver.trips.each do |trip|
-      @books = trip.books
-    end
+      if current_user.driver
+        current_user.driver.trips.each do |trip|
+          @books = trip.books
+          end
+      else
+        # render :text => 'Driver登録を済ませて下さい。'
+        @driver = Driver.new
+        render 'drivers/new'
+      end
   end
 
 
@@ -66,7 +72,6 @@ class UsersController < ApplicationController
 
   def show
 # <<<<<<< HEAD
-
     @user = User.find(params[:id])
     if !@user.driver == nil
       @trips = current_user.driver.trips

@@ -95,7 +95,7 @@
         <!-- <ul> -->
           <!-- pathは仮。フィードにNotificationを実装したらそこに飛ばす-->
             <% if !current_user.driver %>
-              <li><%= link_to "DriverR", new_driver_path %></li>
+              <li><%= link_to "DriverR", new_driver_path, :id => "driver" %></li>
             <% else %>
               <li><%= link_to "List Your Trips", new_trip_path, class: "account" %></li>
             <% end %> 
