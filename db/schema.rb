@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20141209071059) do
     t.datetime "updated_at"
     t.string   "license_history"
     t.string   "time_get_license"
+    t.string   "purpose"
   end
 
   create_table "messages", force: true do |t|
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 20141209071059) do
     t.integer  "complete_flag"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "purpose"
   end
 
   create_table "users", force: true do |t|
@@ -80,6 +82,10 @@ ActiveRecord::Schema.define(version: 20141209071059) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "self_introduction"
+    t.string   "location"
+    t.string   "school"
+    t.string   "workplace"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

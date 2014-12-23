@@ -24,3 +24,15 @@
 </table>
 
 
+  <div class="span8">
+    <% if @trip.driver.reviews.any? %>
+      <h3>Reviews</h3>
+      <ol class="microposts">
+        <%= render @reviews %>
+      </ol>
+      <%= will_paginate @reviews %>
+    <% end %>
+  </div>
+
+
+

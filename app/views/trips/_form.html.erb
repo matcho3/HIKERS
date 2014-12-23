@@ -20,14 +20,17 @@
           <i data-time-icon="icon-time" >
         </span>
       </div>
-
-    <div class="field">
+      <div class="field">
         <%= f.label :capacity %><br>
         <%= f.text_field :capacity, placeholder: "Capacity" %>
       </div>
       <div class="field">
         <%= f.label :price %><br>
         <%= f.text_field :price, placeholder: "Price" %>円
+      </div>
+      <div class="field">
+        <%= f.label :purpose %><br>
+        <%= f.text_field :purpose, placeholder: "what is your purpose?" %>
       </div>
       <div class="actions">
         <%= f.submit "登録", class: "btn btn-large btn-primary" %>

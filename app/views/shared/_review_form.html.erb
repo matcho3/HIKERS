@@ -1,0 +1,13 @@
+<h2>Review for <%= @user.name %></h2>
+<%= form_for(@review) do |r| %>
+  <%= render 'shared/error_messages', object: r.object %>
+  <div class="field">
+    <%= hidden_field_tag :driver_id, @user.id %>
+    <%= r.text_area :comment, placeholder: "Compose new review...", class: "comment_area" %>
+    <%= r.submit "Post", class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>
+
+
+
+<!-- ダレに対するレビューなのかを判別させる。 -->

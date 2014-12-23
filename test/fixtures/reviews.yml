@@ -1,11 +1,70 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+review_1:
+  id: 1
   user_id: 1
   driver_id: 1
-  comment: MyText
+  comment: Best Driver Ever!!
 
-two:
+review_2:
+  id: 2
+  user_id: 2
+  driver_id: 1
+  comment: 最高の運転でした。
+
+review_3:
+  id: 3
+  user_id: 3
+  driver_id: 1 
+  comment: You are so friendly and nice guy.
+
+review_4:
+  id: 4
+  user_id: 4
+  driver_id: 1
+  comment: very good at driving
+
+review_5:
+  id: 5
+  user_id: 5
+  driver_id: 1
+  comment: the car is very clean
+
+review_6:
+  id: 6
   user_id: 1
   driver_id: 1
-  comment: MyText
+  comment: He is sucks
+
+review_7:
+  id: 7
+  user_id: 2
+  driver_id: 1
+  comment: he is just asshole
+
+review_8:
+  id: 8
+  user_id: 3
+  driver_id: 1
+  comment: best driver ever 
+
+review_9:
+  id: 9
+  user_id: 4
+  driver_id: 1
+  comment: I like him
+
+review_10:
+  id: 10
+  user_id: 5
+  driver_id: 1
+  comment: I was having a great day with him
+
+
+# create_table "reviews", force: true do |t|
+#     t.integer  "user_id"
+#     t.integer  "driver_id"
+#     t.text     "comment"
+#     t.datetime "created_at"
+#     t.datetime "updated_at"
+#   end

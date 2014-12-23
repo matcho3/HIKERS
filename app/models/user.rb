@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
   has_many :messages
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :books
   has_one :driver
 

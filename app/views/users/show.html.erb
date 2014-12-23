@@ -1,30 +1,68 @@
-<div class="row">
+<div class="row sample">
   <aside class="span4">
     <section>
       <%= render 'shared/user_info' %>
     </section>
   </aside>
-  <%= link_to 'レビューを書く', new_review_path %>
-  <h2>MY TRIPS</h2>
-   <table border="1">
-    <tr>
-      <th>car_image</th><th>Departure</th><th>Destination</th><th>leaving_time</th><th>Capacity</th><th>Price</th>
-    </tr>
-    <% if !@user.driver == nil %>
-      <% @trips.each do |trip| %>
-        <tr>
-          <td><%= link_to profile_car_image_for(trip.driver), book_user_path  %></td>
-          <td><%= trip.departure %></td>
-          <td><%= trip.destination %></td>
-          <td><%= trip.leaving_time %></td>
-          <td><%= trip.capacity %></td>
-          <td><%= trip.price %></td>
-        </tr>
-        <h2>You got a trip request From<%= @user.name %> !! YAY :)</h2>
-      <% end %>
-    <% end %>
-  </table>
+ 
+
+  <% if !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
+    <!-- {|u| [u.body_part]} -->
+    <!-- ココカラ -->
+    <%= render 'shared/trips_collections' %>
+       <!-- ココまではパーシャルで、呼び出せるようにする。ドロップダウンからの表示。 -->
+  <% end %>
 </div>
 
 
-<!--<%= link_to 'Back', users_path %>-->
+<div class="sample">
+<% unless @user == current_user %>
+<%= render 'shared/review_form' %>
+<% end %>
+</div>
+
+<%#= @feed_reviews.each do |feed_review| %>
+<!-- <p><%#= feed_review %></p> -->
+<!-- <#% end %> -->
+
+
+
+<div class="sample2">
+  <div class="span8">
+    <% if @user.driver.reviews.any? %>
+      <h3>Reviews</h3>
+      <ol class="microposts">
+        <%= render @reviews %>
+      </ol>
+      <%= will_paginate @reviews %>
+    <% end %>
+
+  </div>
+
+  <!-- </table> -->
+ <!--  <h2>MY REVIEW</h2>
+  <!twitterと同様にreviewを表示。pagenate -->
+  <!-- <section>
+    self-introduction: <%#= current_user.self_introduction %><br>
+    location:<%#= current_user.location %><br>
+    school:<%#= current_user.school %><br>
+    workplace:<%#= current_user.workplace %>
+  </section>   -->
+ 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<%= link_to 'Back', users_path %>

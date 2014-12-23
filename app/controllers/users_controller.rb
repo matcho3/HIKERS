@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
   before_action :signed_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
   before_filter :authenticate_user!
@@ -18,17 +18,56 @@ class UsersController < ApplicationController
     # @reviews = @user.reviews.paginate(page: params[:page])
     # @feed_reviews = current_user.reviews.paginate(page: params[:page])
 
+  # def show
+  #   if !@user.driver == nil
+  #     @trips = current_user.driver.trips
+  #     @trips.each do |trip|
+  #       @books = trip.books
+  #     end
+  #     @books.each do |book|
+  #      @user = book.user
+  #     end
+  #   end
+  # end
+
   def show
-    if !@user.driver == nil
-      @trips = current_user.driver.trips
-      @trips.each do |trip|
-        @books = trip.books
-      end
-      @books.each do |book|
-       @user = book.user
-      end
+# <<<<<<< HEAD
+    @user = User.find(params[:id])
+    @review = Review.new
+    @reviews = @user.driver.reviews.paginate(page: params[:page])
+# =======
+    # if !@user.driver == nil
+    #   @trips = current_user.driver.trips
+    #   @trips.each do |trip|
+    #     @books = trip.books
+    #   end
+      #@userがかぶるからコメントアウトしてみました
+      #@books.each do |book|
+       #@user = book.user
+      #end
     end
+    #@reviews = @user.reviews.paginate(page: params[:page])
+# >>>>>>> 90ca0090f3e05de2b7fb48850688348ad41cb0ef
   end
+
+  # Review.pluck(:comment)
+
+# User.pluck(:body_part)
+# create_table "reviews", force: true do |t|
+#     t.integer  "user_id"
+#     t.integer  "driver_id"
+#     t.text     "comment"
+#     t.datetime "created_at"
+#     t.datetime "updated_at"
+#   end
+
+
+
+
+
+
+
+
 
   def book
     @trips = current_user.driver.trips
@@ -131,7 +170,7 @@ class UsersController < ApplicationController
     end
 
     def user_profile_params
-      params.require(:user).permit(:name, :birthday)
+      params.require(:user).permit(:name, :birthday, :self_introduction, :location, :school, :workplace)
     end
 
     def signed_in_user

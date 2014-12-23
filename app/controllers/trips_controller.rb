@@ -26,6 +26,24 @@ class TripsController < ApplicationController
         flash[:success] = "Your book request has been confirmed!!"
     end
 
+def index
+  end
+
+  def purchase
+    # WebPay.api_key = WEBPAY_SECRET_KEY
+    webpay = WebPay.new(WEBPAY_SECRET_KEY)
+    # WebPay::Charge.create(currency: 'jpy', amount: 1000, card: params['webpay-token'])
+    charge = webpay.charge.create(currency: 'jpy', amount: 4000, card: params['webpay-token'])
+    flash.now[:notice] = '支払いが完了しました'
+    redirect_to action: :purchased
+  end
+
+def purchased
+  end
+
+
+
+
   	def show
       @trip = Trip.find(params[:id])
   	end
@@ -47,7 +65,7 @@ class TripsController < ApplicationController
 
 private
    def trip_params
-      params.require(:trip).permit(:departure, :destination, :leaving_time, :capacity, :price)
+      params.require(:trip).permit(:departure, :destination, :leaving_time, :capacity, :price, :purpose)
    end
 
    def set_trip
