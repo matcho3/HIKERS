@@ -18,7 +18,10 @@ class User < ActiveRecord::Base
                          provider: auth.provider,
                          uid:      auth.uid,
                          email:    auth.info.email,
+                         image:    auth.info.image,
                          password: Devise.friendly_token[0,20]
+                         # gender:   auth.extra.raw_info.gender,
+                         # birthday: auth.extra.raw_info.birthday
                         )
     end
     user

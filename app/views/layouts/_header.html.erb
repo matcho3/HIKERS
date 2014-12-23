@@ -33,7 +33,11 @@
             
             <li id="fat-menu" class="dropdown">
                 <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
-                  Account <b class="caret"></b>
+                  <% if !current_user.uid = nil %>
+                  <%= image_tag(current_user.image, :size => '35x35', :class => "img-circle") %>  <%= current_user.name %><b class="caret"></b>
+                  <% else %>
+                   Account<b class="caret"></b>
+                  <% end %>
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Profile", current_user %></li>
@@ -72,9 +76,13 @@
                 <i class="fa fa-globe" ></i>
               </a>
               <ul class="dropdown-menu">
-                <% current_user.notifications.last(10).each do |notification| %>
-                  <li><%= notification.body %></lnoi>
+              <% current_user.notifications.last(10).each do |notification| %>
+              <%= link_to notification_path do %>
+                  <li><%= notification.body %><hr></li>
+                  <% end %>
                 <% end %>
+                
+
                 <li><%= link_to "notification", notification_path %></li>
                 <li class="divider"></li>
                 <!-- <li>You got a trip request from JUN. </li> -->
