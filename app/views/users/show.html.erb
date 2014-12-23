@@ -5,11 +5,22 @@
     </section>
   </aside>
 
-  <% if !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
-    <!-- ココカラ -->
+
+<% if @user.driver == nil %>
+     <%= render 'shared/user_info' %>
+<% elsif !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
     <%= render 'shared/trips_collections' %>
+<% elsif %>
+
+
+
+
+
+  <!-- <#% if !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %> -->
+    <!-- ココカラ -->
+    <%#= render 'shared/trips_collections' %>
        <!-- ココまではパーシャルで、呼び出せるようにする。ドロップダウンからの表示。 -->
-  <% end %>
+  <!-- <#% end %> -->
 </div>
 
 
