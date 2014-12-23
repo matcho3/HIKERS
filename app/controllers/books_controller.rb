@@ -10,7 +10,8 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    # @trip = Trip.find(params[:id])
+    raise 'hi'
+    @trip = Trip.find(params[:id])
   end
 
   # GET /books/new
@@ -22,6 +23,28 @@ class BooksController < ApplicationController
   def edit
   end
 
+  def approve
+    @book = Book.find(params[:id])
+    @book.status = 1
+    @book.save
+
+    @notification = Notification.new
+    @notification.user_id = @book.user_id
+    @notification.body = "#{current_user.name} さんがあなたの申請を承認しました。"
+    @notification.save 
+  end
+
+
+  def disapprove
+    @book = Book.find(params[:id])
+    @book.status = 2
+    @book.save
+
+    @notification = Notification.new
+    @notification.user_id = @book.user_id
+    @notification.body = "#{current_user.name} さんがあなたの申請を却下しました。"
+    @notification.save
+  end
   # POST /books
   # POST /books.json
   def create

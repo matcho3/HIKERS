@@ -4,7 +4,7 @@ class CreateBooks < ActiveRecord::Migration
       t.integer :trip_id
       t.integer :user_id
       t.integer :reservations
-      t.integer :status
+      t.integer :status, default: 0
 
       t.timestamps
     end
