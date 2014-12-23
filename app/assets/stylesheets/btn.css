@@ -1,0 +1,172 @@
+/* Your CSS codes here */
+
+.btn2{
+display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 13px;
+line-height: 1.42857143;
+border-radius: 2px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+/*color: #fff;
+background: #61D0FF;
+border: 1px solid rgba(194, 194, 194, 1);*/
+/*margin-left: 547px;*/
+/*color: #86B5DC; */
+color: rgb(74, 142, 195);
+background: white;
+border: 1px solid rgba(194, 194, 194, 1);
+/* margin-left: 547px; */
+}
+
+.h44{
+	display:inline-block;
+	/*margin-left: 83px;*/
+	margin-left: 146px;
+}
+
+.btn3{
+display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 13px;
+line-height: 1.42857143;
+border-radius: 2px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+/*color: #fff;
+background: #61D0FF;
+border: 1px solid rgba(194, 194, 194, 1);*/
+/*margin-left: 547px;*/
+/*color: #86B5DC; */
+background: white;
+border: 1px solid rgba(194, 194, 194, 1);
+/* margin-left: 547px; */
+	margin: 10px auto;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+	
+
+
+.btn4{
+display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 13px;
+line-height: 1.42857143;
+border-radius: 2px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+/*color: #fff;
+background: #61D0FF;
+border: 1px solid rgba(194, 194, 194, 1);*/
+/*margin-left: 547px;*/
+/*color: #86B5DC; */
+color: #5094CE;
+background: rgb(252, 252, 252);
+border: 1px solid #468DCB;
+width: 82px;
+margin-left: 557px;
+/* margin-left: 547px; */
+	/*margin: 10px auto;
+	margin-right: 8px;
+	margin-left: 8px;*/
+}
+
+
+.btn5{
+display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 13px;
+line-height: 1.42857143;
+border-radius: 2px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+/*color: #fff;
+background: #61D0FF;
+border: 1px solid rgba(194, 194, 194, 1);*/
+/*margin-left: 547px;*/
+/*color: #86B5DC; */
+width: 66px;
+
+background: white;
+border: 1px solid rgba(194, 194, 194, 1);
+/* margin-left: 547px; */
+	margin: 10px auto;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
+.btn6{
+display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 13px;
+line-height: 1.42857143;
+border-radius: 2px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+/*color: #fff;
+background: #61D0FF;
+border: 1px solid rgba(194, 194, 194, 1);*/
+/*margin-left: 547px;*/
+/*color: #86B5DC; */
+color: rgb(74, 142, 195);
+margin-right:6px;
+background: white;
+border: 1px solid rgba(194, 194, 194, 1);
+/* margin-left: 547px; */
+}
+
+/*btn.btn-color {
+color: #fff;
+background: #59DCED;
+border: 1px solid rgba(161, 154, 153, 0.49);*/

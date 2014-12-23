@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
   has_many :messages
+  has_many :notifications
   has_many :reviews, dependent: :destroy
   has_many :books
   has_one :driver
@@ -40,6 +41,10 @@ class User < ActiveRecord::Base
   # def self.create_unique_email
   #   User.create_unique_string + "@example.com"
   # end
+def notification
+    # @string = "hi"
+    # current_user.driver.trips.each do |trip|
+    # @books = trip.books
 
   # send message
   has_many :sending_messages, foreign_key: "sending_id", class_name: "Message", dependent: :destroy
@@ -54,6 +59,12 @@ class User < ActiveRecord::Base
 		sending_messages.create!(to_user_id: other_user.id)
 	end
 
+
+    # return self.books
+    # @books 
+    # books = Book.where(trip_id: trip.id)
+    # @user = @book.user
+    # render 'show'
 end
 
 

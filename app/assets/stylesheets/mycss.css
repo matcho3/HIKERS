@@ -23,8 +23,8 @@
 .noborder{border:none!important; }
 
 a:hover{opacity: 0.6; text-decoration: none;}
-img{max-width: 100%}
-ul , ol{list-style: none; margin:0; padding: 0;}
+/*img{max-width: 100%}
+*/ul , ol{list-style: none; margin:0; padding: 0;}
 
 .raleway{
   font-family: 'Raleway', sans-serif;
@@ -1769,5 +1769,12 @@ pre {
   width: 25%;
 }
 
+}
+
+.notification{
+font-family: verdana, arial, helvetica, sans-serif;
+font-size: 13px;
+line-height: 18px;
+text-align: center;
 }
 

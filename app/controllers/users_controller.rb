@@ -12,6 +12,40 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def notification
+    # @string = "hi"
+    current_user.driver.trips.each do |trip|
+      @books = trip.books
+    end
+  end
+
+
+
+
+  # end
+    # return self.books
+    # @books 
+    # books = Book.where(trip_id: trip.id)
+    # @user = @book.user
+    # render 'show'
+  # end
+
+
+  # def review
+    
+  # end
+
+
+
+
+
+
+
+
+
+
+
+
   # GET /users/1
   # GET /users/1.json
   
@@ -32,23 +66,62 @@ class UsersController < ApplicationController
 
   def show
 # <<<<<<< HEAD
+
     @user = User.find(params[:id])
-    @review = Review.new
-    @reviews = @user.driver.reviews.paginate(page: params[:page])
+    if !@user.driver == nil
+      @trips = current_user.driver.trips
+      @trips.each do |trip|
+        @books = trip.books
+      end
+      @books.each do |book|
+       @user = book.user
+      end
+
+    end
+    if !@user.driver == nil 
+      # raise
+        @review = Review.new
+        @reviews = @user.driver.reviews.paginate(page: params[:page])
+    end
+
+
+
+
+
+
+
+
+
+
 # =======
-    # if !@user.driver == nil
-    #   @trips = current_user.driver.trips
-    #   @trips.each do |trip|
-    #     @books = trip.books
-    #   end
+    
       #@userがかぶるからコメントアウトしてみました
       #@books.each do |book|
        #@user = book.user
       #end
     #end
+
     #@reviews = @user.reviews.paginate(page: params[:page])
 # >>>>>>> 90ca0090f3e05de2b7fb48850688348ad41cb0ef
   end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   # Review.pluck(:comment)
 
