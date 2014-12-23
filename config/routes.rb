@@ -41,6 +41,7 @@ end
       get 'book'
     end
  end
+ resources :messages
  resources :drivers
  resources :reviews
  resources :trips do

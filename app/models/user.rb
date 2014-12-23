@@ -41,8 +41,8 @@ class User < ActiveRecord::Base
   has_many :receivings, through: :receiving_relationships
 
   # send messageする関数
-  def send!(other_user)
-    sending_messages.create!(to_user_id: other_user.id)
+  def sending!(other_user, content)
+    sending_messages.create!(receiving_id: other_user.id, content: content)
   end
 
 

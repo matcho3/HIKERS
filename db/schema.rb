@@ -11,15 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20141223145751) do
-
 
   create_table "books", force: true do |t|
     t.integer  "trip_id"
     t.integer  "user_id"
     t.integer  "reservations"
-    t.integer  "status",       default: 0
+    t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -90,14 +88,14 @@ ActiveRecord::Schema.define(version: 20141223145751) do
     t.string   "remember_token"
     t.date     "birthday"
     t.string   "image"
-    t.string   "self_introduction"
-    t.string   "location"
-    t.string   "school"
-    t.string   "workplace"
     t.string   "sex"
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "self_introduction"
+    t.string   "location"
+    t.string   "school"
+    t.string   "workplace"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
