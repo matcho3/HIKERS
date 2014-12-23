@@ -31,9 +31,9 @@ end
   match '/book/:id',to:'book#show',as:'books_trip',via:'get'
   # post "sample_pages/purchase"
   
-  resources :users do
+ resources :users do
     member do
-      #get :sending, :receivings, 'book'
+      get :sending, :receivings
       get 'book'
     end
  end
