@@ -4,7 +4,7 @@
 
 <table border="1">
   <tr>
-    <th>profile_image</th><th>car_image</th><th>Departure</th><th>Destination</th><th>leaving_time</th><th>Capacity</th><th>Price</th>
+    <th>profile_image</th><th>car_image</th><th>Departure</th><th>Destination</th><th>leaving_time</th><th>Capacity</th><th>Price</th><th>message</th>
   </tr>
 
   <tr>
@@ -15,6 +15,10 @@
     <td><%= @trip.leaving_time %></td>
     <td><%= @trip.capacity %></td>
     <td><%= @trip.price %></td>
+    <td><%= link_to sending_user_path(current_user.id), class: "btn" do %>
+      <i class="fa fa-message"></i>
+      <% end %>
+    </td>
   </tr>
 </table>
 

@@ -196,7 +196,7 @@ class UsersController < ApplicationController
   end
 
   def sending
-    @title = "Following"
+    @title = "All Message"
     @user = User.find(params[:id])
     @users = @user.sendings.paginate(page: params[:page])
     render 'show_message'

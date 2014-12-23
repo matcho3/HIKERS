@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
 
   def create
     @user = User.find(params[:message][:sending_id])
+    @content = (params[:message][:content])
     current_user.sending!(@user)
     redirect_to @user
   end
