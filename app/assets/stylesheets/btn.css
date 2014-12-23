@@ -166,6 +166,11 @@ border: 1px solid rgba(194, 194, 194, 1);
 /* margin-left: 547px; */
 }
 
+.account{
+	color: #fff;
+text-decoration: none;
+}
+
 /*btn.btn-color {
 color: #fff;
 background: #59DCED;
