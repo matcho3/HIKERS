@@ -35,6 +35,20 @@ class User < ActiveRecord::Base
     end
   end
 
+  # send message
+  has_many :sending_messages, foreign_key: "sending_id", class_name: "Message", dependent: :destroy
+  has_many :sendings, through: :sending_messages
+  
+  # receive message
+  has_many :receiving_messages, foreign_key: "receiving_id", class_name: "Message", dependent: :destroy
+  has_many :receivings, through: :receiving_relationships
+
+  # send messageする関数
+  def sending!(other_user, content)
+    sending_messages.create!(receiving_id: other_user.id, content: content)
+  end
+
+
   # # 通常サインアップ時のuid用、Twitter OAuth認証時のemail用にuuidな文字列を生成
   # def self.create_unique_string
   #   SecureRandom.uuid
@@ -44,18 +58,17 @@ class User < ActiveRecord::Base
   # def self.create_unique_email
   #   User.create_unique_string + "@example.com"
   # end
-def notification
+  def notification
     # @string = "hi"
     # current_user.driver.trips.each do |trip|
     # @books = trip.books
 
-  end
+  
+
     # return self.books
     # @books 
     # books = Book.where(trip_id: trip.id)
     # @user = @book.user
     # render 'show'
+  end
 end
-
-
-
