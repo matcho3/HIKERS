@@ -107,7 +107,7 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-  line-height: 1;
+  line-height: 2;
   &:hover {
     color: white;
     text-decoration: none;
@@ -118,6 +118,15 @@ header form{
   display: inline-block;
   margin: 0;
 }
+
+ul.nav.pull-right.menu {
+line-height: 3;
+}
+
+.search-input {
+line-height: 4;
+}
+
 
 /* footer */
 
@@ -270,6 +279,9 @@ input {
 .gravatar {
   float: left;
   margin-right: 10px;
+  margin-top: 195px;
+  border: 6px solid rgba(1,1,1,0.3);
+  position: relative;
 }
 aside {
   textarea {
@@ -500,7 +512,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 }
 
 .background-search-card {
-  background-color: #8ce071;
+  // background-color: #8ce071;
+  background-color: #DDDDDD;
   margin-right: 20px;
   margin-bottom: 30px;
 
@@ -524,9 +537,11 @@ a.panel-image {
   height: 100%;
 }
 
+
 .car_icon {
-  max-width: 204px;
-  height: auto;
+  max-height: 330px;
+  position: relative;
+  margin-left: -130px;
 }
 .col-bottom{
   vertical-align: bottom;
@@ -540,4 +555,6 @@ a.panel-image {
 @media only screen and (max-width: 1173px) {
   .menu {display: none;}
 }
+
+
 
