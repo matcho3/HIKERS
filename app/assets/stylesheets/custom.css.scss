@@ -40,14 +40,16 @@ $blue: #049cdb;
 }
 
 /* universal */
-
 html {
+  height:100%;
+  min-height:100%;
   overflow-y: scroll;
 }
 
 body {
   padding-top: 60px;
   color:#15A8B5;
+  min-height:100%;
 }
 
 section {
@@ -411,8 +413,8 @@ z-index: 3013;
   margin-left: 188px;
 }
 
-img {height: 151px;
-width: auto;}
+// img {height: auto;
+// width: auto;}
 
 // .select2 {
 //    background: transparent;
@@ -453,7 +455,7 @@ width: auto;}
 // }
 
 a:visited{
-  color: #645DCF
+  // color: #645DCF
 }
 
 .comment_area{
@@ -476,3 +478,66 @@ button.btn.btn-large, input[type="submit"].btn.btn-large{
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section{
   display: initial;
 }
+
+
+/*Search Results
+===========================*/
+.col-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.media-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  right: 0;
+}
+
+.search-list {
+  max-width: 1400px;
+  margin-top: 60px;
+}
+
+.background-search-card {
+  background-color: #8ce071;
+  margin-right: 20px;
+  margin-bottom: 30px;
+
+}
+
+// image-url('car_images/camp3.png')
+.panel-image {
+  min-height: 424px;
+}
+
+a.panel-image {
+  display: block;
+}
+
+// .row-table {
+//   display: table;
+//   table-layout: fixed;
+// }
+
+.row-full-height {
+  height: 100%;
+}
+
+.car_icon {
+  max-width: 204px;
+  height: auto;
+}
+.col-bottom{
+  vertical-align: bottom;
+  float: none;
+  display: table-cell;
+}
+
+/*Media Queries
+===========================*/
+
+@media only screen and (max-width: 1173px) {
+  .menu {display: none;}
+}
+

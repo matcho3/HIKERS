@@ -28,7 +28,7 @@
 
 
       <nav>
-        <ul class="nav pull-right">
+        <ul class="nav pull-right menu">
           <% if signed_in? %>
             
             <li id="fat-menu" class="dropdown">
@@ -63,7 +63,7 @@
             <i class="fa fa-paper-plane-o"></i>
             <% end %></li>
             
-
+            
 
 
             
@@ -72,21 +72,18 @@
                 <i class="fa fa-globe" ></i>
               </a>
               <ul class="dropdown-menu">
-            
-                <li>You got a trip request from JUN. </li>
-                 <li class="divider"></li>
-                  <!-- ココのJUN の部分を、@user.nameとかで受け取るインスタンスで受け取って、名前を表示させる。 -->
+                <% current_user.notifications.last(10).each do |notification| %>
+                  <li><%= notification.body %></lnoi>
+                <% end %>
+                <li><%= link_to "notification", notification_path %></li>
                 <li class="divider"></li>
-                <li>
+                <!-- <li>You got a trip request from JUN. </li> -->
+                <li><%= link_to "reviews", reviews_path %></li>
 
-                  <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
-                </li>
+                  <!-- ココのJUN の部分を、@user.nameとかで受け取るインスタンスで受け取って、名前を表示させる。 -->
               </ul>
             </li>
           <!-- </ul> -->
-
-
-          
         <!-- <ul> -->
           <!-- pathは仮。フィードにNotificationを実装したらそこに飛ばす-->
             <% if !current_user.driver %>
@@ -103,13 +100,12 @@
             <li><%= link_to user_omniauth_authorize_path(:facebook), class: " btn-social btn-facebook" do %>
             <i class="fa fa-facebook"></i>
             <% end %></li>
-             <li><%= link_to "Sign up", new_user_registration_path %></li>   
+             <li><%= link_to "Sign up", new_user_registration_path %></li>
 
             <li><%= link_to "Sign in", new_user_session_path %></li>
             <li><%= link_to "List Your Trips", new_trip_path %></li>
           <% end %>
         <!-- </ul> -->
-
         </ul>
       </nav>
     </div>

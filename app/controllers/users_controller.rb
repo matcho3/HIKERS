@@ -12,6 +12,40 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def notification
+    # @string = "hi"
+    current_user.driver.trips.each do |trip|
+      @books = trip.books
+    end
+  end
+
+
+
+
+  # end
+    # return self.books
+    # @books 
+    # books = Book.where(trip_id: trip.id)
+    # @user = @book.user
+    # render 'show'
+  # end
+
+
+  # def review
+    
+  # end
+
+
+
+
+
+
+
+
+
+
+
+
   # GET /users/1
   # GET /users/1.json
   
@@ -40,13 +74,15 @@ class UsersController < ApplicationController
         @books = trip.books
       end
       @books.each do |book|
-       @buser = book.user
+       @user = book.user
       end
+
     end
-    if !@user.driver == nil
+    if !@user.driver == nil 
+      # raise
         @review = Review.new
         @reviews = @user.driver.reviews.paginate(page: params[:page])
-    end
+  end
 
 
 

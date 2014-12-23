@@ -4,10 +4,8 @@
       <%= render 'shared/user_info' %>
     </section>
   </aside>
- 
 
   <% if !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
-    <!-- {|u| [u.body_part]} -->
     <!-- ココカラ -->
     <%= render 'shared/trips_collections' %>
        <!-- ココまではパーシャルで、呼び出せるようにする。ドロップダウンからの表示。 -->
@@ -21,15 +19,10 @@
 <% end %>
 </div>
 
-<%#= @feed_reviews.each do |feed_review| %>
-<!-- <p><%#= feed_review %></p> -->
-<!-- <#% end %> -->
-
-
 
 <div class="sample2">
   <div class="span8">
-    <% if @user.driver.reviews.any? %>
+    <% if @user.driver.reviews.any?  %>
       <h3>Reviews</h3>
       <ol class="microposts">
         <%= render @reviews %>
@@ -37,6 +30,13 @@
       <%= will_paginate @reviews %>
     <% end %>
   </div>
+</div>
+
+
+
+
+
+
 
   <!-- </table> -->
  <!--  <h2>MY REVIEW</h2>
@@ -48,7 +48,6 @@
     workplace:<%#= current_user.workplace %>
   </section>   -->
  
-</div>
 
 
 
