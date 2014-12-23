@@ -45,7 +45,7 @@ class UsersController < ApplicationController
       #@books.each do |book|
        #@user = book.user
       #end
-    end
+    #end
     #@reviews = @user.reviews.paginate(page: params[:page])
 # >>>>>>> 90ca0090f3e05de2b7fb48850688348ad41cb0ef
   end
@@ -120,6 +120,20 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+  end
+
+  def sending
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.sendings.paginate(page: params[:page])
+    render 'show_message'
+  end
+
+  def receiving
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.receiving.paginate(page: params[:page])
+    render 'show_message'
   end
   
   # POST /users

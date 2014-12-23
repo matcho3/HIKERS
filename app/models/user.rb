@@ -42,11 +42,11 @@ class User < ActiveRecord::Base
   # end
 
   # send message
-  has_many :sending_messages, foreign_key: "from_user_id", class_name: "Messages", dependent: :destroy
+  has_many :sending_messages, foreign_key: "sending_id", class_name: "Message", dependent: :destroy
   has_many :sendings, through: :sending_messages
   
   # receive message
-  has_many :receiving_messages, foreign_key: "to_user_id", class_name: "Messages", dependent: :destroy
+  has_many :receiving_messages, foreign_key: "receiving_id", class_name: "Message", dependent: :destroy
   has_many :receivings, through: :receiving_relationships
 
 	# send messageする関数

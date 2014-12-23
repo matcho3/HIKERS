@@ -16,7 +16,7 @@
       <i class="fa fa-ticket"></i>
       <% end %>
     </td>
-    <td><%= link_to sending_user_path, class: "btn" do %>
+    <td><%= link_to sending_user_path(current_user.id), class: "btn" do %>
       <i class="fa fa-message"></i>
       <% end %>
     </td>
