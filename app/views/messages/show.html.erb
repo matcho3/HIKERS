@@ -1,5 +1,5 @@
 <div class="row">
-	<aside class="span4">
+	<div class="span4">
 		<section>
       		<h1>
         	<%= profile_image_for current_user %>
@@ -15,16 +15,16 @@
 		</div>
 		<%= f.submit "送信！", class: "btn btn-large btn-primary" %>
 		<% end %>
-	</aside>
-
+	</div>
+	
 	<div class="span8">
 		<h3>Messages </h3>
+		<table border="1">
+			<tr>
+				<th>profile_image</th><th>name</th><th>content</th><th>time</th>
+			</tr>
 			<%= render @messages %>
-			<%# @messages.each do |message| %>
-    			<!--<div>
-        			<%= message.content %>
-    			</div>-->
-    		<%# end %>
+		</table>
 	</div>
 </div>
 

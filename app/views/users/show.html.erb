@@ -5,22 +5,11 @@
     </section>
   </aside>
 
-
-<% if @user.driver == nil %>
-     <%= render 'shared/user_info' %>
-<% elsif !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
-    <%= render 'shared/trips_collections' %>
-<% elsif %>
-
-
-
-
-
-  <!-- <#% if !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %> -->
+  <% if !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
     <!-- ココカラ -->
-    <%#= render 'shared/trips_collections' %>
+    <%= render 'shared/trips_collections' %>
        <!-- ココまではパーシャルで、呼び出せるようにする。ドロップダウンからの表示。 -->
-  <!-- <#% end %> -->
+  <% end %>
 </div>
 
 
@@ -33,12 +22,14 @@
 
 <div class="sample2">
   <div class="span8">
+    <% if !@user.driver == nil %>
     <% if @user.driver.reviews.any?  %>
       <h3>Reviews</h3>
       <ol class="microposts">
         <%= render @reviews %>
       </ol>
       <%= will_paginate @reviews %>
+    <% end %>
     <% end %>
   </div>
 </div>

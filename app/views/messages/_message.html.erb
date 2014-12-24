@@ -1,15 +1,15 @@
-<li>
-  <%= link_to profile_image_for(message.sending_id) %>
-  <span class="user">
-    <%= link_to message.sending_id.user.name, message.sending_id.user %>
-  </span>
-  <span class="content"><%= message.content %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(message.created_at) %> ago.
-  </span>
-  <%# if current_user?(message.sending_id.user) %>
-    <%# link_to "delete", message, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: message.content %>
-  <%# end %>
-</li>
+<tr>
+  <td>
+    <%= link_to profile_image_for(User.find_by(id: message.sending_id))
+   %>
+  </td>
+  <td>
+      <%= link_to User.find_by(id: message.sending_id).name, User.find_by(id: message.sending_id) %>
+  </td>
+  <td>
+      <%= message.content %>
+  </td>
+  <td>
+      Posted <%= time_ago_in_words(message.created_at) %> ago.
+  </td>
+</tr>
