@@ -6,11 +6,9 @@
         	<%= current_user.name %>
       		</h1>
     	</section>
-		<%= form_for(current_user.receiving_messages.build(receiving_id: @user.id), remote: true) do |f| %>
-
+		<%= form_for(current_user.sending_messages.build(receiving_id: @user.id), remote: true) do |f| %>
 
 		<div><%= f.hidden_field :receiving_id %></div>
-		<%#= raise %>
 
 		<div class="field">
   			<%= f.text_area :content, placeholder: "メッセージ" %>
@@ -21,11 +19,12 @@
 
 	<div class="span8">
 		<h3>Messages </h3>
-			<% @messages.each do |message| %>
-    			<div>
+			<%= render @messages %>
+			<%# @messages.each do |message| %>
+    			<!--<div>
         			<%= message.content %>
-    			</div>
-    		<% end %>
+    			</div>-->
+    		<%# end %>
 	</div>
 </div>
 
