@@ -22,12 +22,14 @@
 
 <div class="sample2">
   <div class="span8">
+    <% if !@user.driver == nil %>
     <% if @user.driver.reviews.any?  %>
       <h3>Reviews</h3>
       <ol class="microposts">
         <%= render @reviews %>
       </ol>
       <%= will_paginate @reviews %>
+    <% end %>
     <% end %>
   </div>
 </div>
