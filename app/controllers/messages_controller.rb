@@ -6,6 +6,13 @@ class MessagesController < ApplicationController
     @content = (params[:message][:content])
     current_user.sending!(@user, @content)
     redirect_to message_path(@user)
+    #if @content.save
+      #flash[:success] = "Message created!"
+      #redirect_to message_path(@user)
+    #else
+      #@feed_tweets = current_user.messages.paginate(page: params[:page])
+      #redirect_to message_path(@user)
+    #end
   end
 
   def index
