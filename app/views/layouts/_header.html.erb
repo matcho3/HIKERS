@@ -36,13 +36,14 @@
                   <li><%= link_to "Profile", current_user %></li>
                   
 
-                  <% if !current_user.driver %>
+                  <% if current_user.driver == nil %>
                     <li><%= link_to "DriverR", new_driver_path %></li>
                   <% else %>
                     <li><%= link_to "DriverR", edit_driver_path(current_user.driver.id) %></li>
-                  <% end %> 
 
                   <li><%= link_to "my trip", trip_driver_path(id: current_user.driver.id) %></li>
+
+                  <% end %>
 
   
                   <li class="divider"></li>
