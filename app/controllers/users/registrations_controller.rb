@@ -10,7 +10,7 @@ before_action :current_user,   only: [:edit, :update]
       flash[:success] = "Welcome to HIKERS!"
       redirect_to root_path
     else
-    	render 'users/registrations/new'
+    	render 'devise/registrations/new'
     end
   end
 
@@ -22,7 +22,7 @@ before_action :current_user,   only: [:edit, :update]
       sign_in(@user, :bypass => true)
       redirect_to root_path
     else
-      render 'users/registrations/edit'
+      render 'devise/registrations/edit'
     end
   end
 

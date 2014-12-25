@@ -4,16 +4,20 @@
       <%= render 'shared/user_info' %>
     </section>
   </aside>
-
+</div>
 
 <% if @user.driver == nil %>
      <%= render 'shared/user_info' %>
 <% elsif !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
     <%= render 'shared/trips_collections' %>
-<% elsif %>
-
-
-
+<% elsif @user != current_user %>
+    <div class="sample">
+    <%= render 'shared/review_form' %>
+    </div>
+<% elsif @user.driver.reviews.any? %>
+<div class="sample2">
+  <div class="span8">
+<% end %>
 
 
   <!-- <#% if !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %> -->
@@ -21,14 +25,12 @@
     <%#= render 'shared/trips_collections' %>
        <!-- ココまではパーシャルで、呼び出せるようにする。ドロップダウンからの表示。 -->
   <!-- <#% end %> -->
-</div>
 
 
-<div class="sample">
-<% unless @user == current_user %>
-<%= render 'shared/review_form' %>
-<% end %>
-</div>
+<!-- </div> -->
+
+
+
 
 
 <div class="sample2">

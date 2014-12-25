@@ -1,6 +1,7 @@
 .header_img{
     position: relative;
     overflow: hidden;
+    margin-top: -60px;
 }
  
 .youtube_bg{
