@@ -39,6 +39,14 @@ opacity:0.9;
   opacity: 0.9;
 }
 
+/**********************profile_image*/
+
+.col-xs-12.col-sm-4.profile {
+margin-top: -197px;
+}
+
+
+
 /* resume stuff */
 
 .bs-callout {
