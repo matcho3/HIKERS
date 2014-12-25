@@ -4,6 +4,7 @@
       <%= render 'shared/user_info' %>
     </section>
   </aside>
+
 </div>
 
 <% if @user.driver == nil %>
@@ -20,31 +21,28 @@
 <% end %>
 
 
-  <!-- <#% if !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %> -->
-    <!-- ココカラ -->
-    <%#= render 'shared/trips_collections' %>
-       <!-- ココまではパーシャルで、呼び出せるようにする。ドロップダウンからの表示。 -->
-  <!-- <#% end %> -->
-
-
-<!-- </div> -->
 
 
 
 
 
-<div class="sample2">
+
+
+
+<!-- <div class="sample2">
   <div class="span8">
-    <% if @user.driver.reviews.any?  %>
+    <#% if !@user.driver == nil %>
+    <#% if @user.driver.reviews.any?  %>
       <h3>Reviews</h3>
       <ol class="microposts">
-        <%= render @reviews %>
+        <%#= render @reviews %>
       </ol>
-      <%= will_paginate @reviews %>
-    <% end %>
+      <%#= will_paginate @reviews %>
+    <#% end %>
+    <#% end %>
   </div>
 </div>
-
+ -->
 
 
 

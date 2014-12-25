@@ -33,7 +33,7 @@ end
   match '/approve/:id',to:'books#approve',as:'approve_book',via:'get'
   match '/disapprove/:id',to:'books#disapprove',as:'disapprove_book',via:'get'
    # post "sample_pages/purchase"
-   # url で表示したくない、容量　POST
+   # url で表示したくない、容量 POST
   
  resources :users do
     member do

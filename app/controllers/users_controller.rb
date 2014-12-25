@@ -203,8 +203,20 @@ class UsersController < ApplicationController
   def sending
     @title = "All Message"
     @user = User.find(params[:id])
-    @users = @user.sendings.paginate(page: params[:page])
-    render 'show_message'
+    receiving_users = Message.where(sending_id: current_user.id).map{|message| message.receiving}
+    sending_users = Message.where(receiving_id: current_user.id).map{|message| message.sending}
+    #@pre_usersは@userとmessageしているuserすべて
+    @pre_users = receiving_users + sending_users
+    #@usersは@pre_usersから重複を取り除いたuser
+    @users = @pre_users.uniq
+
+    #@usersそれぞれと@userとの最新のmessageを取り出してviewに渡す
+    #@users.each do |user|
+      #messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [user.id, @user.id], [@user.id, user.id])
+      #@message = messages.last
+    #end 
+    render 'show_message'#error的なのを書く
+      
   end
 
   def receiving
