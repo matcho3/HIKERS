@@ -1,0 +1,15 @@
+<tr>
+  <td>
+    <%= link_to profile_image_for(User.find_by(id: message.sending_id))
+   %>
+  </td>
+  <td>
+      <%= link_to User.find_by(id: message.sending_id).name, User.find_by(id: message.sending_id) %>
+  </td>
+  <td>
+      <%= message.content %>
+  </td>
+  <td>
+      Posted <%= time_ago_in_words(message.created_at) %> ago.
+  </td>
+</tr>

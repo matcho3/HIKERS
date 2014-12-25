@@ -1,7 +1,8 @@
+<!-- これ使わない -->
 <li>
   <%= profile_image_for(user) %>
   <%= link_to user.name, user %>
-  <!-- 最新のメッセージ　-->
+  <%= @message.content %>
   <li><%= link_to sending_user_path(current_user.id), id: "logo" do %>
   <i class="fa fa-paper-plane-o"></i>
   <% end %></li>
