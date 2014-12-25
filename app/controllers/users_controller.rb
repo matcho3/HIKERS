@@ -203,8 +203,18 @@ class UsersController < ApplicationController
   def sending
     @title = "All Message"
     @user = User.find(params[:id])
-    @users = @user.sendings.paginate(page: params[:page])
-    render 'show_message'
+    @messages = Message.where('sending_id IN (?)', [@user.id], 'receiving_id IN (?)', [@user.id])
+    if !(@user.sendings == nil && @user.receivings == nil) 
+      @messages.each do |message|
+        @pre_users = User.find_by(id: message.receiving.id)
+      end  
+      @users = @pre_users.uniq
+      raise
+      render 'show_message'
+    else
+      raise
+      render 'show_message' #error的なのを書く
+    end  
   end
 
   def receiving

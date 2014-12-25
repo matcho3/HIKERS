@@ -6,7 +6,7 @@
       <span><%= link_to "view my profile", @user %></span>
     </section>
     <!--<section>
-      <% if @users.any? %>
+      <% if !@users == nil %>
         <div class="user_avatars">
           <% @users.each do |user| %>
             <%= link_to profile_image_for(user), user %>
@@ -17,7 +17,7 @@
   </aside>
   <div class="span8">
     <h3><%= @title %></h3>
-    <% if @users.any? %>
+    <% if !@users == nil %>
       <ul class="users">
         <%= render @users %>
       </ul>
