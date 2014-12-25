@@ -1,0 +1,30 @@
+<h1>NOTIFICATIONS</h1>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>ドライバーさんの名前</th>
+      <th>登録したユーザーの名前</th>
+      <th>Reservations</th>
+      <th>Status</th>
+      
+    </tr>
+  </thead> -->
+
+  <!-- <tbody> -->
+    <% @books.each do |book| %>
+      <ul class="notification">
+        <li><%= book.trip.driver.user.name %>さん！</li>
+        <li><%= book.user.name %>君から、あなたのTRIP NO.<%= book.trip.id %>に予約リクエストがきてますよ。！ <%= link_to '承認', approve_book_path(book), class: "btn6" %>
+<%= link_to "却下", disapprove_book_path(book), id: "btn", class: "btn2" %></li>
+        <hr>
+        <!-- <li><%#= book.reservations %></li>
+        <li><%#= book.status %></li> -->
+      </ul>
+    <% end %>
+<!--   </>
+</table> -->
+
+<br>
+
+

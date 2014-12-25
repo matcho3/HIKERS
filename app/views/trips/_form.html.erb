@@ -12,10 +12,10 @@
         <%= f.label :destination %><br>
         <%= f.text_field :destination, placeholder: "Destination" %>
       </div>
-      <div class="datepicker">
-        <%= f.label :leaving_time, class: "label2" %><br>
-        <%= f.text_field :leaving_time, placeholder: "Date and Time",class: "field5" %>
-        <span class="add-on">
+      <div class="field">
+        <%= f.label :leaving_time %><br>
+        <%= f.text_field :leaving_time, placeholder: "Date and Time"%>
+        <span class="add-on datepicker ">
           <i  data-date-icon="icon-calendar">
           <i data-time-icon="icon-time" >
         </span>
@@ -36,7 +36,7 @@
         <%= f.submit "登録", class: "btn btn-large btn-primary" %>
       </div>
     <% end %>
-　</div>
+ </div>
 </div>
 
 

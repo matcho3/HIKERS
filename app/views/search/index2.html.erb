@@ -1,0 +1,25 @@
+<!-- <h1>Search Results</h1> -->
+<table border="1">
+  <tr>
+    <th>profile_image</th><th>car_image</th><th>Departure</th><th>Destination</th><th>leaving_time</th><th>Capacity</th><th>Price</th><th>check</th>
+  </tr>
+
+<% @trips.each do |trip| %>
+  <tr>
+    <td><%= profile_image_for trip.driver.user  %></td>
+    <td><%=  profile_car_image_for trip.driver %></td>
+    <td><%= trip.departure %></td>
+    <td><%= trip.destination %></td>
+    <td><%= trip.leaving_time %></td>
+    <td><%= trip.capacity %></td>
+    <td><%= trip.price %></td>
+
+    <td><%= link_to trips_search_path(trip), class: "btn btn-large btn-primary" do %>
+      <i class="fa fa-thumbs-o-up"></i>
+      <% end %>
+ <%= link_to trips_search_path(trip),class: "darken-on-hover-container panel-image media-photo" %>
+     
+    </td>
+  </tr>
+<% end %>
+</table>`

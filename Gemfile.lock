@@ -28,7 +28,7 @@ GEM
     arel (4.0.2)
     bcrypt (3.1.9)
     bcrypt-ruby (3.1.2)
-    better_errors (2.0.0)
+    better_errors (2.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
@@ -67,7 +67,7 @@ GEM
     httparty (0.13.3)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    i18n (0.6.11)
+    i18n (0.7.0)
     jbuilder (1.0.2)
       activesupport (>= 3.0.0)
     jquery-rails (3.0.4)
@@ -116,7 +116,7 @@ GEM
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
-    rails_serve_static_assets (0.0.2)
+    rails_serve_static_assets (0.0.3)
     rails_stdout_logging (0.0.3)
     railties (4.0.5)
       actionpack (= 4.0.5)
@@ -161,7 +161,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.3)
       rack (>= 1.0)
-    webpay (3.2.1)
+    webpay (3.2.2)
       faraday (~> 0.9)
     will_paginate (3.0.4)
 

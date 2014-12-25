@@ -1,7 +1,7 @@
 <h1> Check the Trip you selected! </h1>
 <table border="1">
   <tr>
-    <th>profile_image</th><th>car_image</th><th>Departure</th><th>Destination</th><th>leaving_time</th><th>Capacity</th><th>Price</th><th>Book</th>
+    <th>profile_image</th><th>car_image</th><th>Departure</th><th>Destination</th><th>leaving_time</th><th>Capacity</th><th>Price</th><th>Book</th><th>message</th>
   </tr>
 <% @trip %>
   <tr>
@@ -14,6 +14,10 @@
     <td><%= @trip.price %></td>
     <td><%= link_to trip_path(@trip), class: "btn ", method: :get do %>
       <i class="fa fa-ticket"></i>
+      <% end %>
+    </td>
+    <td><%= link_to message_path, class: "btn" do %>
+      <i class="fa fa-message"></i>
       <% end %>
     </td>
   </tr>

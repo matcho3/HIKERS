@@ -1,23 +1,43 @@
+<!--<<<<<<< HEAD
 <h1>Search Results</h1>
 <table border="1">
   <tr>
-    <th>profile_image</th><th>car_image</th><th>Departure</th><th>Destination</th><th>leaving_time</th><th>Capacity</th><th>Price</th><th>check</th>
+    <th>profile_image</th><th>car_image</th><th>Departure</th><th>Destination</th><th>leaving_time</th><th>Capacity</th><th>Price</th><th>message</th><th>check</th>
   </tr>
+=======
+>>>>>>> 19c08f20ee7696a386fb5339364c60dfe36006dc-->
 
-<% @trips.each do |trip| %>
-  <tr>
-    <td><%= profile_image_for trip.driver.user  %></td>
-    <td><%=  profile_car_image_for trip.driver %></td>
-  	<td><%= trip.departure %></td>
-    <td><%= trip.destination %></td>
-    <td><%= trip.leaving_time %></td>
-    <td><%= trip.capacity %></td>
-    <td><%= trip.price %></td>
+<ul class="search-list col-center">
+   <% @trips.each do |trip| %>
+  <li class="col-sm-6 col-lg-3 row-space-4 transition-delay-1000">
+    <!-- <a href="#" class="darken-on-hover-container panel-image media-photo"> -->
+   <%= link_to trips_search_path(trip), class: "darken-on-hover-container panel-image media-photo" do %>
+      <div class="media-cover darken-on-hover background-search-card">
+         <div class="row row-table row-full-height">
+          <div class="driver_info">
+            <%=  profile_car_image_for trip.driver %>
+            <%= profile_image_for trip.driver.user  %>
+            <%#= image_tag(trip.driver.user.image, :size => '35x35', :class => "img-circle") %>
+          </div>
+           <div class="col-bottom col-sm-12">
+            <div class="h3 text-center text-contrast strong">
+             
+          <%= trip.departure %>
+          <%= trip.destination %>
+          </div>
+           <p class="text-center text-contrast">
+          <i class="fa fa-users"></i><%= trip.capacity %>人
+          <i class="fa fa-jpy"></i><%= trip.price %>
+          
 
-    <td><%= link_to trips_search_path(trip), class: "btn btn-large btn-primary" do %>
-    	<i class="fa fa-thumbs-o-up"></i>
-    	<% end %>
-    </td>
-  </tr>
-<% end %>
-</table>
+          </p>
+          </div>
+         </div>
+      </div>
+    <% end %>
+    <!-- </a> -->
+  </li>
+  <% end %>
+</ul>
+<!-- </table>` -->
+

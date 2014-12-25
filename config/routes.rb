@@ -25,14 +25,19 @@ end
   # get "sessions/create"
   # match '/signup',to:'users#new',via:'get'
   # match '/signout',to:'sessions#destroy',via:'delete'
+  match '/notification', to:'users#notification',via:"get"
   match '/search', to: 'search#index', via: 'get'
   match '/search/:id',to: 'search#show',as:'trips_search', via:'get'
   match '/driver/:id',to:'drivers#new',as:'resister_driver', via:'get'
-  match '/book/:id',to:'book#show',as:'books_trip',via:'get'
-  # post "sample_pages/purchase"
+  match '/book/:id',to:'books#show',as:'books_trip',via:'get'
+  match '/approve/:id',to:'books#approve',as:'approve_book',via:'get'
+  match '/disapprove/:id',to:'books#disapprove',as:'disapprove_book',via:'get'
+   # post "sample_pages/purchase"
+   # url で表示したくない、容量 POST
   
   resources :users do
     member do
+      get :sending, :receivings
       get 'book'
     end
   end
@@ -44,15 +49,12 @@ end
   end
 
   resources :reviews
-
+  resources :messages
   resources :trips do
     member do
       get 'book'
     end
   end
-
-
-
 end
 
 

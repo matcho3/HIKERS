@@ -16,15 +16,49 @@ class TripsController < ApplicationController
   	end
 
     def book
-      # @trip = Trip.find(params[:id])
-      # @book = Book.new
-      # @book.user_id = current_user.id 
-      # @book.trip_id = @trip.id
-      # @book.save
-      @book = current_user.books.create(trip_id: @trip.id)
+      @trip = Trip.find(params[:id])
+      @book = Book.new
+      @book.user_id = current_user.id 
+      @book.trip_id = @trip.id
       @book.save
+
+      @notification = Notification.new
+      @notification.user_id = @book.user_id
+      # @notification.book_id = @book.id
+      @notification.body = "あなたのトリップに、申請がありました。"
+      @notification.save
+      # @book = current_user.books.create(trip_id: @trip.id)
+      # @book.save
         flash[:success] = "Your book request has been confirmed!!"
     end
+
+
+# create_table "notifications", force: true do |t|
+#     t.integer  "user_id"
+#     t.text     "body"
+#     t.integer  "read_flag",  default: 0
+#     t.integer  "review_id"
+#     t.integer  "book_id"
+#     t.datetime "created_at"
+#     t.datetime "updated_at"
+#   end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def index
   end

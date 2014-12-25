@@ -1,0 +1,30 @@
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= profile_image_for @user %>
+      <h1><%= @user.name %></h1>
+      <span><%= link_to "view my profile", @user %></span>
+    </section>
+  </aside>
+  <div class="span8">
+    <h3><%= @title %></h3>
+      <ul class="users">
+        <% unless @users == [] %>
+
+          <% @users.each do |user| %>
+            <li>
+              <%= profile_image_for(user) %>
+              <%= link_to user.name, user %>
+              <%= Message.where('sending_id IN (?) AND receiving_id IN (?)', [user.id, @user.id], [@user.id, user.id]).first.content %>
+              <li><%= link_to sending_user_path(current_user.id), id: "logo" do %>
+              <i class="fa fa-paper-plane-o"></i>
+              <% end %>
+              </li>
+            </li>
+          <% end %>
+        <% else %>
+          メッセージは０件です
+        <% end %>
+      </ul>
+  </div>
+</div>
