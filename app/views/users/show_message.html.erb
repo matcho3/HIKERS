@@ -10,8 +10,8 @@
     <h3><%= @title %></h3>
       <ul class="users">
         <% unless @users == [] %>
-
           <% @users.each do |user| %>
+          <%= link_to messages_user_path(user) do %>
             <li>
               <%= profile_image_for(user) %>
               <%= link_to user.name, user %>
@@ -21,6 +21,7 @@
               <% end %>
               </li>
             </li>
+          <% end %>
           <% end %>
         <% else %>
           メッセージは０件です
