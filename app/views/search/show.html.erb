@@ -143,6 +143,25 @@
                 <li class="list-group-item">google inc.</li>
                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
                 <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+
+
+              <!-- request to This USER***************************** -->
+
+              
+            <br><br>  
+            <p><%= link_to trip_path(@trip), class: "btn9", method: :get do %>
+              Request to <%= @trip.driver.user.name %>
+            <% end %></p>
+
+
+
+
+
+
+
+            <!-- request to this User ENd*************************** -->
+
+
               </ul>
             </div>
           </div>
@@ -236,6 +255,25 @@
                 <li class="list-group-item">google inc.</li>
                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
                 <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+                <br><br>  
+
+
+            
+
+
+
+            <p><%= link_to trip_path(@trip), class: "btn8", method: :get do %>
+              Message to <%= @trip.driver.user.name %>
+            <% end %></p>
+
+
+
+
+
+
+
+
+
               </ul>
             </div>
           </div>
