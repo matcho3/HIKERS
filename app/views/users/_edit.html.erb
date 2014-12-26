@@ -1,41 +1,87 @@
-<div class="row">
-  <div class="span6 offset3">   
-    <%= form_for(@user) do |f| %>
-    
-    <%= render 'shared/error_messages',object: f.object %>
 
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :image  %><br>
-      <%= f.file_field :image %>
-    </div>
-    <div class="field">
-      <%= f.label :birthday %><br>
-      <%= f.date_select :birthday %>
-    </div>
-    <h1>Any item</h1>
-    <div class="field">
-      <%= f.label :self_introduction %>
-      <%= f.text_area :self_introduction, :rows => "40×30" %>  
-    </div> 
-    <div class="field">
-      <%= f.label :location %><br>
-      <%= f.text_field :location %>
-    </div>
-    <div class="field">
-      <%= f.label :school %><br>
-      <%= f.text_field :school %>
-    </div>
-    <div class="field">
-      <%= f.label :place_of_employment %><br>
-      <%= f.text_field :workplace %>
-    </div>
-    <div class="actions">
-      <%= f.submit "DONE", class: "btn btn-large btn-primary" %>
-    </div>
+
+<!-- <h1>New Drivers</h1> -->
+<div id="login-form" >
+<br>
+<fieldset id="driver-entry-field">
+    <h3 class="driver-entry-name">Editing User</h3>
+    <article class="container-login center-block">
+       <%= form_for(@user) do |f| %>
+    <section>
+      <!-- <ul id="top-bar" class="nav nav-tabs nav-justified">
+        <li class="active"><a href="#login-access">Accesso</a></li>
+        <li><a href="#">Password dimenticata</a></li>
+      </ul> -->
+      <!-- <div class="tab-content tabs-login col-lg-12 col-md-12 col-sm-12 cols-xs-12"> -->
+        <!-- <div id="login-access" class="tab-pane fade active in"> -->
+                      
+          <!-- <form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal"> -->
+            
+
+
+
+            <!-- <div class="form-group "> -->
+              <!-- <label for="login" class="sr-only">Email</label> -->
+                <!-- <input type="text" class="form-control" name="login" id="login_value" 
+                  placeholder="Email" tabindex="1" value="" /> -->
+                  <%= f.label :name %><br>
+                  <%= f.text_field :name, class: "form-control" %>
+            <!-- </div> -->
+
+
+
+
+            <!-- <div class="form-group "> -->
+              <!-- <label for="password" class="sr-only">Password</label> -->
+                 <%= f.label :image  %><br>
+                 <%= f.file_field :image, class: "form-control" %>
+            <!-- </div> -->
+            
+
+            <!-- <div class="form-group "> -->
+
+                  <%= f.label :birthday %><br>
+                  <%= raw sprintf(
+                  f.date_select(
+                    :birthday,
+                    {use_month_numbers: true,
+                      start_year:        1920,
+                      end_year:          2014,
+                      default:           Date.new(1992, 1, 1),
+                      date_separator:    '%s'},
+                      id: "form-control"),
+                        '年 ', '月 ') + '日' %>
+                 
+                
+                  <h3>Optional</h3>
+                
+                  <!-- </div> -->
+                  <%= f.label :self_introduction %>
+                  <%= f.text_area :self_introduction, :rows => "40×30" %> 
+
+                  
+                  <%= f.label :location %><br>
+                  <%= f.text_field :location, class: "form-control" %>
+                  
+                  <%= f.label :school %><br>
+                  <%= f.text_field :school, class: "form-control" %>
+
+                  <%= f.label :place_of_employment %><br>
+                  <%= f.text_field :workplace, class: "form-control" %>
+
+
+                
+            <!-- <br/> -->
+            <!-- <div class="form-group "> -->
+            <%= f.submit "ENTRY" %>
+
+                <!-- <button type="submit" name="log-me-in" id="submit" tabindex="5" class="btn btn-lg  btn-primary">Entra</button> -->
+            <!-- </div> -->
+          <!-- </form>       -->
+        <!-- </div> -->
+      <!-- </div> -->
+    </section>
     <% end %>
- </div>
+  </article>
+</fieldset>
 </div>

@@ -132,3 +132,30 @@ margin-right: auto;
 width: 487px;
 }
 
+/*.birthday .form-control
+{
+  width: 15%;
+  min-width: 65px;
+  display: inline-block;
+}*/
+
+
+#form-control
+{
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #999999;
+    border-radius: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #333333;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    /*width: 100%;*/
+  width: 23%;
+  min-width: 65px;
+  display: inline-block;
+}
