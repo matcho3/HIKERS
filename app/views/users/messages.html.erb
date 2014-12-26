@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="span4">
+		<section>
+      		<h1>
+        	<%= profile_image_for current_user %>
+        	<%= current_user.name %>
+      		</h1>
+    	</section>
+		<%= form_for(current_user.sending_messages.build(receiving_id: @user.id), remote: true) do |f| %>
+
+		<div><%= f.hidden_field :receiving_id %></div>
+
+		<div class="field">
+  			<%= f.text_area :content, placeholder: "メッセージ" %>
+		</div>
+		<%= f.submit "送信！", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+	
+	<div class="span8">
+		<h3>Messages </h3>
+		<table border="1">
+			<tr>
+				<th>profile_image</th><th>name</th><th>content</th><th>time</th>
+			</tr>
+			<%= render @messages %>
+		</table>
+	</div>
+</div>

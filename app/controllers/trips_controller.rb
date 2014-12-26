@@ -66,7 +66,9 @@ class TripsController < ApplicationController
 
 
 
-
+  def driver
+    @user = Trip.find(params[:id]).driver.user
+  end
 
 def index
   end

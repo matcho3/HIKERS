@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223145751) do
+ActiveRecord::Schema.define(version: 20141225071631) do
 
   create_table "books", force: true do |t|
     t.integer  "trip_id"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20141223145751) do
   create_table "messages", force: true do |t|
     t.integer  "receiving_id"
     t.integer  "sending_id"
-    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "content"
   end
 
   create_table "notifications", force: true do |t|

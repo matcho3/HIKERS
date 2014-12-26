@@ -18,11 +18,11 @@ class MessagesController < ApplicationController
   def index
   end
 
-  def show
-    @trip = Trip.find(params[:id])
-    @user = @trip.driver.user
-    @messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [current_user.id, @user.id], [@user.id, current_user.id] )
-  end
+  #def show
+    #@trip = Trip.find(params[:id])
+    #@user = @trip.driver.user
+    #@messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [current_user.id, @user.id], [@user.id, current_user.id] )
+  #end
 
   #def destroy
     #@user = Message.find(params[:id]).sending

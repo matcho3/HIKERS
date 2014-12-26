@@ -220,6 +220,11 @@ class UsersController < ApplicationController
       
   end
 
+  def messages
+    @user = User.find(params[:id])
+    @messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [current_user.id, @user.id], [@user.id, current_user.id] )
+  end
+
   def receiving
     @title = "Followers"
     @user = User.find(params[:id])

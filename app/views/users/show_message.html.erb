@@ -16,8 +16,8 @@
               <%= profile_image_for(user) %>
               <%= link_to user.name, user %>
               <%= Message.where('sending_id IN (?) AND receiving_id IN (?)', [user.id, @user.id], [@user.id, user.id]).first.content %>
-              <li><%= link_to sending_user_path(current_user.id), id: "logo" do %>
-              <i class="fa fa-paper-plane-o"></i>
+              <li><%= link_to messages_user_path(user), id: "logo" do %>
+               <i class="fa fa-paper-plane-o"></i>
               <% end %>
               </li>
             </li>

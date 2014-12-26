@@ -37,7 +37,7 @@ end
   
   resources :users do
     member do
-      get :sending, :receivings
+      get :sending, :receivings, :messages
       get 'book'
     end
   end
@@ -52,7 +52,7 @@ end
   resources :messages
   resources :trips do
     member do
-      get 'book'
+      get 'book', :driver
     end
   end
 end

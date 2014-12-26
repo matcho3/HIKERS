@@ -16,10 +16,7 @@
       <i class="fa fa-ticket"></i>
       <% end %>
     </td>
-    <td><%= link_to message_path, class: "btn" do %>
-      <i class="fa fa-message"></i>
-      <% end %>
-    </td>
+    <td><%= link_to 'message', driver_trip_path(@trip) %>
   </tr>
 </table>
 
