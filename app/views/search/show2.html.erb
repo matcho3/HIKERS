@@ -1,29 +1,29 @@
-<div class="contents">
-<div class="container">
+
+
 <ul class="search-list col-center">
-   <% @trips.each do |trip| %>
+   <% @trip %>
   <li class="col-sm-6 col-lg-3 row-space-4 transition-delay-1000">
     <!-- <a href="#" class="darken-on-hover-container panel-image media-photo"> -->
    <%= link_to trips_search_path(trip), class: "darken-on-hover-container panel-image media-photo" do %>
       <div class="media-cover darken-on-hover background-search-card">
          <div class="row row-table row-full-height">
           <div class="driver_info">
-            <%=  profile_car_image_for trip.driver %>
-            <%= profile_image_for trip.driver.user  %>
-           
+            <%= link_to profile_image_for(@trip.driver.user), @trip.driver.user  %>
+            <%= profile_car_image_for @trip.driver %>
             <%#= image_tag(trip.driver.user.image, :size => '35x35', :class => "img-circle") %>
           </div>
            <div class="col-bottom col-sm-12">
             <div class="h3 text-center text-contrast strong">
              
-          <%= trip.departure %>
-          <%= trip.destination %>
+          <%= @trip.departure %>
+          <%= @trip.destination %>
           </div>
            <p class="text-center text-contrast">
-          <i class="fa fa-users"></i><%= trip.capacity %>人
-          <i class="fa fa-jpy"></i><%= trip.price %>
-          
-
+          <i class="fa fa-users"></i><%= @trip.capacity %>人
+          <i class="fa fa-jpy"></i><%= @trip.price %>
+          <%= link_to message_path, class: "btn" do %>
+      <i class="fa fa-message"></i>
+      <% end %>
           </p>
           </div>
          </div>
@@ -33,7 +33,15 @@
   </li>
   <% end %>
 </ul>
-</div>
-</div>
 <!-- </table>` -->
+
+<div class="span8">
+    <% if @trip.driver.reviews.any? %>
+      <h3>Reviews</h3>
+      <ol class="microposts">
+        <%= render @reviews %>
+      </ol>
+      <%= will_paginate @reviews %>
+    <% end %>
+</div>
 

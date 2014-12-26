@@ -5,35 +5,44 @@
     </section>
   </aside>
 
-  <% if !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
-    <!-- ココカラ -->
+</div>
+
+<% if @user.driver == nil %>
+     <%= render 'shared/user_info' %>
+<% elsif !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
     <%= render 'shared/trips_collections' %>
-       <!-- ココまではパーシャルで、呼び出せるようにする。ドロップダウンからの表示。 -->
-  <% end %>
-</div>
-
-
-<div class="sample">
-<% unless @user == current_user %>
-<%= render 'shared/review_form' %>
-<% end %>
-</div>
-
-
+<% elsif @user != current_user %>
+    <div class="sample">
+    <%= render 'shared/review_form' %>
+    </div>
+<% elsif @user.driver.reviews.any? %>
 <div class="sample2">
   <div class="span8">
-    <% if !@user.driver == nil %>
-    <% if @user.driver.reviews.any?  %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="sample2">
+  <div class="span8">
+    <#% if !@user.driver == nil %>
+    <#% if @user.driver.reviews.any?  %>
       <h3>Reviews</h3>
       <ol class="microposts">
-        <%= render @reviews %>
+        <%#= render @reviews %>
       </ol>
-      <%= will_paginate @reviews %>
-    <% end %>
-    <% end %>
+      <%#= will_paginate @reviews %>
+    <#% end %>
+    <#% end %>
   </div>
 </div>
-
+ -->
 
 
 

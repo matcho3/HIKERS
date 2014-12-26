@@ -21,6 +21,7 @@ class MessagesController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @user = @trip.driver.user
+
     @messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [current_user.id, @user.id], [@user.id, current_user.id] )
   end
 

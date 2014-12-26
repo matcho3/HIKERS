@@ -3,4 +3,3 @@ module DriversHelper
     	image_tag "/docs/#{driver.car_image}", size: size, class: :car_icon
   	end
 end
-
