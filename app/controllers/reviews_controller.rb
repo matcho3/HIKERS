@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
-
+    @reviews = Review.where(driver_id: current_user.driver.id)
   end
 
   # GET /reviews/new

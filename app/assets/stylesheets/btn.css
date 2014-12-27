@@ -193,6 +193,22 @@ margin-left: 898px;
 /* float: right; */
 }
 
+.btn12{
+background: #15ADC7;
+border-radius: 8px;
+color: #fff;
+float: right;
+font-weight: bold;
+margin-top: -29px;
+padding: 19px 20px;
+font-size: 20px;
+font-family: inherit;
+margin-right: -3px;
+border-style: outset;
+}
+
+
+
 /*btn.btn-color {
 color: #fff;
 background: #59DCED;

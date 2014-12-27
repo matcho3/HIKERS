@@ -12,17 +12,21 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def notification
+def notification
     # @string = "hi"
-      if current_user.driver
+
+    if current_user.notifications.blank?
+        render 'users/no_notification'
+    else
+      # if current_user.driver
         current_user.driver.trips.each do |trip|
           @books = trip.books
           end
-      else
-        # render :text => 'Driver登録を済ませて下さい。'
-        @driver = Driver.new
-        render 'drivers/new'
-      end
+    end
+      #   # render :text => 'Driver登録を済ませて下さい。'
+      #   @driver = Driver.new
+      #   render 'drivers/new'
+      # end
   end
 
 
@@ -72,6 +76,7 @@ class UsersController < ApplicationController
 
   def show
 # <<<<<<< HEAD
+ @review = Review.new
     @user = User.find(params[:id])
     if !@user.driver == nil
       @trips = current_user.driver.trips
@@ -83,31 +88,10 @@ class UsersController < ApplicationController
       end
 
     end
-    if !@user.driver == nil 
-      # raise
-        @review = Review.new
-        @reviews = @user.driver.reviews.paginate(page: params[:page])
-    end
-
-
-
-
-
-
-
-
-
-
-# =======
     
-      #@userがかぶるからコメントアウトしてみました
-      #@books.each do |book|
-       #@user = book.user
-      #end
-    #end
-
-    #@reviews = @user.reviews.paginate(page: params[:page])
-# >>>>>>> 90ca0090f3e05de2b7fb48850688348ad41cb0ef
+      # raise
+        # @review = Review.new
+        # @reviews = @user.driver.reviews.paginate(page: params[:page])
   end
 
 

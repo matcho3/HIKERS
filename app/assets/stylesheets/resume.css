@@ -65,6 +65,15 @@ text-rendering: auto;
 float: right;
 }
 
+
+img.profile2 {
+
+margin-top: 227px;
+border: 6px solid rgba(1, 1, 1, 0.3);
+border-radius: 50%;
+}
+
+
 /* resume stuff */
 
 .bs-callout {

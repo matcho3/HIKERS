@@ -87,7 +87,14 @@
           <div class="col-lg-12">
             <div class="col-xs-12 col-sm-4 profile">
               <figure>
+                  
+                <% if current_user == @user %>
+                  <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", class: "profile2 img-circle img-responsive" %>
+                <% else %>
                  <%= profile_image_for @user, size: '300x300', class: "img-circle img-responsive" %>
+                 <% end%>
+                  
+
                 <!-- <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300"> -->
                 <!-- <hr> -->
                
@@ -129,40 +136,87 @@
           </div>
         </div>
        </div>
+
+<!-- Review Area Started *********************************-->
+
+<% if current_user != @user %>
+  
+  <div class="container">
+    <div>
+      <div class="#">
+        <div class="review">
+              <div>
+                  <a class="btn btn-success btn-green " href="#reviews-anchor" id="open-review-box">Leave a Review for <%= @user.name %> </a>
+              </div>
+          
+              <div class="row" id="post-review-box" style="display:none;">
+                  <div class="col-md-12">
+
+                    <%= form_for(@review) do |r| %>
+                    <%= hidden_field_tag :driver_id, @user.id %>
+                      <!-- <form accept-charset="UTF-8" action="" method="post"> -->
+                          <!-- <input id="ratings-hidden" name="rating" type="hidden">  -->
+                          <!-- <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5"></textarea> -->
+
+                          <%= r.text_area :comment, placeholder: "Compose new review...", class: "comment_area form-control animated", cols: "50", id: "new-review" %>
+
+
+          
+                          <div class="text-right">
+                              <div class="stars starrr" data-rating="0"></div>
+                              <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
+                              <span class="glyphicon glyphicon-remove"></span>Cancel</a>
+
+
+                              <!-- <button class="btn btn-success btn-lg" type="submit">Save</button> -->
+                                <%= r.submit "Post", class: "btn btn-success btn-lg" %>
+                      
+                          </div>
+                      <!-- </form> -->
+                      <% end %>
+                  </div>
+              </div>
+          </div> 
+           
+      </div>
+    </div>
+  </div>
+<% end %>
+<!-- Review Area end *********************************-->
+
+
+
+
+
+
+
+
+
+
+
+
       <div class="bs-callout">
         <h4>About <%= @user.name %></h4>
-        <table class="table table-striped table-responsive ">
-          <thead>
-            <tr><th>Date of Issue</th>
-            <th>When to get License</th>
-            <!-- <th>CGPA</th> -->
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td><%#= @trip.driver.time_get_license %></td>
-              <td><%#= @trip.driver.license_history %></td>
-              <!-- <td> 3.50 </td> -->
-            </tr>
-          </tbody>
-        </table>
+        <%= @user.self_introduction %>
         <h4></h4>
       </div>
       
-
-
+      
       <div class="bs-callout">
-         <h4>Time Schedule  </h4>
-         <h3><%#= @trip.leaving_time %><h3>
+        <h4>Review for  <%= @user.name %></h4>
+        <% if @user.driver.reviews %>
+        <% @user.driver.reviews.each do |r| %>
+        <b><%= r.comment %></b><br>
+        Posted <%= time_ago_in_words(r.created_at) %> ago.
+        <br><hr>
+
+        <% end %>
+        <% end %>
+        <h4></h4>
       </div>
 
 
 
-
-
-      <div class="bs-callout">
-        <h4>Root of Trips </h4>
-         <h3><%#= @trip.departure %> >>>> <%#= @trip.destination %><h3>
-      </div>
 
 
     </div>

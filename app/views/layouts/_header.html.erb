@@ -31,20 +31,23 @@
             
             <li id="fat-menu" class="dropdown">
                 <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
-                  <% if !current_user.uid = nil %>
+                  <% if current_user.uid %>
                   <%= image_tag(current_user.image, :size => '35x35', :class => "img-circle") %>  <%= current_user.name %><b class="caret"></b>
                   <% else %>
                    Account<b class="caret"></b>
                   <% end %>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "Profile", current_user %></li>
-                  
+                  <li><%= link_to "Profile", current_user %></li><hr>
+                  <li><%= link_to "Notifications", notification_path %></li><hr>
+                 <!--  <li class="divider"></li> -->
+                <li><%= link_to "Reviews", review_path(current_user) %></li><hr>
+
 
                   <% if !current_user.driver %>
-                    <li><%= link_to "DriverR", new_driver_path %></li>
+                    <li><%= link_to "DriverR", new_driver_path %></li><hr>
                   <% else %>
-                    <li><%= link_to "DriverR", edit_driver_path(current_user.driver.id) %></li>
+                    <li><%= link_to "DriverR", edit_driver_path(current_user.driver.id) %></li><hr>
                   <% end %> 
 
 
@@ -74,17 +77,27 @@
                 <i class="fa fa-globe" ></i>
               </a>
               <ul class="dropdown-menu">
+              <li>notifications</li>
+              <!-- books.nil if 文開始************************************ -->
+              <% if current_user.books.blank? %>
+                  <li><%= 'No notifications' %><hr></li>
+       
+                
+              <% else %>
+
               <% current_user.notifications.last(10).each do |notification| %>
               <%= link_to notification_path do %>
                   <li><%= notification.body %><hr></li>
                   <% end %>
                 <% end %>
+              
+              <% end %>
+              <!-- ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊books.blan? のif文終了 -->
+                
                 
 
-                <li><%= link_to "notification", notification_path %></li>
-                <li class="divider"></li>
-                <!-- <li>You got a trip request from JUN. </li> -->
-                <li><%= link_to "reviews", reviews_path %></li>
+
+            
 
                   <!-- ココのJUN の部分を、@user.nameとかで受け取るインスタンスで受け取って、名前を表示させる。 -->
               </ul>

@@ -1,19 +1,11 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @review.user_id %>
-</p>
+<div class="container container4">
+<h1>Your Reviews</h1>
 
-<p>
-  <strong>Driver:</strong>
-  <%= @review.driver_id %>
-</p>
+<% @reviews.each do |r| %>
+<%= r.comment %><hr>
+<% end %>
 
-<p>
-  <strong>Comment:</strong>
-  <%= @review.comment %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_review_path(@review) %> |
-<%= link_to 'Back', reviews_path %>
+
