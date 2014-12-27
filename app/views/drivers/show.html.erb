@@ -1,9 +1,13 @@
+<div class="container container3">
 <h1>
   <%= profile_car_image_for @driver %>
-  <%= profile_image_for current_user %> <%= @driver.user.name %>
+  <%= profile_image_for current_user %>
+  <%= @driver.user.name %>
 </h1>
 	license history <%= @driver.license_history %>
 
 
 <!--<%= link_to 'Edit', edit_driver_path(@driver) %> 
 <%= link_to 'Back', users_path %>-->
+</div>
+<br><br><br>
