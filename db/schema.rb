@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223145751) do
+ActiveRecord::Schema.define(version: 20141220153544) do
 
   create_table "books", force: true do |t|
     t.integer  "trip_id"
@@ -39,6 +39,10 @@ ActiveRecord::Schema.define(version: 20141223145751) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "messages", ["receiving_id", "sending_id"], name: "index_messages_on_receiving_id_and_sending_id", unique: true
+  add_index "messages", ["receiving_id"], name: "index_messages_on_receiving_id"
+  add_index "messages", ["sending_id"], name: "index_messages_on_sending_id"
 
   create_table "notifications", force: true do |t|
     t.integer  "user_id"
