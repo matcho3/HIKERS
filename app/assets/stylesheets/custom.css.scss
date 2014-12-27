@@ -1,4 +1,4 @@
-@import "bootstrap";
+// @import "bootstrap";
 
 
 /* mixins, variables, etc. */
@@ -35,7 +35,6 @@ $blue: #049cdb;
   clear: both;
   float: left;
   width: 100%;
-  margin-top: 45px;
   @include box_sizing;
 }
 
@@ -47,6 +46,7 @@ html {
 }
 
 body {
+  background-color: #EAEAEA;
   padding-top: 60px;
   color:#15A8B5;
   min-height:100%;
@@ -127,6 +127,19 @@ line-height: 3;
 line-height: 4;
 }
 
+.alert {margin-top: 0; z-index: 3000;}
+
+.navbar-inverse{
+  background-color: transparent;
+  border-color: transparent;
+  transition: all 0.8s;
+}
+
+.navbar-inverse.navbar-scroll{
+  background-color: rgba(40,30,50,0.9);
+  border-color: rgba(30,27,31,0.9);
+  padding:15px 0; 
+}
 
 /* footer */
 
@@ -324,7 +337,7 @@ aside {
 
 .navbar-inverse
 {
-  color:red;
+  // color:red;
 }
 
 .hero-unit
@@ -537,11 +550,48 @@ a.panel-image {
   height: 100%;
 }
 
+.bg {
+  // max-height: 330px;
+  // position: relative;
+  // margin-left: -130px;
+
+
+max-height: 330px;
+position: relative;
+margin-left: -130px;
+width: 1600px;
+height: 500px;
+}
+  // min-height: 100%;
+  // min-width: 1024px;
+  // /* Set up proportionate scaling */
+  // width: 100%;
+  // height: auto;
+  // /* Set up positioning */
+  // position: fixed;
+  // /* またはabsolute; */
+  // top: 0;
+  // left: 0;
+
+
+
 
 .car_icon {
   max-height: 330px;
   position: relative;
   margin-left: -130px;
+  width:100% !important;
+  // min-height: 100%;
+  // min-width: 1024px;
+  // /* Set up proportionate scaling */
+  // width: 100%;
+  // height: auto;
+  // /* Set up positioning */
+  // position: fixed;
+  // /* またはabsolute; */
+  // top: 0;
+  // left: 0;
+
 }
 .col-bottom{
   vertical-align: bottom;

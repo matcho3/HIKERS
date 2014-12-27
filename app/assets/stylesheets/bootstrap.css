@@ -3998,8 +3998,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #333;
 }
 .navbar-inverse {
-  background-color: #222;
-  border-color: #080808;
+  background-color: rgba(1,1,1,0);
+  /*border-color: #080808;*/
 }
 .navbar-inverse .navbar-brand {
   color: #999;
@@ -5802,4 +5802,4 @@ td.visible-print {
 }
 
 
-/*# sourceMappingURL=bootstrap.css.map */
+

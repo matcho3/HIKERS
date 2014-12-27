@@ -15,26 +15,36 @@ driver_1:
   id: 1
   user_id: 1
   car_image: camp7.png
+  time_get_license: 2004
+  license_history: 10years ago
 
 driver_2:
   id: 2
   user_id: 2
   car_image: camp2.png
+  time_get_license: 2004
+  license_history: 8years ago
 
 driver_3:
   id: 3
   user_id: 3
   car_image: camp3.png
+  time_get_license: 2004
+  license_history: 5years ago
 
 driver_4:
   id: 4
   user_id: 4
   car_image: camp4.png
+  time_get_license: 2004
+  license_history: 7years ago
 
 driver_5:
   id: 5
   user_id: 5
   car_image: camp3.png
+  time_get_license: 2004
+  license_history: 1years ago
 
 # driver_1:
 #   user_id: 1

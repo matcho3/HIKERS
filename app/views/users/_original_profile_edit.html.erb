@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="span6 offset3">   
+    <%= form_for(@user) do |f| %>
+    
+    <%= render 'shared/error_messages',object: f.object %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :image  %><br>
+      <%= f.file_field :image %>
+    </div>
+    <div class="field">
+      <%= f.label :birthday %><br>
+      <%= f.date_select :birthday %>
+    </div>
+    <h1>Any item</h1>
+
+
+    
+    <div class="field">
+      <%= f.label :self_introduction %>
+      <%= f.text_area :self_introduction, :rows => "40×30" %>  
+    </div> 
+    <div class="field">
+      <%= f.label :location %><br>
+      <%= f.text_field :location %>
+    </div>
+    <div class="field">
+      <%= f.label :school %><br>
+      <%= f.text_field :school %>
+    </div>
+    <div class="field">
+      <%= f.label :place_of_employment %><br>
+      <%= f.text_field :workplace %>
+    </div>
+    <div class="actions">
+      <%= f.submit "DONE", class: "btn btn-large btn-primary" %>
+    </div>
+    <% end %>
+ </div>
+</div>

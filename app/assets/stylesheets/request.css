@@ -1,0 +1,44 @@
+
+.btn9{
+/*background: #1dabb8;
+border-radius: 3px;
+color: #fff;
+float: right;
+font-weight: bold;
+margin-top: 20px;
+padding: 12px 20px;*/
+
+background: #FF5A5F;
+/*border-radius: 8px;
+color: #fff;
+float: right;
+font-weight: bold;
+margin-top: 20px;
+padding: 19px 20px;
+font-size: 20px;
+font-family: inherit;
+border-style: outset;*/
+border-radius: 8px;
+color: #fff;
+float: right;
+font-weight: bold;
+margin-top: 20px;
+padding: 19px 20px;
+font-size: 20px;
+font-family: inherit;
+border-style: outset;
+}
+
+
+.btn8{
+background: #15ADC7;
+border-radius: 8px;
+color: #fff;
+float: right;
+font-weight: bold;
+margin-top: 20px;
+padding: 19px 20px;
+font-size: 20px;
+font-family: inherit;
+border-style: outset;
+}

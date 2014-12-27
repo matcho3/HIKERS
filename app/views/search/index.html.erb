@@ -1,12 +1,5 @@
-<!--<<<<<<< HEAD
-<h1>Search Results</h1>
-<table border="1">
-  <tr>
-    <th>profile_image</th><th>car_image</th><th>Departure</th><th>Destination</th><th>leaving_time</th><th>Capacity</th><th>Price</th><th>message</th><th>check</th>
-  </tr>
-=======
->>>>>>> 19c08f20ee7696a386fb5339364c60dfe36006dc-->
-
+<div class="contents">
+<div class="container">
 <ul class="search-list col-center">
    <% @trips.each do |trip| %>
   <li class="col-sm-6 col-lg-3 row-space-4 transition-delay-1000">
@@ -17,6 +10,7 @@
           <div class="driver_info">
             <%=  profile_car_image_for trip.driver %>
             <%= profile_image_for trip.driver.user  %>
+           
             <%#= image_tag(trip.driver.user.image, :size => '35x35', :class => "img-circle") %>
           </div>
            <div class="col-bottom col-sm-12">
@@ -39,5 +33,7 @@
   </li>
   <% end %>
 </ul>
+</div>
+</div>
 <!-- </table>` -->
 
