@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
     @user = User.find(params[:message][:receiving_id])
     @content = (params[:message][:content])
     current_user.sending!(@user, @content)
-    redirect_to message_path(@user)
+    #redirect_to message_path(@user)
     #if @content.save
       #flash[:success] = "Message created!"
       #redirect_to message_path(@user)
