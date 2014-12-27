@@ -45,6 +45,7 @@ class ReviewsController < ApplicationController
 
     @notification = Notification.new
     @notification.user_id = @review.user_id
+    @notification.review_id = @review.id
     @notification.body = "あなたに、新しいレビューが書かれました。"
     @notification.save
     # @user = current_user

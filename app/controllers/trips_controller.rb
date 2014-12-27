@@ -24,6 +24,7 @@ class TripsController < ApplicationController
 
       @notification = Notification.new
       @notification.user_id = @book.user_id
+      @notification.book_id = @book.id
       # @notification.book_id = @book.id
       @notification.body = "あなたのトリップに、申請がありました。"
       @notification.save
