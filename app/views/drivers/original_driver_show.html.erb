@@ -1,0 +1,11 @@
+<div class="container3">
+<h1>
+  <%= profile_car_image_for @driver %>
+  <%= profile_image_for current_user %> <%= @driver.user.name %>
+</h1>
+	license history <%= @driver.license_history %>
+<%= link_to new_trip_path, class: "btn12" do %>
+  Trip Entry 
+<% end %> 
+</div>
+<br><br><br>

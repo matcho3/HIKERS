@@ -12,7 +12,12 @@ class ReviewsController < ApplicationController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
+    if current_user.driver.reviews.blank?
+        render 'reviews/no_reviews'
+    else
+
     @reviews = Review.where(driver_id: current_user.driver.id)
+    end
   end
 
   # GET /reviews/new

@@ -68,13 +68,15 @@
                          <br>
                        <!-- <a href="" class="btn11">BOOK to This USER</a> -->
                    
-                                    
-
-                        <%= link_to book_trip_path(@trip), class: "btn11", method: :get do %>
-                                  BOOk to <%= @trip.driver.user.name %>
+                        <% if current_user != @trip.driver.user %>
+                                <%= link_to book_trip_path(@trip), class: "btn11", method: :get do %>
+                                          BOOk to <%= @trip.driver.user.name %>
+                                  <% end %>
+                        <% else %>
+                                <%= link_to root_url, class: "btn13" do %>
+                                          HOME 
+                                <% end %>
                         <% end %>
-
-
                 </div>
                 <br>
             </div>

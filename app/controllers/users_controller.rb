@@ -14,14 +14,15 @@ class UsersController < ApplicationController
 
 def notification
     # @string = "hi"
+    
+    current_user.driver.trips.each do |trip|
+          @books = trip.books
+    end
 
     if current_user.notifications.blank?
         render 'users/no_notification'
-    else
       # if current_user.driver
-        current_user.driver.trips.each do |trip|
-          @books = trip.books
-          end
+        
     end
       #   # render :text => 'Driver登録を済ませて下さい。'
       #   @driver = Driver.new

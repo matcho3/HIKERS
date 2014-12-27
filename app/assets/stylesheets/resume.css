@@ -73,7 +73,20 @@ border: 6px solid rgba(1, 1, 1, 0.3);
 border-radius: 50%;
 }
 
-
+.fa3{
+/*display: inline-block;
+font: normal normal normal 14px/1 FontAwesome;
+font-size: initial;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+float: right;
+margin-top: -17px;*/
+display: inline-block;
+font: normal normal normal 14px/1 FontAwesome;
+font-size: initial;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+}
 /* resume stuff */
 
 .bs-callout {

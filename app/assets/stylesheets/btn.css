@@ -199,7 +199,7 @@ border-radius: 8px;
 color: #fff;
 float: right;
 font-weight: bold;
-margin-top: -29px;
+margin-top: 13px;
 padding: 19px 20px;
 font-size: 20px;
 font-family: inherit;
@@ -207,7 +207,27 @@ margin-right: -3px;
 border-style: outset;
 }
 
-
+.btn13 {
+display: inline-block;
+padding: 6px 12px;
+font-size: 17px;
+/* font-weight: initial; */
+line-height: 1.428571429;
+/* text-align: center; */
+/* white-space: nowrap; */
+/* vertical-align: middle; */
+/* cursor: pointer; */
+/* -webkit-user-select: none; */
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+/* background-image: none; */
+/* border: 1px solid transparent; */
+border-radius: 4px;
+margin-left: 982px;
+/* float: right; */
+}
 
 /*btn.btn-color {
 color: #fff;

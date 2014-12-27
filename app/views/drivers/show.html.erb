@@ -1,11 +1,43 @@
-<div class="container3">
-<h1>
-  <%= profile_car_image_for @driver %>
-  <%= profile_image_for current_user %> <%= @driver.user.name %>
-</h1>
-	license history <%= @driver.license_history %>
-<%= link_to new_trip_path, class: "btn12" do %>
-  Trip Entry 
-<% end %> 
+
+<div id="login-form" >
+<br>
+<fieldset id="driver-entry-field">
+    <h3 class="driver-entry-name">Driver Entry</h3>
+    <article class="container-login center-block">
+    	 
+		<section>
+
+
+
+<!-- <div class="container"> -->
+ <!-- background-image: url("../images/inu01.jpg") -->
+	<div class="container3">
+		<div class="col-md-12 column productbox">
+			<h1>
+			  <%= profile_car_image_for @driver %>
+			  <%= profile_image_for current_user %> <%= @driver.user.name %>
+			</h1>
+		    <!-- <img src="http://placehold.it/460x250/e67e22/ffffff&text=HTML5" class="img-responsive"> -->
+		    <!-- <div class="producttitle">Product 2</div> -->
+		   
+		</div>
+		 <div class="productprice">
+		    	<div class="pull-right">
+		    		<!-- <a href="#" class="btn btn-danger btn-sm" role="button"></a> -->
+
+					<%= link_to new_trip_path, class: "btn12" do %>
+					  Continue
+					<% end %> 
+		    	</div>
+		    	<!-- <div class="pricetext">
+		    		
+		    	</div> -->
+		   </div>
+	</div>
+<!-- </div> -->
+
+</section>
+		
+	</article>
+</fieldset>
 </div>
-<br><br><br>
