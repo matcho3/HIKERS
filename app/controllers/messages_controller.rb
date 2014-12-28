@@ -4,8 +4,13 @@ class MessagesController < ApplicationController
   def create
     @user = User.find(params[:message][:receiving_id])
     @content = (params[:message][:content])
-    current_user.sending!(@user, @content)
-    #redirect_to message_path(@user)
+    @message = current_user.sending_messages.build(receiving_id: @user.id, content: @content)
+    @message.save
+    respond_to do |format|
+      format.html { redirect_to messages_user_path(@user)}
+      format.js
+    end
+    #redirect_to messages_user__path(@user)
     #if @content.save
       #flash[:success] = "Message created!"
       #redirect_to message_path(@user)

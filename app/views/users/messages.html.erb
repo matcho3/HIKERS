@@ -20,10 +20,11 @@
 	<div class="span8">
 		<h3>Messages </h3>
 		<table border="1">
-			<tr>
+			<tr id="message-head">
 				<th>profile_image</th><th>name</th><th>content</th><th>time</th>
 			</tr>
 			<%= render @messages %>
 		</table>
+		<%= will_paginate @messages %>
 	</div>
 </div>

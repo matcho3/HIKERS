@@ -212,7 +212,7 @@ def notification
 
   def messages
     @user = User.find(params[:id])
-    @messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [current_user.id, @user.id], [@user.id, current_user.id] )
+    @messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [current_user.id, @user.id], [@user.id, current_user.id] ).paginate(page: params[:page])
   end
 
   def receiving
