@@ -89,7 +89,7 @@ def purchased
 
 
   	def show
-      @trip = Trip.find(params[:id])
+      # @trip = Trip.find(params[:id])
   	end
   	
   	def edit

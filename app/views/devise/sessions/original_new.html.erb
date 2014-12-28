@@ -1,0 +1,40 @@
+
+  <!-- <div class="container"> -->
+
+  <div id="login-form">
+<br>
+<fieldset class="field-width">
+    <h3>Login</h3>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
+
+      <!-- <form action="javascript:void(0);" method="get"> -->
+      
+
+        <!-- <input type="email" required value="Email" onBlur="if(this.value=='')this.value='Email'" onFocus="if(this.value=='Email')this.value='' "> --> <!-- JS because of IE support; better: placeholder="Email" -->
+    
+        <%= f.email_field :email, autofocus: true, placeholder: "email" %>
+  
+     <!-- placeholder="&#xF002; Search" -->
+
+
+        <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
+    
+        <!-- <input type="submit" value="Login"> -->
+        <%= f.submit "Log in" %>
+        
+        <footer class="clearfix">
+
+          <p><span class="info">?</span><a href="#">Forgot Password</a></p>
+
+        </footer>
+
+      <!-- </form> -->
+        
+    
+  <% end %>
+  </fieldset>
+  </div> <!-- end login-form -->
+
+<!-- </div> -->
+

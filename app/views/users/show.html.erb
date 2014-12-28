@@ -1,24 +1,189 @@
-<div class="row sample">
-  <aside class="span4">
-    <section>
-      <%= render 'shared/user_info' %>
-    </section>
-  </aside>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container"> -->
+<div class="row info" style="text-align:center;">
+    <!-- div class="col-xs-12 alert alert-info">
+        The skills meter from <a class="alert-link" href="http://bootsnipp.com/snippets/featured/progress-bar-meter">here</a> is used in this design. 
+        Feel free to remove this div from the design.
+    </div> -->
 </div>
 
-<% if @user.driver == nil %>
-     <%= render 'shared/user_info' %>
-<% elsif !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
-    <%= render 'shared/trips_collections' %>
-<% elsif @user != current_user %>
-    <div class="sample">
-    <%= render 'shared/review_form' %>
+<div class="resume">
+    <!-- <header class="page-header">
+    <h1 class="page-title">About Driver + Trip You Selected </h1>
+    <small> <i class="fa fa-clock-o"></i> Last Updated on: <time>Sunday, October 05, 2014</time></small>
+  </header> -->
+  <% @user %>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+    <div class="panel">
+      <div class="panel-heading resume-heading">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="col-xs-12 col-sm-4 profile">
+              <figure>
+                  
+                <% if current_user == @user && @user.uid != nil %>
+                  <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", class: "profile2 img-circle img-responsive" %>
+                  <%= link_to edit_user_path(@user) do %>
+                 <i class="fa3 fa-pencil-square-o"></i>
+                <% end %>
+                <% else %>
+                 <%= profile_image_for @user, size: '300x300', class: "img-circle img-responsive" %>
+                 <%= link_to edit_user_path(@user) do %>
+                 <i class="fa3 fa-pencil-square-o"></i>
+                <% end %>
+                 <% end%>
+                  
+
+                <!-- <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300"> -->
+                <!-- <hr> -->
+               
+              </figure>
+              
+              <div class="row">
+                
+              </div>
+              
+            </div>
+
+            <div class="col-xs-12 col-sm-8">
+
+              <ul class="list-group">
+                <%if @user == current_user %>
+               <h1 class="username"><%= @user.name %>
+                <%#= link_to edit_user_path(@user) do %>
+                 <!-- <i class="fa2 fa-pencil-square-o"></i> -->
+                <!-- <#% end %> -->
+               </h1>
+               <% else %>
+               <h1 class="username"><%= @user.name %></h1>
+               <% end %>
+
+            
+
+                <li class="list-group-item">Senior Software Engineer</li>
+                <li class="list-group-item">google inc.</li>
+                <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
+                <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+       </div>
+
+<!-- Review Area Started *********************************-->
+
+<% if current_user != @user %>
+  
+  <div class="container">
+    <div>
+      <div class="#">
+        <div class="review">
+              <div>
+                  <a class="btn btn-success btn-green " href="#reviews-anchor" id="open-review-box">Leave a Review for <%= @user.name %> </a>
+              </div>
+          
+              <div class="row" id="post-review-box" style="display:none;">
+                  <div class="col-md-12">
+
+                    <%= form_for(@review) do |r| %>
+                    <%= hidden_field_tag :driver_id, @user.id %>
+                      <!-- <form accept-charset="UTF-8" action="" method="post"> -->
+                          <!-- <input id="ratings-hidden" name="rating" type="hidden">  -->
+                          <!-- <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5"></textarea> -->
+
+                          <%= r.text_area :comment, placeholder: "Compose new review...", class: "comment_area form-control animated", cols: "50", id: "new-review" %>
+
+
+          
+                          <div class="text-right">
+                              <div class="stars starrr" data-rating="0"></div>
+                              <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
+                              <span class="glyphicon glyphicon-remove"></span>Cancel</a>
+
+
+                              <!-- <button class="btn btn-success btn-lg" type="submit">Save</button> -->
+                                <%= r.submit "Post", class: "btn btn-success btn-lg" %>
+                      
+                          </div>
+                      <!-- </form> -->
+                      <% end %>
+                  </div>
+              </div>
+          </div> 
+           
+      </div>
     </div>
-<% elsif @user.driver.reviews.any? %>
-<div class="sample2">
-  <div class="span8">
+  </div>
 <% end %>
+<!-- Review Area end *********************************-->
 
 
 
@@ -29,49 +194,41 @@
 
 
 
-<!-- <div class="sample2">
-  <div class="span8">
-    <#% if !@user.driver == nil %>
-    <#% if @user.driver.reviews.any?  %>
-      <h3>Reviews</h3>
-      <ol class="microposts">
-        <%#= render @reviews %>
-      </ol>
-      <%#= will_paginate @reviews %>
-    <#% end %>
-    <#% end %>
+
+
+      <div class="bs-callout">
+        <h4>About <%= @user.name %></h4>
+        <%= @user.self_introduction %>
+        <h4></h4>
+      </div>
+      
+      
+      <div class="bs-callout">
+        <h4>Review for  <%= @user.name %></h4>
+        <% if @user.driver.reviews %>
+        <% @user.driver.reviews.each do |r| %>
+        <b><%= r.comment %></b><br>
+        Posted <%= time_ago_in_words(r.created_at) %> ago.
+        <br><hr>
+
+        <% end %>
+        <% end %>
+        <h4></h4>
+      </div>
+
+
+
+
+
+    </div>
+
   </div>
 </div>
- -->
+    
+</div>
+
+<!-- </div> -->
 
 
 
 
-
-
-  <!-- </table> -->
- <!--  <h2>MY REVIEW</h2>
-  <!twitterと同様にreviewを表示。pagenate -->
-  <!-- <section>
-    self-introduction: <%#= current_user.self_introduction %><br>
-    location:<%#= current_user.location %><br>
-    school:<%#= current_user.school %><br>
-    workplace:<%#= current_user.workplace %>
-  </section>   -->
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-<%= link_to 'Back', users_path %>

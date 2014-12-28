@@ -1,0 +1,49 @@
+<div class="row sample">
+  <aside class="span4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+  </aside>
+
+</div>
+
+<% if @user.driver == nil %>
+     <%= render 'shared/user_info' %>
+<% elsif !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
+    <%= render 'shared/trips_collections' %>
+<% elsif @user != current_user %>
+    <div class="sample">
+    <%= render 'shared/review_form' %>
+    </div>
+<% elsif @user.driver.reviews.any? %>
+<div class="sample2">
+  <div class="span8">
+<% end %>
+
+<!-- <div class="sample2">
+  <div class="span8">
+    <#% if !@user.driver == nil %>
+    <#% if @user.driver.reviews.any?  %>
+      <h3>Reviews</h3>
+      <ol class="microposts">
+        <%#= render @reviews %>
+      </ol>
+      <%#= will_paginate @reviews %>
+    <#% end %>
+    <#% end %>
+  </div>
+</div>
+ -->
+
+  <!-- </table> -->
+ <!--  <h2>MY REVIEW</h2>
+  <!twitterと同様にreviewを表示。pagenate -->
+  <!-- <section>
+    self-introduction: <%#= current_user.self_introduction %><br>
+    location:<%#= current_user.location %><br>
+    school:<%#= current_user.school %><br>
+    workplace:<%#= current_user.workplace %>
+  </section>   -->
+ 
+<br>
+<%= link_to 'Back', users_path %>
