@@ -1,7 +1,7 @@
 var cbpAnimatedHeader = (function() {
 
     var docElem = document.documentElement,
-        header = document.querySelector( '.navbar-inverse' ),
+        header = document.querySelector( '.transparent-nav' ),
         didScroll = false,
         changeHeaderOn = 150;
 
