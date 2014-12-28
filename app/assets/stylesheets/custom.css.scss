@@ -135,12 +135,17 @@ line-height: 4;
   transition: all 0.8s;
 }
 
-.navbar-inverse.navbar-scroll{
+.transparent-nav.navbar-scroll{
   background-color: rgba(40,30,50,0.9);
   border-color: rgba(30,27,31,0.9);
   padding:15px 0; 
 }
 
+.colored-nav {
+  background-color: rgba(40,30,50,0.9);
+  border-color: rgba(30,27,31,0.9);
+  padding:15px 0;
+}
 /* footer */
 
 footer {
