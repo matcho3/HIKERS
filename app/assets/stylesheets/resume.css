@@ -45,8 +45,48 @@ opacity:0.9;
 margin-top: -197px;
 }
 
+.username{
+  /*background-color: rgb(178, 178, 178);;
+  margin-bottom: 0px;
+  font-family: inherit;*/
+background-color: rgb(247, 243, 243);
+margin-bottom: 0px;
+font-family: inherit;
+border-radius: 3px;
+border: outset;
+}
+
+.fa2{
+display: inline-block;
+font: normal normal normal 14px/1 FontAwesome;
+font-size: x-large;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+float: right;
+}
 
 
+img.profile2 {
+
+margin-top: 227px;
+border: 6px solid rgba(1, 1, 1, 0.3);
+border-radius: 50%;
+}
+
+.fa3{
+/*display: inline-block;
+font: normal normal normal 14px/1 FontAwesome;
+font-size: initial;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+float: right;
+margin-top: -17px;*/
+display: inline-block;
+font: normal normal normal 14px/1 FontAwesome;
+font-size: initial;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+}
 /* resume stuff */
 
 .bs-callout {

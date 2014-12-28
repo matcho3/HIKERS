@@ -1,22 +1,274 @@
-<h1>Sign in</h1>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(:session, url: sessions_path) do |f| %>
+<!-- <!DOCTYPE html> --> 
+<!-- <html lang="en"> -->
+<!-- <head> -->
+<!-- <title>Example of Twitter Bootstrap 3 Modals</title>
+ --><!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/<! css/bootstrap-theme.min.css"> --> 
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<style type="text/css">
+    .bs-example{
+      margin: 20px;
+    }
+</style>
+<!-- </head> -->
+<!-- <body> -->
+<div class="bs-example">
+    <!-- Button HTML (to Trigger Modal) -->
+    <a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Launch Demo Modal</a>
+    
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <!-- <div class="modal-dialog"> -->
+           
+                <!-- <div class="modal-header">
 
-      <div class="field">
-      <%= f.label :email %><br>
-      <%= f.text_field :email %>
-      </div>
-      <div class="field">
-      <%= f.label :password %><br>
-      <%= f.password_field :password %>
-      </div>
-      <div class="actions">
-      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-  	  </div>
-    <% end %>
+                   
+                </div> -->
 
-    <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
-  </div>
+
+                <!-- <div class="modal-body"> -->
+                   <!--  <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p> -->
+                  
+  <!-- <div class="container"> -->
+
+  <div id="login-form">
+
+<br>
+<fieldset>
+  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+    <h3>Login</h3>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
+
+      <!-- <form action="javascript:void(0);" method="get"> -->
+
+        <!-- <input type="email" required value="Email" onBlur="if(this.value=='')this.value='Email'" onFocus="if(this.value=='Email')this.value='' "> --> <!-- JS because of IE support; better: placeholder="Email" -->
+    
+        <%= f.email_field :email, autofocus: true, placeholder: "email" %>
+  
+     <!-- placeholder="&#xF002; Search" -->
+
+
+        <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
+    
+        <!-- <input type="submit" value="Login"> -->
+        <%= f.submit "Log in" %>
+        
+        <footer class="clearfix">
+
+          <p><span class="info">?</span><a href="#">Forgot Password</a></p>
+
+        </footer>
+
+      <!-- </form> -->
+        
+    
+  <% end %>
+  </fieldset>
+  </div> <!-- end login-form -->
+
 </div>
+
+
+
+
+
+
+                <!-- </div> -->
+               <!--  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+</div>     
+<!-- </body> -->
+</html>     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html> 
+<!-- <html lang="en"> -->
+<!-- <head> -->
+<!-- <title>Example of Twitter Bootstrap 3 Modals</title>
+ --><!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+<style type="text/css">
+    .bs-example{
+      margin: 20px;
+    }
+</style>
+<!-- </head> -->
+<!-- <body> -->
+<div class="bs-example">
+    <!-- Button HTML (to Trigger Modal) -->
+    <a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Launch Demo Modal</a>
+    
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+
+
+                <div class="modal-body">
+                   <!--  <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p> -->
+                  
+  <!-- <div class="container"> -->
+
+  <div id="login-form">
+<br>
+<fieldset>
+    <h3>Login</h3>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
+
+      <!-- <form action="javascript:void(0);" method="get"> -->
+      
+
+        <!-- <input type="email" required value="Email" onBlur="if(this.value=='')this.value='Email'" onFocus="if(this.value=='Email')this.value='' "> --> <!-- JS because of IE support; better: placeholder="Email" -->
+    
+        <%= f.email_field :email, autofocus: true, placeholder: "email" %>
+  
+     <!-- placeholder="&#xF002; Search" -->
+
+
+        <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
+    
+        <!-- <input type="submit" value="Login"> -->
+        <%= f.submit "Log in" %>
+        
+        <footer class="clearfix">
+
+          <p><span class="info">?</span><a href="#">Forgot Password</a></p>
+
+        </footer>
+
+      <!-- </form> -->
+        
+    
+  <% end %>
+  </fieldset>
+  </div> <!-- end login-form -->
+
+</div>
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>     
+<!-- </body> -->
+<!-- </html>                                                                                                                                         

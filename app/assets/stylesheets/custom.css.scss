@@ -48,7 +48,7 @@ html {
 body {
   background-color: #EAEAEA;
   padding-top: 60px;
-  color:#15A8B5;
+  // color:#15A8B5;
   min-height:100%;
 }
 
@@ -361,6 +361,7 @@ margin: auto;
   width:161px;;
   margin-left:-5px;
   border-radius: 0px;
+  border: outset 2px rgb(221, 221, 221);
 }
 
 .fa2{
@@ -410,6 +411,7 @@ vertical-align: middle;
 width:168px;
   margin-left:-5px;
   border-radius: 0px;
+  border: outset 2px rgb(221, 221, 221);
 }
 
 
@@ -573,7 +575,13 @@ height: 500px;
   // top: 0;
   // left: 0;
 
-
+.container3{
+  width:50%;
+  padding-right: 15px;
+padding-left: 15px;
+margin-right: auto;
+margin-left: auto;
+}
 
 
 .car_icon {
