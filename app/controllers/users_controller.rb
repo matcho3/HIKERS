@@ -90,10 +90,16 @@ def notification
 
     end
     
+    #end
+
+
+    #@reviews = @user.reviews.paginate(page: params[:page])
+
       # raise
         # @review = Review.new
         # @reviews = @user.driver.reviews.paginate(page: params[:page])
   end
+
 
 
 
@@ -202,6 +208,11 @@ def notification
     #end 
     render 'show_message'#error的なのを書く
       
+  end
+
+  def messages
+    @user = User.find(params[:id])
+    @messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [current_user.id, @user.id], [@user.id, current_user.id] ).paginate(page: params[:page])
   end
 
   def receiving

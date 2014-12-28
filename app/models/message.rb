@@ -6,4 +6,5 @@ class Message < ActiveRecord::Base
 	
     validates :sending_id, presence: true
     validates :receiving_id, presence: true
+    validates :content, length: { maximum: 140 }
 end

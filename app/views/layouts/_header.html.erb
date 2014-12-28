@@ -44,13 +44,16 @@
                 <li><%= link_to "Reviews", review_path(current_user) %></li><hr>
 
 
-                  <% if !current_user.driver %>
-                    <li><%= link_to "DriverR", new_driver_path %></li><hr>
+                  <% if current_user.driver == nil %>
+                    <li><%= link_to "DriverR", new_driver_path %></li>
                   <% else %>
-                    <li><%= link_to "DriverR", edit_driver_path(current_user.driver.id) %></li><hr>
-                  <% end %> 
+                    <li><%= link_to "DriverR", edit_driver_path(current_user.driver.id) %></li>
 
+                    <li><%= link_to "my trip", trip_driver_path(id: current_user.driver.id) %></li>
 
+                  <% end %>
+
+  
                   <li class="divider"></li>
                   <li>
                     <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
@@ -105,17 +108,10 @@
           <!-- </ul> -->
         <!-- <ul> -->
           <!-- pathは仮。フィードにNotificationを実装したらそこに飛ばす-->
-            <% if !current_user.driver %>
-              <li><%= link_to "DriverR", new_driver_path, :id => "driver" %></li>
-            <% else %>
-              <li><%= link_to "List Your Trips", new_trip_path, class: "account" %></li>
-            <% end %> 
-
-
-
+            
+            <li><%= link_to "List Your Trips", new_trip_path, class: "account" %></li>
 
           <% else %>
-
             <li><%= link_to user_omniauth_authorize_path(:facebook), class: " btn-social btn-facebook" do %>
             <i class="fa fa-facebook"></i>
             <% end %></li>

@@ -35,20 +35,26 @@ end
    # post "sample_pages/purchase"
    # url で表示したくない、容量 POST
   
- resources :users do
+  resources :users do
     member do
-      get :sending, :receivings
+      get :sending, :receivings, :messages
       get 'book'
     end
- end
- resources :messages
- resources :drivers
- resources :reviews
- resources :trips do
-    member do
-      get 'book'
+  end
+
+  resources :drivers do
+    member do 
+      get 'trip'
     end
- end
+  end
+
+  resources :reviews
+  resources :messages
+  resources :trips do
+    member do
+      get 'book', :driver
+    end
+  end
 end
 
 
