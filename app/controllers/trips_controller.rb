@@ -9,7 +9,7 @@ class TripsController < ApplicationController
   		@trip = current_user.driver.trips.build(trip_params)
     	if @trip.save
       		flash[:success] = "Trip Entry Completed!"
-      		redirect_to root_url
+      		redirect_to @trip
     	else
       		render 'new'
     	end
@@ -24,6 +24,7 @@ class TripsController < ApplicationController
 
       @notification = Notification.new
       @notification.user_id = @book.user_id
+      @notification.book_id = @book.id
       # @notification.book_id = @book.id
       @notification.body = "あなたのトリップに、申請がありました。"
       @notification.save
@@ -79,7 +80,7 @@ def purchased
 
 
   	def show
-      @trip = Trip.find(params[:id])
+      # @trip = Trip.find(params[:id])
   	end
   	
   	def edit

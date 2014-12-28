@@ -31,7 +31,7 @@ body header form{
 }
 
 header.navbar.navbar-fixed-top.navbar-inverse{
-	height: 60px;
+	height: 86px;
 }
 
 
@@ -65,6 +65,8 @@ margin: 0 auto;
 #driver{
   color: #fff;
 }
+
+
 
 
 /*html#facebook {

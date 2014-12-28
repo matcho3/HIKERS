@@ -8,9 +8,9 @@ before_action :current_user,   only: [:edit, :update]
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to HIKERS!"
-      redirect_to root_path
+      redirect_to root_url
     else
-    	render 'users/registrations/new'
+    	render 'devise/registrations/new'
     end
   end
 
@@ -20,9 +20,9 @@ before_action :current_user,   only: [:edit, :update]
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       sign_in(@user, :bypass => true)
-      redirect_to root_path
+      redirect_to @user
     else
-      render 'users/registrations/edit'
+      render 'devise/registrations/edit'
     end
   end
 

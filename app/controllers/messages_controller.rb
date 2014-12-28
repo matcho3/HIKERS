@@ -6,6 +6,13 @@ class MessagesController < ApplicationController
     @content = (params[:message][:content])
     current_user.sending!(@user, @content)
     redirect_to message_path(@user)
+    #if @content.save
+      #flash[:success] = "Message created!"
+      #redirect_to message_path(@user)
+    #else
+      #@feed_tweets = current_user.messages.paginate(page: params[:page])
+      #redirect_to message_path(@user)
+    #end
   end
 
   def index
@@ -14,7 +21,8 @@ class MessagesController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @user = @trip.driver.user
-    @messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [current_user.id, @user.id], [current_user.id, @user.id] )
+
+    @messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [current_user.id, @user.id], [@user.id, current_user.id] )
   end
 
   #def destroy

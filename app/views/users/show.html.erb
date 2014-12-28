@@ -1,77 +1,365 @@
-<div class="row sample">
-  <aside class="span4">
-    <section>
-      <%= render 'shared/user_info' %>
-    </section>
-  </aside>
+<header class="navbar navbar-fixed-top navbar-inverse colored-nav">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to root_path, id: "logo" do %>
+        <i class="fa fa-car"><b>HIKERS</b></i>
+      <% end %>
+
+            <%= form_tag search_path, method: :get do %>
+              <div class="search-input">
+                <%= text_field_tag :departure , '', size: '80' ,class: "field2" , placeholder: "Departure" %>
+                <%= text_field_tag :destination , '', size: '80' ,class: "field2" , placeholder: "Destination" %>
+                <div class="datepicker">
+                  <%= text_field_tag :leaving_time , '', size: '80' ,class: "field3" , placeholder: "Date and Time" %>
+                  <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar"></i>
+                    <!-- <i data-date-icon="icon-calendar"></i> -->
+                    <!-- <i data-time-icon="icon-time" ></i> -->
+                  </span>
+                  <!-- <span class="input-group-addon"><span class="fa fa-calendar"> -->
+                      <!-- </span> -->
+                <!-- </span> -->
+                </div>
+                <button type="submit"><i class="fa2 fa-search"></i></button>
+              </div>
+            <% end %>
 
 
-<% if @user.driver == nil %>
-     <%= render 'shared/user_info' %>
-<% elsif !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %>
-    <%= render 'shared/trips_collections' %>
-<% elsif %>
+      <nav>
+        <ul class="nav pull-right menu">
+          <% if signed_in? %>
+            
+            <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
+                  <% if current_user.uid %>
+                  <%= image_tag(current_user.image, :size => '35x35', :class => "img-circle") %>  <%= current_user.name %><b class="caret"></b>
+                  <% else %>
+                   Account<b class="caret"></b>
+                  <% end %>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Profile", current_user %></li><hr>
+                  <li><%= link_to "Books", notification_path %></li><hr>
+                 <!--  <li class="divider"></li> -->
+                <li><%= link_to "Reviews", review_path(current_user) %></li><hr>
+
+
+                  <% if !current_user.driver %>
+                    <li><%= link_to "DriverR", new_driver_path %></li><hr>
+                  <% else %>
+                    <li><%= link_to "DriverR", edit_driver_path(current_user.driver.id) %></li><hr>
+                  <% end %> 
+
+
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+                  </li>
+                </ul>
+            </li>
+
+
+
+            
+
+
+          <!-- <ul> -->
+            <li><%= link_to sending_user_path(current_user.id), id: "logo" do %>
+            <i class="fa fa-paper-plane-o"></i>
+            <% end %></li>
+            
+            
+
+
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="logo">
+                <i class="fa fa-globe" ></i>
+              </a>
+              <ul class="dropdown-menu">
+              <li>notifications</li>
+              <!-- books.nil if 文開始************************************ -->
+              <% if current_user.books.blank? %>
+                  <li><%= 'No notifications' %><hr></li>
+       
+                
+              <% else %>
+
+              <% current_user.notifications.last(5).each do |notification| %>
+              <%= link_to notification_path do %>
+                  <li><%= notification.body %><hr></li>
+                  <% end %>
+                <% end %>
+              
+              <% end %>
+              <!-- ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊books.blan? のif文終了 -->
+                
+                
+
+
+            
+
+                  <!-- ココのJUN の部分を、@user.nameとかで受け取るインスタンスで受け取って、名前を表示させる。 -->
+              </ul>
+            </li>
+          <!-- </ul> -->
+        <!-- <ul> -->
+          <!-- pathは仮。フィードにNotificationを実装したらそこに飛ばす-->
+            <% if !current_user.driver %>
+              <li><%= link_to "DriverR", new_driver_path, :id => "driver" %></li>
+            <% else %>
+              <li><%= link_to "List Your Trips", new_trip_path, class: "account" %></li>
+            <% end %> 
+
+
+
+
+          <% else %>
+
+            <li><%= link_to user_omniauth_authorize_path(:facebook), class: " btn-social btn-facebook" do %>
+            <i class="fa fa-facebook"></i>
+            <% end %></li>
+             <li><%= link_to "Sign up", new_user_registration_path %></li>
+
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+            <li><%= link_to "List Your Trips", new_trip_path %></li>
+          <% end %>
+        <!-- </ul> -->
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
 
 
 
 
 
-  <!-- <#% if !@user.driver == nil && !@user.driver.trips.each {|t| [t.departure]} == nil %> -->
-    <!-- ココカラ -->
-    <%#= render 'shared/trips_collections' %>
-       <!-- ココまではパーシャルで、呼び出せるようにする。ドロップダウンからの表示。 -->
-  <!-- <#% end %> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container"> -->
+<div class="row info" style="text-align:center;">
+    <!-- div class="col-xs-12 alert alert-info">
+        The skills meter from <a class="alert-link" href="http://bootsnipp.com/snippets/featured/progress-bar-meter">here</a> is used in this design. 
+        Feel free to remove this div from the design.
+    </div> -->
 </div>
 
+<div class="resume">
+    <!-- <header class="page-header">
+    <h1 class="page-title">About Driver + Trip You Selected </h1>
+    <small> <i class="fa fa-clock-o"></i> Last Updated on: <time>Sunday, October 05, 2014</time></small>
+  </header> -->
+  <% @user %>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+    <div class="panel">
+      <div class="panel-heading resume-heading">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="col-xs-12 col-sm-4 profile">
+              <figure>
+                  
+                <% if current_user == @user && @user.uid != nil %>
+                  <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", class: "profile2 img-circle img-responsive" %>
+                  <%= link_to edit_user_path(@user) do %>
+                 <i class="fa3 fa-pencil-square-o"></i>
+                <% end %>
+                <% else %>
+                 <%= profile_image_for @user, size: '300x300', class: "img-circle img-responsive" %>
+                 <%= link_to edit_user_path(@user) do %>
+                 <i class="fa3 fa-pencil-square-o"></i>
+                <% end %>
+                 <% end%>
+                  
 
-<div class="sample">
-<% unless @user == current_user %>
-<%= render 'shared/review_form' %>
+                <!-- <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300"> -->
+                <!-- <hr> -->
+               
+              </figure>
+              
+              <div class="row">
+                
+              </div>
+              
+            </div>
+
+            <div class="col-xs-12 col-sm-8">
+
+              <ul class="list-group">
+                <%if @user == current_user %>
+               <h1 class="username"><%= @user.name %>
+                <%#= link_to edit_user_path(@user) do %>
+                 <!-- <i class="fa2 fa-pencil-square-o"></i> -->
+                <!-- <#% end %> -->
+               </h1>
+               <% else %>
+               <h1 class="username"><%= @user.name %></h1>
+               <% end %>
+
+            
+
+                <li class="list-group-item">Senior Software Engineer</li>
+                <li class="list-group-item">google inc.</li>
+                <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
+                <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+       </div>
+
+<!-- Review Area Started *********************************-->
+
+<% if current_user != @user %>
+  
+  <div class="container">
+    <div>
+      <div class="#">
+        <div class="review">
+              <div>
+                  <a class="btn btn-success btn-green " href="#reviews-anchor" id="open-review-box">Leave a Review for <%= @user.name %> </a>
+              </div>
+          
+              <div class="row" id="post-review-box" style="display:none;">
+                  <div class="col-md-12">
+
+                    <%= form_for(@review) do |r| %>
+                    <%= hidden_field_tag :driver_id, @user.id %>
+                      <!-- <form accept-charset="UTF-8" action="" method="post"> -->
+                          <!-- <input id="ratings-hidden" name="rating" type="hidden">  -->
+                          <!-- <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5"></textarea> -->
+
+                          <%= r.text_area :comment, placeholder: "Compose new review...", class: "comment_area form-control animated", cols: "50", id: "new-review" %>
+
+
+          
+                          <div class="text-right">
+                              <div class="stars starrr" data-rating="0"></div>
+                              <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
+                              <span class="glyphicon glyphicon-remove"></span>Cancel</a>
+
+
+                              <!-- <button class="btn btn-success btn-lg" type="submit">Save</button> -->
+                                <%= r.submit "Post", class: "btn btn-success btn-lg" %>
+                      
+                          </div>
+                      <!-- </form> -->
+                      <% end %>
+                  </div>
+              </div>
+          </div> 
+           
+      </div>
+    </div>
+  </div>
 <% end %>
-</div>
+<!-- Review Area end *********************************-->
 
 
-<div class="sample2">
-  <div class="span8">
-    <% if @user.driver.reviews.any?  %>
-      <h3>Reviews</h3>
-      <ol class="microposts">
-        <%= render @reviews %>
-      </ol>
-      <%= will_paginate @reviews %>
-    <% end %>
+
+
+
+
+
+
+
+
+
+
+      <div class="bs-callout">
+        <h4>About <%= @user.name %></h4>
+        <%= @user.self_introduction %>
+        <h4></h4>
+      </div>
+      
+      
+      <div class="bs-callout">
+        <h4>Review for  <%= @user.name %></h4>
+        <% if @user.driver.reviews %>
+        <% @user.driver.reviews.each do |r| %>
+        <b><%= r.comment %></b><br>
+        Posted <%= time_ago_in_words(r.created_at) %> ago.
+        <br><hr>
+
+        <% end %>
+        <% end %>
+        <h4></h4>
+      </div>
+
+
+
+
+
+    </div>
+
   </div>
 </div>
+    
+</div>
+
+<!-- </div> -->
 
 
 
 
-
-
-
-  <!-- </table> -->
- <!--  <h2>MY REVIEW</h2>
-  <!twitterと同様にreviewを表示。pagenate -->
-  <!-- <section>
-    self-introduction: <%#= current_user.self_introduction %><br>
-    location:<%#= current_user.location %><br>
-    school:<%#= current_user.school %><br>
-    workplace:<%#= current_user.workplace %>
-  </section>   -->
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-<%= link_to 'Back', users_path %>

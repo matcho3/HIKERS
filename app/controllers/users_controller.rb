@@ -12,17 +12,22 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def notification
+def notification
     # @string = "hi"
-      if current_user.driver
-        current_user.driver.trips.each do |trip|
+    
+    current_user.driver.trips.each do |trip|
           @books = trip.books
-          end
-      else
-        # render :text => 'Driver登録を済ませて下さい。'
-        @driver = Driver.new
-        render 'drivers/new'
-      end
+    end
+
+    if current_user.notifications.blank?
+        render 'users/no_notification'
+      # if current_user.driver
+        
+    end
+      #   # render :text => 'Driver登録を済ませて下さい。'
+      #   @driver = Driver.new
+      #   render 'drivers/new'
+      # end
   end
 
 
@@ -72,6 +77,7 @@ class UsersController < ApplicationController
 
   def show
 # <<<<<<< HEAD
+ @review = Review.new
     @user = User.find(params[:id])
     if !@user.driver == nil
       @trips = current_user.driver.trips
@@ -83,31 +89,10 @@ class UsersController < ApplicationController
       end
 
     end
-    if !@user.driver == nil 
-      # raise
-        @review = Review.new
-        @reviews = @user.driver.reviews.paginate(page: params[:page])
-    end
-
-
-
-
-
-
-
-
-
-
-# =======
     
-      #@userがかぶるからコメントアウトしてみました
-      #@books.each do |book|
-       #@user = book.user
-      #end
-    #end
-
-    #@reviews = @user.reviews.paginate(page: params[:page])
-# >>>>>>> 90ca0090f3e05de2b7fb48850688348ad41cb0ef
+      # raise
+        # @review = Review.new
+        # @reviews = @user.driver.reviews.paginate(page: params[:page])
   end
 
 
@@ -203,8 +188,20 @@ class UsersController < ApplicationController
   def sending
     @title = "All Message"
     @user = User.find(params[:id])
-    @users = @user.sendings.paginate(page: params[:page])
-    render 'show_message'
+    receiving_users = Message.where(sending_id: current_user.id).map{|message| message.receiving}
+    sending_users = Message.where(receiving_id: current_user.id).map{|message| message.sending}
+    #@pre_usersは@userとmessageしているuserすべて
+    @pre_users = receiving_users + sending_users
+    #@usersは@pre_usersから重複を取り除いたuser
+    @users = @pre_users.uniq
+
+    #@usersそれぞれと@userとの最新のmessageを取り出してviewに渡す
+    #@users.each do |user|
+      #messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [user.id, @user.id], [@user.id, user.id])
+      #@message = messages.last
+    #end 
+    render 'show_message'#error的なのを書く
+      
   end
 
   def receiving

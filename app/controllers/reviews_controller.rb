@@ -12,7 +12,12 @@ class ReviewsController < ApplicationController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
+    if current_user.driver.reviews.blank?
+        render 'reviews/no_reviews'
+    else
 
+    @reviews = Review.where(driver_id: current_user.driver.id)
+    end
   end
 
   # GET /reviews/new
@@ -27,15 +32,22 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    # @user = User.new
-    # @user = User.find(params)
-    # @user = something
+   
     @review = Review.new
     @review.comment =  params[:review][:comment]
     @review.user_id = current_user.id
     @review.driver_id = params[:driver_id]
     @driver = Driver.find(params[:driver_id]);
     @user = @driver.user
+    @review.save
+
+    # notificationの保存＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+    @notification = Notification.new
+    @notification.user_id = @review.user_id
+    @notification.review_id = @review.id
+    @notification.body = "あなたに、新しいレビューが書かれました。"
+    @notification.save
     # @user = current_user
     if @review.save
       flash[:success] = "Review created!"

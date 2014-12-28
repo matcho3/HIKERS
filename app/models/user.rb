@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   
   # receive message
   has_many :receiving_messages, foreign_key: "receiving_id", class_name: "Message", dependent: :destroy
-  has_many :receivings, through: :receiving_relationships
+  has_many :receivings, through: :receiving_messages
 
   # send messageする関数
   def sending!(other_user, content)
