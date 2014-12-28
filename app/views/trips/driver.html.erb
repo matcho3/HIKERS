@@ -1,0 +1,8 @@
+<dev>
+  <%= profile_image_for(@user) %>
+  <%= link_to @user.name, @user %>
+  <li><%= link_to messages_user_path(@user), id: "logo" do %>
+     <i class="fa fa-paper-plane-o">Message</i>
+  <% end %>
+  </li>
+</dev>

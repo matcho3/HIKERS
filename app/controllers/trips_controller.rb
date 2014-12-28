@@ -6,13 +6,21 @@ class TripsController < ApplicationController
   	end
 
   	def create
-  		@trip = current_user.driver.trips.build(trip_params)
-    	if @trip.save
-      		flash[:success] = "Trip Entry Completed!"
-      		redirect_to @trip
-    	else
-      		render 'new'
-    	end
+      if signed_in?
+        unless current_user.driver == nil 
+  	      @trip = current_user.driver.trips.build(trip_params)
+          if @trip.save
+           flash[:success] = "Trip Entry Completed!"
+           redirect_to root_url
+          else
+           render 'new'
+          end
+        else
+          redirect_to new_driver_path
+        end
+      else
+        redirect_to new_user_path
+      end
   	end
 
     def book
@@ -59,7 +67,9 @@ class TripsController < ApplicationController
 
 
 
-
+  def driver
+    @user = Trip.find(params[:id]).driver.user
+  end
 
 def index
   end

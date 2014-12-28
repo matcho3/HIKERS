@@ -4,8 +4,13 @@ class MessagesController < ApplicationController
   def create
     @user = User.find(params[:message][:receiving_id])
     @content = (params[:message][:content])
-    current_user.sending!(@user, @content)
-    redirect_to message_path(@user)
+    @message = current_user.sending_messages.build(receiving_id: @user.id, content: @content)
+    @message.save
+    respond_to do |format|
+      format.html { redirect_to messages_user_path(@user)}
+      format.js
+    end
+    #redirect_to messages_user__path(@user)
     #if @content.save
       #flash[:success] = "Message created!"
       #redirect_to message_path(@user)
@@ -18,12 +23,11 @@ class MessagesController < ApplicationController
   def index
   end
 
-  def show
-    @trip = Trip.find(params[:id])
-    @user = @trip.driver.user
-
-    @messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [current_user.id, @user.id], [@user.id, current_user.id] )
-  end
+  #def show
+    #@trip = Trip.find(params[:id])
+    #@user = @trip.driver.user
+    #@messages = Message.where('sending_id IN (?) AND receiving_id IN (?)', [current_user.id, @user.id], [@user.id, current_user.id] )
+  #end
 
   #def destroy
     #@user = Message.find(params[:id]).sending
