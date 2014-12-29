@@ -179,7 +179,11 @@
             <div class="box">
                 <div class="box-icon">
                      <!-- <figure> -->
+                     <% if @trip.driver.user.uid != nil %>
+                        <%= image_tag "http://graph.facebook.com/#{@trip.driver.user.uid}/picture?type=large", class: "gravatar img-circle img-responsive" %>
+                     <%else%>
                          <%= profile_image_for @trip.driver.user, size: '300x300', class: "img-circle" %>
+                    <% end %>
                 <!-- <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300"> -->
                       <!-- </figure> -->
                     <!-- <span class="fa fa-4x fa-html5"></span> -->

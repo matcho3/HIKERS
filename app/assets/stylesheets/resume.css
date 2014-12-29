@@ -73,6 +73,13 @@ border: 6px solid rgba(1, 1, 1, 0.3);
 border-radius: 50%;
 }
 
+h4.payment {
+text-align: center;
+}
+
+
+
+
 .fa3{
 /*display: inline-block;
 font: normal normal normal 14px/1 FontAwesome;

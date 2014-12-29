@@ -39,6 +39,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Profile", current_user %></li><hr>
+                  <li><%= link_to "Settings", edit_user_path(current_user) %></li><hr>
                   <li><%= link_to "Books", notification_path %></li><hr>
                  <!--  <li class="divider"></li> -->
                 <li><%= link_to "Reviews", review_path(current_user) %></li><hr>
@@ -157,37 +158,57 @@
 
 
 
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-icon">
+                     <!-- <figure> -->
+
+                     <% if current_user.uid != nil %>
+                        <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", class: "gravatar img-circle img-responsive" %>
+                     <% else %>
+                       <%= profile_image_for current_user, size: '300x300', class: "img-circle img-responsive" %>
+                      <% end %>
+                <!-- <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300"> -->
+                      <!-- </figure> -->
+                    <!-- <span class="fa fa-4x fa-html5"></span> -->
+                </div>
+                <div class="info2">
+
+                      <div class="bs-callout bs-callout-danger align">
+                            <h4 class="payment">Books</h4>
 
 
+                            <% @books.each do |book| %>
+                            <ul class="notification">
+                            <li><%= book.trip.driver.user.name %>さん！</li>
+                            <li><%= book.user.name %>君から、あなたのTRIP NO.<%= book.trip.id %>に予約リクエストがきてますよ。！ <%= link_to '承認', approve_book_path(book), class: "btn6" %>
+                            <%= link_to "却下", disapprove_book_path(book), id: "btn", class: "btn2" %></li>
+                            <hr>
+                            <!-- <li><%#= book.reservations %></li>
+                            <li><%#= book.status %></li> -->
+                          </ul>
+                          <% end %>
+                      </div>
 
-<h1>Book Request for <%= current_user.name %></h1>
+                      <br>
 
-<!-- <table>
-  <thead>
-    <tr>
-      <th>ドライバーさんの名前</th>
-      <th>登録したユーザーの名前</th>
-      <th>Reservations</th>
-      <th>Status</th>
+                      <%= link_to root_url, class: "btn13" do %>
+                                                HOME 
+                                      <% end %>
+                 </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br>
+
       
-    </tr>
-  </thead> -->
 
-  <!-- <tbody> -->
-    <% @books.each do |book| %>
-    
-      <ul class="notification">
-        <li><%= book.trip.driver.user.name %>さん！</li>
-        <li><%= book.user.name %>君から、あなたのTRIP NO.<%= book.trip.id %>に予約リクエストがきてますよ。！ <%= link_to '承認', approve_book_path(book), class: "btn6" %>
-<%= link_to "却下", disapprove_book_path(book), id: "btn", class: "btn2" %></li>
-        <hr>
-        <!-- <li><%#= book.reservations %></li>
-        <li><%#= book.status %></li> -->
-      </ul>
-    <% end %>
-<!--   </>
-</table> -->
 
-<br>
+
 
 

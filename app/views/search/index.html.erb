@@ -132,6 +132,25 @@
 </header>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="contents">
 <div class="container">
 <ul class="search-list col-center">
@@ -143,19 +162,41 @@
          <div class="row row-table row-full-height">
           <div class="driver_info">
             <%=  profile_car_image_for trip.driver %>
+            <% if trip.driver.user.uid != nil %>
+                  <%= image_tag "http://graph.facebook.com/#{trip.driver.user.uid}/picture?type=large", class: "gravatar img-circle img-responsive", style: "width: 120px" %>
+      
+                <% else %>
             <%= profile_image_for trip.driver.user  %>
+            <% end %>
            
             <%#= image_tag(trip.driver.user.image, :size => '35x35', :class => "img-circle") %>
           </div>
            <div class="col-bottom col-sm-12">
             <div class="h3 text-center text-contrast strong">
-             
           <%= trip.departure %>
           <%= trip.destination %>
           </div>
            <p class="text-center text-contrast">
           <i class="fa fa-users"></i><%= trip.capacity %>人
           <i class="fa fa-jpy"></i><%= trip.price %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           
 
           </p>

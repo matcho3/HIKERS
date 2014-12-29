@@ -75,6 +75,7 @@ def index
   end
 
   def purchase
+  
     # WebPay.api_key = WEBPAY_SECRET_KEY
     webpay = WebPay.new(WEBPAY_SECRET_KEY)
     # WebPay::Charge.create(currency: 'jpy', amount: 1000, card: params['webpay-token'])

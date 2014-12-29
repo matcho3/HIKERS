@@ -39,6 +39,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Profile", current_user %></li><hr>
+                  <li><%= link_to "Settings", edit_user_path(current_user) %></li><hr>
                   <li><%= link_to "Books", notification_path %></li><hr>
                  <!--  <li class="divider"></li> -->
                 <li><%= link_to "Reviews", review_path(current_user) %></li><hr>
@@ -85,7 +86,7 @@
                 
               <% else %>
 
-              <% current_user.notifications.last(5).each do |notification| %>
+              <% current_user.notifications.each do |notification| %>
               <%= link_to notification_path do %>
                   <li><%= notification.body %><hr></li>
                   <% end %>

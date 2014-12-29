@@ -39,10 +39,12 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Profile", current_user %></li><hr>
+                  <li><%= link_to "Settings", edit_user_path(current_user) %></li><hr>
                   <li><%= link_to "Books", notification_path %></li><hr>
                  <!--  <li class="divider"></li> -->
                 <li><%= link_to "Reviews", review_path(current_user) %></li><hr>
 
+                
 
                   <% if !current_user.driver %>
                     <li><%= link_to "DriverR", new_driver_path %></li><hr>
@@ -225,14 +227,26 @@
                  <i class="fa3 fa-pencil-square-o"></i>
                 <% end %>
                 <% else %>
-                 <%= profile_image_for @user, size: '300x300', class: "img-circle img-responsive" %>
-                 <%= link_to edit_user_path(@user) do %>
-                 <i class="fa3 fa-pencil-square-o"></i>
-                <% end %>
+                    <% if current_user == @user %>
+                       <%= profile_image_for @user, size: '300x300', class: "img-circle img-responsive" %>
+                       <%= link_to edit_user_path(@user) do %>
+                       <i class="fa3 fa-pencil-square-o"></i>
+                      <% end %>
+                    <% else %>
+                      <%if @user.uid != nil %>
+                      <%= image_tag "http://graph.facebook.com/#{@user.uid}/picture?type=large", class: "profile2 img-circle img-responsive" %>
+                      <% else %>
+                      <%= profile_image_for @user, size: '300x300', class: "img-circle img-responsive" %>
+                      <% end %>
+                    <% end %>
+                
                  <% end%>
                   
 
-                <!-- <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300"> -->
+
+
+
+                  <!-- <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300"> -->
                 <!-- <hr> -->
                
               </figure>

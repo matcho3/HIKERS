@@ -132,13 +132,114 @@
 </header>
 
 
-<div class="container container4">
-<h1>Your Reviews</h1>
 
-<% @reviews.each do |r| %>
-<%= r.comment %><hr>
-<% end %>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-icon">
+                     <!-- <figure> -->
+                     
+                        <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", class: "gravatar img-circle img-responsive" %>
+                     
+                <!-- <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300"> -->
+                      <!-- </figure> -->
+                    <!-- <span class="fa fa-4x fa-html5"></span> -->
+                </div>
+                <div class="info2">
+                    <!-- <div> -->
+                       <!--  <h4 class="text-center">Title</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!</p><br>
+                        <a href="" class="btn">BOOK to This USER</a>
+ -->
+                    <!-- </div> -->
+                     <!-- <div class="bs-callout bs-callout-danger">
+                            <h4>About Driver</h4>
+                        <table class="table table-striped table-responsive ">
+                              <thead>
+                                <tr><th>Date of Issue</th>
+                                <th>When to get License</th></tr>
+                              </thead>
+                              <tbody>
+                                <tr> -->
+                                 <!--  <td><%#= @trip.driver.time_get_license %></td>
+                                  <td><%#= @trip.driver.license_history %></td> -->
+                                  <!-- <td> 3.50 </td> -->
+                                <!-- </tr>
+
+                              </tbody>
+                        </table>
+                      </div> -->
+
+
+                      <div class="bs-callout bs-callout-danger align">
+                            <h4 class="payment">Reviews</h4>
+                            <!-- <div class="container container4"> -->
+                          
+                          
+                          <% @reviews.each do |r| %>
+                         <b><%= r.comment %></b><br>
+                        Posted <%= time_ago_in_words(r.created_at) %> ago.
+                        <br><hr>
+                          <% end %>
+                            <!-- </div> -->
+                      </div>
+
+
+
+
+                         <br>
+                       <!-- <a href="" class="btn11">BOOK to This USER</a> -->
+                   
+
+                     <%= link_to root_url, class: "btn13" do %>
+                                          HOME 
+                                <% end %>
+
+
+
+                      <!--   <#% if current_user != @trip.driver.user %>
+                                <%#= link_to book_trip_path(@trip), class: "btn11", method: :get do %>
+                                          BOOk to <%#= @trip.driver.user.name %>
+                                  <#% end %>
+                        <#% else %>
+                                
+                        <#% end %> -->
+                </div>
+                <br>
+            </div>
+        </div>
+  </div>
 </div>
+<br><br><br>
+
+
+
+
+
+
 
 
